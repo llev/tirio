@@ -5,6 +5,7 @@
    ============================================================ */
 import { useState, useEffect, useRef } from 'react';
 import D from '@/lib/data';
+import { audioPathById } from '@/lib/content-adapter';
 import { Icon, Button, AudioButton, ArtSlot, EngDots, Welsh, TopBar } from '@/components/primitives';
 import { layerCount } from '@/screens/shell';
 
@@ -66,7 +67,7 @@ export function RefWordCard({ word, sneaky, i, play, playingId }){
       {word.notes ? <div className="tr-wordcard__notes">{word.notes}</div> : null}
       <div className="tr-wordcard__row">
         <span className="tr-wordcard__pron">{word.pron}</span>
-        <AudioButton id={`rw-${i}`} size={44} ghost play={play} playingId={playingId} label={`Hear ${word.welsh}`} />
+        <AudioButton id={`rw-${i}`} size={44} ghost play={play} playingId={playingId} label={`Hear ${word.welsh}`} text={word.welsh} audioPath={audioPathById[word.id]} />
       </div>
     </div>
   );
@@ -87,10 +88,10 @@ export function LetterDetail({ id, go, eng, mark, play, playingId, tweaks }) {
       <div className="screen__scroll ld__scroll" onScroll={e2 => setScrolled(e2.target.scrollTop > 6)}>
 
         <div className="ld__hero" style={cvar}>
-          <span className={`ld__letter${l.digraph ? ' ld__digraph' : ''}`} onClick={() => play('letter')}>{l.letter}</span>
+          <span className={`ld__letter${l.digraph ? ' ld__digraph' : ''}`} onClick={() => play('letter', l.letter, audioPathById[l.id])}>{l.letter}</span>
           <div className="ld__name">{l.name}</div>
           <div className="ld__pron">{l.pron}</div>
-          <button className="ld__audio-hint" onClick={() => play('letter')} style={{ background: 'none', border: 0, cursor: 'pointer', color: 'inherit' }}>
+          <button className="ld__audio-hint" onClick={() => play('letter', l.letter, audioPathById[l.id])} style={{ background: 'none', border: 0, cursor: 'pointer', color: 'inherit' }}>
             <Icon name="sound" size={18} /> Tap the letter to hear it
           </button>
         </div>
@@ -123,7 +124,7 @@ export function ParentReference({ id, go, eng, mark, play, playingId }) {
             <span className="ref-letter__desc">{l.description}</span>
             <span className="ref-letter__pron">Sounds like: {l.pron}</span>
           </span>
-          <AudioButton id="letter" size={56} play={play} playingId={playingId} label={`Hear ${l.letter}`} />
+          <AudioButton id="letter" size={56} play={play} playingId={playingId} label={`Hear ${l.letter}`} text={l.letter} audioPath={audioPathById[l.id]} />
         </div>
 
         {l.sneaky && <p className="muted" style={{ fontSize: 17, margin: '0 0 16px' }}>These words show {l.letter} hiding inside. The sneaky sound is picked out in colour.</p>}
@@ -180,7 +181,7 @@ export function ParentSupplemental({ id, go, mark, play, playingId, tweaks }) {
     const ok = w.welsh === round.target.welsh;
     setPicked(w.welsh);
     setStatus(s => [...s, ok ? 'right' : 'wrong']);
-    play(`opt-${w.welsh}`);
+    play(`opt-${w.welsh}`, w.welsh, audioPathById[w.id]);
     setTimeout(() => { setPicked(null); setRi(i => i + 1); }, ok ? 950 : 1500);
   }
 
@@ -192,7 +193,7 @@ export function ParentSupplemental({ id, go, mark, play, playingId, tweaks }) {
         <div className="li">
           <div className="fa__burst" style={{ color: 'var(--text-primary)' }}>Nice work.</div>
           <p className="muted center" style={{ fontSize: 19, maxWidth: '24ch' }}>
-            You found {right} of {rounds.length}. There’s no score here — practise as often as you like.
+            You found {right} of {rounds.length}. There's no score here — practise as often as you like.
           </p>
           <div className="fa__actions">
             <button className="fa-btn fa-btn--ink" onClick={() => { pool.current = null; setRi(0); setStatus([]); }}><Icon name="refresh" size={20} /> Again</button>
@@ -209,9 +210,9 @@ export function ParentSupplemental({ id, go, mark, play, playingId, tweaks }) {
       <TopBar title="Practise it" onBack={() => go('letter', { id })}
         right={<div className="li__progress">{rounds.map((_, i) => <i key={i} className={i < ri ? (status[i] === 'right' ? 'done' : 'on') : i === ri ? 'on' : ''} />)}</div>} />
       <div className="li">
-        <div className="li__prompt">Which word is “{round.target.english}”?</div>
+        <div className="li__prompt">Which word is "{round.target.english}"?</div>
         <div className="li__play">
-          <AudioButton id={`target-${ri}`} size={72} play={play} playingId={playingId} label="Hear it again" />
+          <AudioButton id={`target-${ri}`} size={72} play={play} playingId={playingId} label="Hear it again" text={round.target.welsh} audioPath={audioPathById[round.target.id]} />
         </div>
         <p className="muted" style={{ marginTop: -8, fontSize: 14 }}>Tap to hear it · then pick the Welsh word</p>
         <div className="li__options">
@@ -230,7 +231,7 @@ export function ParentSupplemental({ id, go, mark, play, playingId, tweaks }) {
         </div>
         {wrongPick && <div className="tr-feedback tr-feedback--neutral" style={{ maxWidth: 460 }}>
           <span className="tr-feedback__dot"><Icon name="check" size={16} /></span>
-          Almost — “{round.target.welsh}” is the one. Here it is.
+          Almost — "{round.target.welsh}" is the one. Here it is.
         </div>}
       </div>
     </div>

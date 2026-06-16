@@ -28,18 +28,148 @@ export function Icon({ name, size = 22, sw = 2, fill = false, style }) {
   );
 }
 
-/* ---------- Audio simulation ---------- */
-// No real audio in the prototype — this fakes a "playing" pulse for a beat.
+/* ---------- Welsh TTS / audio file helper ---------- */
+// Tries audio file first (if path supplied), then Welsh TTS, then silence.
+// No English fallback — silence is better than English mispronouncing Welsh words.
+export function speakText(text: string, audioPath?: string) {
+  if (typeof window === 'undefined') return;
+
+  if (audioPath) {
+    const audio = new Audio(audioPath);
+    audio.onerror = () => tryTTS();
+    audio.play().catch(() => tryTTS());
+    return;
+  }
+  tryTTS();
+
+  function tryTTS() {
+    if (!('speechSynthesis' in window)) return;
+    const synth = window.speechSynthesis;
+    function doSpeak() {
+      const cyVoice = synth.getVoices().find(v => v.lang.startsWith('cy'));
+      if (!cyVoice) return;
+      synth.cancel();
+      const u = new SpeechSynthesisUtterance(text);
+      u.voice = cyVoice;
+      u.lang = cyVoice.lang;
+      synth.speak(u);
+    }
+    if (synth.getVoices().length > 0) {
+      doSpeak();
+    } else {
+      synth.addEventListener('voiceschanged', function onVoices() {
+        synth.removeEventListener('voiceschanged', onVoices);
+        doSpeak();
+      });
+    }
+  }
+}
+
+/* ---------- Audio simulation + Web Speech fallback ---------- */
+// play(id)                    — visual pulse only (no text)
+// play(id, welshText)         — speaks Welsh text via speakText() + visual pulse
+// play(id, welshText, path)   — tries audio file first, then TTS
+// play(id, ms)                — visual pulse with custom duration (existing usage unchanged)
 export function useSimAudio() {
   const [playingId, setPlayingId] = useState(null);
   const tid = useRef(null);
-  const play = useCallback((id, ms = 1200) => {
+  const play = useCallback((id, textOrMs?, audioPath?) => {
     clearTimeout(tid.current);
-    setPlayingId(id);
-    tid.current = setTimeout(() => setPlayingId(null), ms);
+    if (typeof textOrMs === 'string') {
+      speakText(textOrMs, audioPath);
+      setPlayingId(id);
+      tid.current = setTimeout(() => setPlayingId(null), 1800);
+    } else {
+      setPlayingId(id);
+      tid.current = setTimeout(() => setPlayingId(null), typeof textOrMs === 'number' ? textOrMs : 1200);
+    }
   }, []);
-  useEffect(() => () => clearTimeout(tid.current), []);
+  useEffect(() => () => {
+    clearTimeout(tid.current);
+    if (typeof window !== 'undefined' && 'speechSynthesis' in window) window.speechSynthesis.cancel();
+  }, []);
   return [playingId, play];
+}
+
+/* ---------- Real microphone recorder ---------- */
+// Records from the mic via MediaRecorder; playback replays the captured blob.
+export function useAudioRecorder() {
+  const [hasRecording, setHasRecording] = useState(false);
+  const [isPlaying, setIsPlaying] = useState(false);
+  const [micError, setMicError] = useState(false);
+  const mrRef = useRef(null);
+  const chunks = useRef([]);
+  const blobUrl = useRef(null);
+  const streamRef = useRef(null);
+  const audioEl = useRef(null);
+
+  async function start() {
+    if (!navigator.mediaDevices?.getUserMedia) { setMicError(true); return false; }
+    try {
+      const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+      streamRef.current = stream;
+      const mr = new MediaRecorder(stream);
+      chunks.current = [];
+      mr.ondataavailable = (e) => { if (e.data.size > 0) chunks.current.push(e.data); };
+      mr.onstop = () => {
+        const blob = new Blob(chunks.current, { type: mr.mimeType || 'audio/webm' });
+        if (blobUrl.current) URL.revokeObjectURL(blobUrl.current);
+        blobUrl.current = URL.createObjectURL(blob);
+        setHasRecording(true);
+        stream.getTracks().forEach(t => t.stop());
+        streamRef.current = null;
+      };
+      mr.start();
+      mrRef.current = mr;
+      setMicError(false);
+      setHasRecording(false);
+      return true;
+    } catch {
+      setMicError(true);
+      return false;
+    }
+  }
+
+  function stop() {
+    if (mrRef.current && mrRef.current.state !== 'inactive') mrRef.current.stop();
+  }
+
+  // playOnce: plays the recording once and calls onEnd when done.
+  function playOnce(onEnd?) {
+    if (!blobUrl.current) return;
+    if (audioEl.current) { audioEl.current.pause(); audioEl.current.onended = null; }
+    const a = new Audio(blobUrl.current);
+    audioEl.current = a;
+    setIsPlaying(true);
+    a.play().catch(() => { setIsPlaying(false); onEnd?.(); });
+    a.onended = () => { setIsPlaying(false); onEnd?.(); audioEl.current = null; };
+  }
+
+  // replay: plays the recording again (from the celebration screen).
+  function replay() {
+    if (!blobUrl.current || isPlaying) return;
+    playOnce();
+  }
+
+  function reset() {
+    if (audioEl.current) { audioEl.current.pause(); audioEl.current.onended = null; audioEl.current = null; }
+    if (blobUrl.current) { URL.revokeObjectURL(blobUrl.current); blobUrl.current = null; }
+    if (streamRef.current) { streamRef.current.getTracks().forEach(t => t.stop()); streamRef.current = null; }
+    if (mrRef.current && mrRef.current.state !== 'inactive') { try { mrRef.current.stop(); } catch {} }
+    mrRef.current = null;
+    chunks.current = [];
+    setHasRecording(false);
+    setIsPlaying(false);
+    setMicError(false);
+  }
+
+  useEffect(() => () => {
+    if (audioEl.current) audioEl.current.pause();
+    if (blobUrl.current) URL.revokeObjectURL(blobUrl.current);
+    if (streamRef.current) streamRef.current.getTracks().forEach(t => t.stop());
+  }, []);
+
+  return { start, stop, playOnce, replay, isPlaying, hasRecording, reset, micError };
 }
 
 /* ---------- Button (DS tr-btn) ---------- */
@@ -53,12 +183,12 @@ export function Button({ kind = 'primary', size, block, arrow, children, onClick
 }
 
 /* ---------- Audio button (DS tr-audio) ---------- */
-export function AudioButton({ id, label, ghost, size = 48, play, playingId, onPlay }) {
+export function AudioButton({ id, label, ghost, size = 48, play, playingId, onPlay, text, audioPath }) {
   const playing = playingId === id;
   return (
     <button className={`tr-audio${ghost ? ' tr-audio--ghost' : ''}${playing ? ' is-playing' : ''}`}
       style={{ width: size, height: size }} aria-label={label || 'Play audio'}
-      onClick={(e) => { e.stopPropagation(); play(id); onPlay && onPlay(); }}>
+      onClick={(e) => { e.stopPropagation(); play(id, text, audioPath); onPlay && onPlay(); }}>
       <Icon name={playing ? 'sound' : 'play'} size={size * 0.42} />
     </button>
   );

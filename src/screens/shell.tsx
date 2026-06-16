@@ -59,7 +59,7 @@ export function Auth({ go, onAuth }) {
         <div className="auth__body">
           <div className="auth__head">
             <div className="auth__title">{mode === 'in' ? 'Croeso back' : 'Start exploring'}</div>
-            <div className="auth__sub">{mode === 'in' ? 'Sign in to pick up where your family left off.' : 'Save your family’s progress as you go.'}</div>
+            <div className="auth__sub">{mode === 'in' ? 'Sign in to pick up where your family left off.' : "Save your family's progress as you go."}</div>
           </div>
 
           <button className="auth__google" onClick={() => onAuth('Lloyd')}>
@@ -77,7 +77,7 @@ export function Auth({ go, onAuth }) {
               <input className="tr-input" type="email" placeholder="you@example.com" /></div>
             <div className={`tr-field${err ? ' tr-field--error' : ''}`}><label className="tr-field__label">Password</label>
               <input className="tr-input" type="password" placeholder="••••••••" onChange={() => setErr(false)} />
-              {err && <span className="tr-field__hint">That email and password don’t match. Try again or reset your password.</span>}</div>
+              {err && <span className="tr-field__hint">That email and password don't match. Try again or reset your password.</span>}</div>
             {mode === 'in' && <button className="auth__link" onClick={() => go('forgot')}>Forgot your password?</button>}
             <Button kind="ink" size="lg" block onClick={() => onAuth('Lloyd')}>
               {mode === 'in' ? 'Sign in' : 'Create account'}
@@ -138,12 +138,12 @@ export function Home({ go, eng, account, tweaks, openSheet, lastLetter, setFlag,
         </button>
       </div>
       <div className="screen__scroll home__scroll" onScroll={e => setScrolled(e.target.scrollTop > 6)}>
-        <div className="home__greet">{account ? `Helo, ${account}.` : 'Helo. Here’s a little Welsh for today.'}</div>
+        <div className="home__greet">{account ? `Helo, ${account}.` : "Helo. Here's a little Welsh for today."}</div>
 
         {!account && (
           <div className="nudge" style={{ marginBottom: 'var(--space-lg)' }}>
             <DotMark />
-            <span className="nudge__txt">Sign in to save your progress<small>Nothing’s lost — your family’s play stays with you.</small></span>
+            <span className="nudge__txt">Sign in to save your progress<small>Nothing's lost — your family's play stays with you.</small></span>
             <Button kind="ink" onClick={() => go('auth')}>Sign in</Button>
           </div>
         )}
@@ -377,8 +377,8 @@ export function WhoModal({ members, onPick }){
   return (
     <div className="who-scrim">
       <div className="who">
-        <div className="who__title">Who’s learning?</div>
-        <div className="who__sub">So we can keep each person’s progress. You can switch any time.</div>
+        <div className="who__title">Who's learning?</div>
+        <div className="who__sub">So we can keep each person's progress. You can switch any time.</div>
         <div className="who__people">
           {members.map(m => (
             <button key={m.id} className="who__person" style={{ '--mc': `var(--tile-${m.color})` }} onClick={() => onPick(m.id)}>
@@ -458,7 +458,7 @@ export function AccountSheet({ account, family, tiers, tracking, addMember, remo
                 <div className="fam__empty">Add the people who play together — turn-taking games pass round to each of them by name.</div>
               )}
               {atLimit
-                ? <div className="fam__limit">You’re at the Teulu limit of {tier.maxMembers}.</div>
+                ? <div className="fam__limit">You're at the Teulu limit of {tier.maxMembers}.</div>
                 : (
                   <form className="fam__add" onSubmit={e => { e.preventDefault(); addMember(newName); setNewName(''); }}>
                     <input className="tr-input" placeholder="Add a name (e.g. Mabli)" value={newName} onChange={e => setNewName(e.target.value)} />

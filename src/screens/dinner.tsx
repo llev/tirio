@@ -7,7 +7,8 @@
    ============================================================ */
 import { useState, useEffect, useRef } from 'react';
 import DDdata from '@/lib/data-dinner';
-import { Icon, Button, AudioButton, Waveform, EngDots, TopBar, useSimAudio } from '@/components/primitives';
+import { DINNER_SAY_IT_REFS, audioPathById } from '@/lib/content-adapter';
+import { Icon, Button, AudioButton, Waveform, EngDots, TopBar, useSimAudio, useAudioRecorder } from '@/components/primitives';
 import { layerCount } from '@/screens/shell';
 import { RefWordCard } from '@/screens/letter';
 
@@ -20,6 +21,7 @@ export const DLAYERS = [
   { key: 'challenge',    title: 'Take it further', sub: 'Four challenges away from the screen',   route: 'dinner-challenge',    color: 'indigo', icon: 'spark' },
 ];
 function dinnerSuggested(e){ for (const L of DLAYERS){ if (!e || !e[L.key]) return L.key; } return null; }
+function dayNum(){ const now=new Date(); return Math.floor((now.getTime()-new Date(now.getFullYear(),0,0).getTime())/86400000); }
 export function dShuffle(a){ a = a.slice(); for (let i=a.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [a[i],a[j]]=[a[j],a[i]]; } return a; }
 export function wordsByIds(ids){ return ids.map(id => DD.wordById[id]).filter(Boolean); }
 
@@ -86,7 +88,7 @@ function DinnerPhraseCard({ p, play, playingId }){
     <div className="dn-phrase">
       <div className="dn-phrase__top">
         <span className="dn-phrase__en">{p.natural}</span>
-        <AudioButton id={`ph-${p.id}`} size={44} ghost play={play} playingId={playingId} label={`Hear ${p.welsh}`} />
+        <AudioButton id={`ph-${p.id}`} size={44} ghost play={play} playingId={playingId} label={`Hear ${p.welsh}`} text={p.welsh} audioPath={p.audio || audioPathById[p.id]} />
       </div>
       <div className="dn-phrase__welsh">{p.welsh}</div>
       <div className="dn-phrase__blocks">
@@ -205,7 +207,7 @@ export function PhraseBuilder({ mark, go, trackPractice }){
   return (
     <div className="pb">
       <div className="pb__prompt">Put the chunks in order to say:</div>
-      <div className="pb__target">“{phrase.natural}”</div>
+      <div className="pb__target">"{phrase.natural}"</div>
 
       {solved ? (
         <div className="pb__reveal">
@@ -283,7 +285,7 @@ export function ListenFind({ mark, trackPractice }){
   return (
     <div className="li" style={{ height: 'auto', padding: '24px 0 40px', gap: 'var(--space-xl)' }}>
       <div className="li__progress">{rounds.map((_, i) => <i key={i} className={i < ri ? (status[i] === 'right' ? 'done' : 'on') : i === ri ? 'on' : ''} />)}</div>
-      <div className="li__prompt">Which one is “{round.target.english}”?</div>
+      <div className="li__prompt">Which one is "{round.target.english}"?</div>
       <AudioButton id={`tgt-${ri}`} size={72} play={play} playingId={playingId} label="Hear it again" />
       <p className="muted" style={{ marginTop: -8, fontSize: 14 }}>Tap to hear it · then pick the Welsh word</p>
       <div className="li__options">
@@ -294,7 +296,7 @@ export function ListenFind({ mark, trackPractice }){
         })}
       </div>
       {wrongPick && <div className="tr-feedback tr-feedback--neutral" style={{ maxWidth: 460 }}>
-        <span className="tr-feedback__dot"><Icon name="check" size={16} /></span>Almost — “{round.target.welsh}” is the one.
+        <span className="tr-feedback__dot"><Icon name="check" size={16} /></span>Almost — "{round.target.welsh}" is the one.
       </div>}
     </div>
   );
@@ -305,7 +307,7 @@ export function DinnerFamilyHub({ go, playDifferently }){
   const acts = [
     { id: 'say',   title: 'Say it together', desc: 'Record the family asking for more — then hear yourselves back.', color: 'coral',  icon: 'mic',  route: () => go('dinner-say') },
     { id: 'plate', title: 'Llond Bol',       desc: 'Pile food on a covered plate. Each turn, say the whole plate from memory — in Welsh — then add one more. How far can you get?', color: 'teal',   icon: 'fwd',  route: () => go('dinner-plate') },
-    { id: 'cafe',  title: 'Bwrdd y Teulu',   desc: 'It’s dinner — and everyone’s hungry. Ask the table for what you want in Welsh, or it stays where it is.', color: 'indigo', icon: 'fwd',  route: () => go('dinner-cafe') },
+    { id: 'cafe',  title: 'Bwrdd y Teulu',   desc: "It's dinner — and everyone's hungry. Ask the table for what you want in Welsh, or it stays where it is.", color: 'indigo', icon: 'fwd',  route: () => go('dinner-cafe') },
   ];
   return (
     <div className="screen layerscreen">
@@ -340,17 +342,38 @@ export function DinnerFamilyHub({ go, playDifferently }){
 
 /* ============================================================ SAY IT TOGETHER */
 export function DinnerSay({ go, mark, tweaks, playDifferently }){
-  const phrase = DD.phraseById['phrase_ga_i_fwy_o_datws'];
+  const [phraseIdx, setPhraseIdx] = useState(() => dayNum() % DINNER_SAY_IT_REFS.length);
+  const phrase = DD.phraseById[DINNER_SAY_IT_REFS[phraseIdx % DINNER_SAY_IT_REFS.length]];
   const [phase, setPhase] = useState(playDifferently ? 'alt' : 'ready');
-  const [playingId, play] = useSimAudio();
+  const [playingId, play] = useSimAudio(); // phrase audio (no real files — simulated pulse)
+  const recorder = useAudioRecorder();
   const cvar = { '--tile-c': `var(--tile-${phrase.color})` };
   const timers = useRef([]);
   const after = (ms, fn) => { const t = setTimeout(fn, ms); timers.current.push(t); return t; };
   useEffect(() => () => timers.current.forEach(clearTimeout), []);
-  function startRec(){ setPhase('rec'); after(2600, () => { setPhase('think'); after(600, () => setPhase('play')); }); }
-  useEffect(() => { if (phase === 'play') after(1900, () => setPhase('done')); }, [phase === 'play']);
-  function reset(){ timers.current.forEach(clearTimeout); setPhase('ready'); }
-  function finish(){ mark('dinner', 'family'); go('dinner-family'); }
+
+  async function startRec() {
+    const ok = await recorder.start();
+    if (!ok) return; // micError shown in UI
+    setPhase('rec');
+    after(2600, stopRec);
+  }
+  function stopRec() {
+    timers.current.forEach(clearTimeout);
+    recorder.stop();
+    setPhase('think');
+  }
+  // When the blob is ready during 'think', auto-play then advance to 'done'
+  useEffect(() => {
+    if (phase === 'think' && recorder.hasRecording) {
+      setPhase('play');
+      recorder.playOnce(() => after(200, () => setPhase('done')));
+    }
+  }, [phase, recorder.hasRecording]);
+
+  function reset() { timers.current.forEach(clearTimeout); recorder.reset(); setPhase('ready'); }
+  function nextPhrase() { timers.current.forEach(clearTimeout); recorder.reset(); setPhraseIdx(i => i + 1); setPhase('ready'); }
+  function finish() { mark('dinner', 'family'); go('dinner-family'); }
 
   return (
     <div className="fa" style={cvar}>
@@ -372,25 +395,31 @@ export function DinnerSay({ go, mark, tweaks, playDifferently }){
         ) : phase === 'done' ? (
           <div className="fa__celebrate">
             <span className="fa__burst">Dyna chi! 🎉</span>
-            <span className="fa__en" style={{ opacity: .9 }}>That’s your family, asking in Welsh.</span>
-            <Waveform state={playingId === 'playback' ? 'play' : 'idle'} />
-            <button className={`fa-playback${playingId === 'playback' ? ' is-playing' : ''}`} onClick={() => play('playback', 1900)}>
-              <span className="fa-playback__icon"><Icon name={playingId === 'playback' ? 'sound' : 'play'} size={22} /></span>
-              {playingId === 'playback' ? 'Playing your recording…' : 'Hear your recording'}
+            <span className="fa__en" style={{ opacity: .9 }}>That's your family, asking in Welsh.</span>
+            <Waveform state={recorder.isPlaying ? 'play' : 'idle'} />
+            <button className={`fa-playback${recorder.isPlaying ? ' is-playing' : ''}`} onClick={() => recorder.replay()}>
+              <span className="fa-playback__icon"><Icon name={recorder.isPlaying ? 'sound' : 'play'} size={22} /></span>
+              {recorder.isPlaying ? 'Playing your recording…' : 'Hear your recording'}
             </button>
             <div className="fa__actions">
               <button className="fa-btn fa-btn--ghost" onClick={reset}><Icon name="refresh" size={20} /> Do it again</button>
+              <button className="fa-btn fa-btn--ghost" onClick={nextPhrase}><Icon name="refresh" size={20} /> Another phrase</button>
               <button className="fa-btn fa-btn--ink" onClick={finish}>Done →</button>
             </div>
           </div>
         ) : (
           <>
             <div className="stack" style={{ alignItems: 'center', gap: 6 }}>
-              <span className="fa__phrase fa__word--tap" role="button" tabIndex={0} aria-label={`Hear ${phrase.welsh}`} onClick={() => play('word')}>{phrase.welsh}</span>
+              <span className="fa__phrase fa__word--tap" role="button" tabIndex={0} aria-label={`Hear ${phrase.welsh}`} onClick={() => play('word', phrase.welsh, phrase.audio || audioPathById[phrase.id])}>{phrase.welsh}</span>
               <span className="fa__en">{phrase.natural}</span>
-              {phase === 'ready' && <button className="fa__hear" onClick={() => play('word')}><Icon name="sound" size={18} /> {playingId === 'word' ? 'Playing…' : 'Tap the phrase to hear it'}</button>}
+              {phase === 'ready' && <button className="fa__hear" onClick={() => play('word', phrase.welsh, phrase.audio || audioPathById[phrase.id])}><Icon name="sound" size={18} /> {playingId === 'word' ? 'Playing…' : 'Tap the phrase to hear it'}</button>}
             </div>
             {phase === 'ready' && <>
+              {recorder.micError && (
+                <p className="fa__prompt" style={{ fontSize: 14, opacity: .75, maxWidth: '28ch', textAlign: 'center' }}>
+                  Mic access was denied — check your browser settings and try again.
+                </p>
+              )}
               <span className="fa__prompt">Everyone together?<br />Tap to record.</span>
               {tweaks.recordStyle === 'bar'
                 ? <button className="rec-bar" onClick={startRec}><span className="rec-bar__dot" /> Tap to record</button>
@@ -399,8 +428,8 @@ export function DinnerSay({ go, mark, tweaks, playDifferently }){
             {phase === 'rec' && <>
               <Waveform state="live" />
               {tweaks.recordStyle === 'bar'
-                ? <button className="rec-bar is-rec" onClick={() => { timers.current.forEach(clearTimeout); setPhase('play'); }}><span className="rec-bar__dot" /> Listening… tap to stop</button>
-                : <button className="rec is-rec" onClick={() => { timers.current.forEach(clearTimeout); setPhase('play'); }}><span className="rec__icon" /><span className="rec__label">Stop</span></button>}
+                ? <button className="rec-bar is-rec" onClick={stopRec}><span className="rec-bar__dot" /> Listening… tap to stop</button>
+                : <button className="rec is-rec" onClick={stopRec}><span className="rec__icon" /><span className="rec__label">Stop</span></button>}
             </>}
             {phase === 'think' && <p className="fa__prompt" style={{ opacity: .7 }}>One sec…</p>}
             {phase === 'play' && <><Waveform state="play" /><p className="fa__welsh">Playing your family back…</p></>}

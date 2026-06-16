@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "generate-audio:azure": "node scripts/generate-audio.mjs azure",
+    "generate-audio:macos": "node scripts/generate-audio.mjs macos"
   },
   "dependencies": {
     "next": "14.2.5",

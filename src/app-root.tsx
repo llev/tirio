@@ -4,7 +4,7 @@
    ============================================================ */
 import { useState, useEffect, useRef, useCallback } from 'react';
 
-import { Icon, Button, TopBar } from '@/components/primitives';
+import { Icon, Button, TopBar, speakText } from '@/components/primitives';
 import {
   useTweaks, TweaksPanel, TweakSection, TweakRadio, TweakToggle,
 } from '@/components/tweaks-panel';
@@ -72,15 +72,24 @@ export default function App(){
   useEffect(() => { activeMemberRef.current = activeMember; }, [activeMember]);
   const [sheet, setSheet] = useState(false);
 
-  // simulated audio (shared across screens that take play/playingId props)
+  // simulated audio + Web Speech fallback (shared across screens that take play/playingId props)
   const [playingId, setPlayingId] = useState(null);
   const playTid = useRef(null);
-  const play = useCallback((id, ms = 1200) => {
+  const play = useCallback((id, textOrMs?, audioPath?) => {
     clearTimeout(playTid.current);
-    setPlayingId(id);
-    playTid.current = setTimeout(() => setPlayingId(null), ms);
+    if (typeof textOrMs === 'string') {
+      speakText(textOrMs, audioPath);
+      setPlayingId(id);
+      playTid.current = setTimeout(() => setPlayingId(null), 1800);
+    } else {
+      setPlayingId(id);
+      playTid.current = setTimeout(() => setPlayingId(null), typeof textOrMs === 'number' ? textOrMs : 1200);
+    }
   }, []);
-  useEffect(() => () => clearTimeout(playTid.current), []);
+  useEffect(() => () => {
+    clearTimeout(playTid.current);
+    if (typeof window !== 'undefined' && 'speechSynthesis' in window) window.speechSynthesis.cancel();
+  }, []);
 
   // router
   const [stack, setStack] = useState([{ name: 'splash', params: {} }]);
@@ -232,13 +241,13 @@ function Forgot({ go }){
         {sent ? (
           <>
             <div className="tr-feedback tr-feedback--success"><span className="tr-feedback__dot"><Icon name="check" size={16} /></span>
-              Check your inbox — we’ve sent a reset link.</div>
+              Check your inbox — we've sent a reset link.</div>
             <Button kind="ink" size="lg" block onClick={() => go('auth')}>Back to sign in</Button>
           </>
         ) : (
           <>
             <div className="auth__head"><div className="auth__title">Reset password</div>
-              <div className="auth__sub">We’ll email you a link to set a new one.</div></div>
+              <div className="auth__sub">We'll email you a link to set a new one.</div></div>
             <div className="tr-field"><label className="tr-field__label">Email</label><input className="tr-input" type="email" placeholder="you@example.com" /></div>
             <Button kind="primary" size="lg" block onClick={() => setSent(true)}>Send reset link</Button>
           </>

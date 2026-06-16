@@ -5,7 +5,8 @@
    ============================================================ */
 import { useState, useEffect, useRef } from 'react';
 import D from '@/lib/data';
-import { Icon, Button, AudioButton, ArtSlot, Waveform, TopBar, DotMark, useSimAudio } from '@/components/primitives';
+import { sayTogetherRefs, allWordsById, audioPathById } from '@/lib/content-adapter';
+import { Icon, Button, AudioButton, ArtSlot, Waveform, TopBar, DotMark, useSimAudio, useAudioRecorder } from '@/components/primitives';
 import { getLetter, shuffle } from '@/screens/letter';
 
 const DIGRAPHS = ['Ch','Dd','Ff','Ng','Ll','Ph','Rh','Th'];
@@ -30,7 +31,7 @@ function subtractMultiset(pool, remove){
 export function FamilyHub({ id, go, flags, mark, playDifferently }) {
   const l = getLetter(id);
   const acts = [
-    { id: 'say',     title: 'Say it together', welsh: 'Pawb gyda’i gilydd', desc: 'Record the whole family saying it — then hear yourselves back.', color: 'coral', route: () => go('family-record', { id }) },
+    { id: 'say',     title: 'Say it together', welsh: "Pawb gyda'i gilydd", desc: 'Record the whole family saying it — then hear yourselves back.', color: 'coral', route: () => go('family-record', { id }) },
     { id: 'arrange', title: 'Build the word',  welsh: 'Trefnwch y gair',   desc: 'The letters are all here. Put them in order to make a Welsh word.', color: 'teal', route: () => go('wordbuilder', { id, variant: 'arrange' }) },
     { id: 'tap',     title: 'Spell it out',    welsh: 'Sillafwch y gair',  desc: 'Tap the letters one by one — no clues this time.', color: 'indigo', route: () => go('wordbuilder', { id, variant: 'tap' }), locked: !flags.arrangeDone },
   ];
@@ -75,39 +76,62 @@ export function FamilyHub({ id, go, flags, mark, playDifferently }) {
 export function FamilyRecord({ id, go, mark, tweaks, playDifferently }) {
   const general = !id;
   const l = id ? getLetter(id) : null;
-  const [word, setWord] = useState(() =>
-    general ? D.buildable[Math.floor(Math.random() * D.buildable.length)]
-            : (l.words ? l.words[0] : { welsh: l.letter, english: l.name }));
+  const _refs = !general ? (sayTogetherRefs[id] || []).map(wid => allWordsById[wid]).filter(Boolean) : [];
+  const pool = general
+    ? D.buildable
+    : (_refs.length ? _refs : (l?.words?.length ? l.words : [{ welsh: l?.letter || '', english: l?.name || '' }]));
+  const [poolIdx, setPoolIdx] = useState(() => Math.floor(Math.random() * pool.length));
+  const word = pool[poolIdx % pool.length];
   const glyph = general ? word.letter : l.letter;
   const color = general ? (word.color || 'coral') : l.color;
   const [phase, setPhase] = useState(playDifferently && !general ? 'alt' : 'ready'); // ready | rec | think | play | done | alt
-  const [playingId, play] = useSimAudio();
+  const [playingId, play] = useSimAudio(); // word audio (no real files — simulated pulse)
+  const recorder = useAudioRecorder();
   const cvar = { '--tile-c': `var(--tile-${color})` };
   const timers = useRef([]);
   const after = (ms, fn) => { const t = setTimeout(fn, ms); timers.current.push(t); return t; };
   useEffect(() => () => timers.current.forEach(clearTimeout), []);
 
-  function startRec(){
+  async function startRec() {
+    const ok = await recorder.start();
+    if (!ok) return; // micError shown in the UI
     setPhase('rec');
-    after(2600, () => { setPhase('think'); after(600, () => setPhase('play')); });
+    after(2600, stopRec);
   }
-  function onPlay(){ setPhase('play'); after(1900, () => setPhase('done')); }
-  useEffect(() => { if (phase === 'play') after(1900, () => setPhase('done')); }, [phase === 'play']);
-  function reset(){ timers.current.forEach(clearTimeout); setPhase('ready'); }
-  function skipWord(){
+  function stopRec() {
     timers.current.forEach(clearTimeout);
-    let w; do { w = D.buildable[Math.floor(Math.random() * D.buildable.length)]; } while (D.buildable.length > 1 && w.welsh === word.welsh);
-    setWord(w); setPhase('ready');
+    recorder.stop();
+    setPhase('think');
   }
-  // when a way to play finishes, progress to the next game rather than the letter page
-  function finish(){ if (!general) mark(id, 'family'); go(general ? 'alphabet' : 'challenge', general ? {} : { id }); }
+  // When the blob is ready during 'think', auto-play it then advance to 'done'
+  useEffect(() => {
+    if (phase === 'think' && recorder.hasRecording) {
+      setPhase('play');
+      recorder.playOnce(() => after(200, () => setPhase('done')));
+    }
+  }, [phase, recorder.hasRecording]);
+
+  function reset() { timers.current.forEach(clearTimeout); recorder.reset(); setPhase('ready'); }
+  function skipWord() {
+    timers.current.forEach(clearTimeout);
+    recorder.reset();
+    setPoolIdx(i => i + 1);
+    setPhase('ready');
+  }
+  function finish() { if (!general) mark(id, 'family'); go(general ? 'alphabet' : 'challenge', general ? {} : { id }); }
 
   return (
     <div className="fa" style={cvar}>
       <div className="fa__bar">
         <button className="fa__close" onClick={() => go(general ? 'alphabet' : 'family', general ? {} : { id })} aria-label="Close"><Icon name="close" /></button>
-        <span className="fa__kicker">{general ? 'Any word · Say it together' : 'Family activity · Say it together'}</span>
-        {general && phase !== 'done' && (
+        <span className="fa__kicker">
+          {general
+            ? 'Any word · Say it together'
+            : pool.length > 1
+              ? `Word ${(poolIdx % pool.length) + 1} of ${pool.length}`
+              : 'Family activity · Say it together'}
+        </span>
+        {phase !== 'done' && pool.length > 1 && (
           <button className="fa__skip" onClick={skipWord}><Icon name="refresh" size={16} /> Another word</button>
         )}
       </div>
@@ -116,7 +140,7 @@ export function FamilyRecord({ id, go, mark, tweaks, playDifferently }) {
         {phase === 'alt' ? (
           <>
             <span className="fa__word">{glyph}</span>
-            <span className="fa__prompt">Find something that starts with “{glyph}” — point to it together.</span>
+            <span className="fa__prompt">Find something that starts with "{glyph}" — point to it together.</span>
             <div className="fa__actions">
               <button className="fa-btn fa-btn--ink" onClick={() => setPhase('ready')}><Icon name="mic" size={20} /> Use recording instead</button>
               <button className="fa-btn fa-btn--paper" onClick={finish}>We found one</button>
@@ -125,30 +149,38 @@ export function FamilyRecord({ id, go, mark, tweaks, playDifferently }) {
         ) : phase === 'done' ? (
           <div className="fa__celebrate">
             <span className="fa__burst">Dyna chi! 🎉</span>
-            <span className="fa__en" style={{ opacity: .9 }}>That’s you, speaking Welsh.</span>
-            <Waveform state={playingId === 'playback' ? 'play' : 'idle'} />
-            <button className={`fa-playback${playingId === 'playback' ? ' is-playing' : ''}`} onClick={() => play('playback', 1900)}>
-              <span className="fa-playback__icon"><Icon name={playingId === 'playback' ? 'sound' : 'play'} size={22} /></span>
-              {playingId === 'playback' ? 'Playing your recording…' : 'Hear your recording'}
+            <span className="fa__en" style={{ opacity: .9 }}>That's you, speaking Welsh.</span>
+            <Waveform state={recorder.isPlaying ? 'play' : 'idle'} />
+            <button className={`fa-playback${recorder.isPlaying ? ' is-playing' : ''}`} onClick={() => recorder.replay()}>
+              <span className="fa-playback__icon"><Icon name={recorder.isPlaying ? 'sound' : 'play'} size={22} /></span>
+              {recorder.isPlaying ? 'Playing your recording…' : 'Hear your recording'}
             </button>
             <div className="fa__actions">
               <button className="fa-btn fa-btn--ghost" onClick={general ? skipWord : reset}><Icon name="refresh" size={20} /> {general ? 'Another word' : 'Do it again'}</button>
+              {!general && pool.length > 1 && (
+                <button className="fa-btn fa-btn--ghost" onClick={skipWord}><Icon name="refresh" size={20} /> Another word</button>
+              )}
               <button className="fa-btn fa-btn--ink" onClick={finish}>{general ? 'Done →' : 'Next game →'}</button>
             </div>
           </div>
         ) : (
           <>
             <div className="stack" style={{ alignItems: 'center', gap: 4 }}>
-              <span className="fa__word fa__word--tap" role="button" tabIndex={0} aria-label={`Hear ${word.welsh}`} onClick={() => play('word')}>{word.welsh}</span>
+              <span className="fa__word fa__word--tap" role="button" tabIndex={0} aria-label={`Hear ${word.welsh}`} onClick={() => play('word', word.welsh, audioPathById[word.id])}>{word.welsh}</span>
               <span className="fa__en">{word.english}</span>
               {phase === 'ready' && (
-                <button className="fa__hear" onClick={() => play('word')}>
+                <button className="fa__hear" onClick={() => play('word', word.welsh, audioPathById[word.id])}>
                   <Icon name="sound" size={18} /> {playingId === 'word' ? 'Playing…' : 'Tap the word to hear it'}
                 </button>
               )}
             </div>
 
             {phase === 'ready' && <>
+              {recorder.micError && (
+                <p className="fa__prompt" style={{ fontSize: 14, opacity: .75, maxWidth: '28ch', textAlign: 'center' }}>
+                  Mic access was denied — check your browser settings and try again.
+                </p>
+              )}
               <span className="fa__prompt">Everyone ready?<br />Tap to record.</span>
               {tweaks.recordStyle === 'bar'
                 ? <button className="rec-bar" onClick={startRec}><span className="rec-bar__dot" /> Tap to record</button>
@@ -158,8 +190,8 @@ export function FamilyRecord({ id, go, mark, tweaks, playDifferently }) {
             {phase === 'rec' && <>
               <Waveform state="live" />
               {tweaks.recordStyle === 'bar'
-                ? <button className="rec-bar is-rec" onClick={() => { timers.current.forEach(clearTimeout); setPhase('play'); }}><span className="rec-bar__dot" /> Listening… tap to stop</button>
-                : <button className="rec is-rec" onClick={() => { timers.current.forEach(clearTimeout); setPhase('play'); }}><span className="rec__icon" /><span className="rec__label">Stop</span></button>}
+                ? <button className="rec-bar is-rec" onClick={stopRec}><span className="rec-bar__dot" /> Listening… tap to stop</button>
+                : <button className="rec is-rec" onClick={stopRec}><span className="rec__icon" /><span className="rec__label">Stop</span></button>}
             </>}
 
             {phase === 'think' && <p className="fa__prompt" style={{ opacity: .7 }}>One sec…</p>}
@@ -341,7 +373,7 @@ export function ChallengeDeck({ id, go }) {
 export function ChallengeFull({ id, challenge, go, mark }) {
   const c = D.challenges.find(x => x.id === challenge);
   const color = CHL_COLORS[c.id];
-  const welsh = { challenge_secret_letter: 'Pawb i chwilio!', challenge_repeat_and_beat: 'Pwy sy’n cofio?', challenge_letter_of_the_day: 'Llythyren y dydd' }[c.id];
+  const welsh = { challenge_secret_letter: 'Pawb i chwilio!', challenge_repeat_and_beat: "Pwy sy'n cofio?", challenge_letter_of_the_day: 'Llythyren y dydd' }[c.id];
   return (
     <div className="fa" style={{ '--tile-c': `var(--tile-${color})`, background: `var(--tile-${color})` }}>
       <div className="fa__bar">
@@ -355,7 +387,7 @@ export function ChallengeFull({ id, challenge, go, mark }) {
         <span className="chl-full__welsh">{welsh}</span>
         <span className="chl-full__alt"><strong>Another way:</strong> {c.alternative}</span>
         <div className="chl-full__go">
-          <button className="away__back" onClick={() => { if (id) mark(id, 'challenge'); go('challenge-away', { id, challenge }); }}>Let’s go →</button>
+          <button className="away__back" onClick={() => { if (id) mark(id, 'challenge'); go('challenge-away', { id, challenge }); }}>Let's go →</button>
         </div>
       </div>
     </div>
@@ -376,8 +408,8 @@ export function ChallengeAway({ id, challenge, go }) {
     <div className={`away${mode === 'dim' ? ' away--dim' : ''}`} style={{ '--tile-c': `var(--tile-${CHL_COLORS[c.id]})`, background: mode === 'dim' ? undefined : `var(--tile-${CHL_COLORS[c.id]})` }}>
       <span className="away__name">{c.title}</span>
       {mode === 'timer' && <span className="away__timer">{mm}:{ss}</span>}
-      <span className="away__hint">{mode === 'dim' ? 'Tap when you’re ready to come back.' : 'The app is waiting. Go and play — come back when you’re done.'}</span>
-      <button className="away__back" onClick={() => go('challenge-return', { id, challenge })}>We’re back</button>
+      <span className="away__hint">{mode === 'dim' ? "Tap when you're ready to come back." : "The app is waiting. Go and play — come back when you're done."}</span>
+      <button className="away__back" onClick={() => go('challenge-return', { id, challenge })}>We're back</button>
       <div className="away__modes">
         {['card', 'dim', 'timer'].map(m => (
           <button key={m} className={`away__mode${mode === m ? ' on' : ''}`} onClick={() => setMode(m)}><span>{m}</span></button>
@@ -392,9 +424,9 @@ export function ChallengeReturn({ id, challenge, go }) {
   const opts = [
     { k: 'go', t: 'We gave it a go' },
     { k: 'loved', t: 'We loved it' },
-    { k: 'nope', t: 'Didn’t quite work today' },
+    { k: 'nope', t: "Didn't quite work today" },
   ];
-  const ack = { go: 'Lovely. That counts.', loved: 'Wonderful — do it again soon.', nope: 'That’s fine. Come back to it.' };
+  const ack = { go: 'Lovely. That counts.', loved: 'Wonderful — do it again soon.', nope: "That's fine. Come back to it." };
   return (
     <div className="ret">
       {ans ? (
@@ -407,7 +439,7 @@ export function ChallengeReturn({ id, challenge, go }) {
         </>
       ) : (
         <>
-          <div className="ret__title">You’re back!</div>
+          <div className="ret__title">You're back!</div>
           <div className="ret__q">How did it go?</div>
           <div className="ret__opts">
             {opts.map(o => <button key={o.k} className="ret-opt" onClick={() => setAns(o.k)}>{o.t}</button>)}

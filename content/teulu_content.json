@@ -1,0 +1,3454 @@
+{
+  "blocks": [
+    {
+      "id": "block_ga_i",
+      "welsh": "Ga i",
+      "english": "Can I have",
+      "type": "verb_phrase",
+      "audio": "blocks/ga-i.mp3",
+      "transcript": "Ga i — sounds like: gah ee",
+      "pronunciation_hint": "gah ee",
+      "notes": "Aspirate mutation trigger — P becomes Ph after this"
+    },
+    {
+      "id": "block_mwy_o",
+      "welsh": "mwy o",
+      "english": "more",
+      "type": "modifier",
+      "audio": "blocks/mwy-o.mp3",
+      "transcript": "mwy o — sounds like: moo-ee oh",
+      "pronunciation_hint": "moo-ee oh",
+      "notes": "'o' triggers soft mutation on the following noun"
+    },
+    {
+      "id": "block_tatws",
+      "welsh": "datws",
+      "english": "potatoes",
+      "type": "noun",
+      "audio": "blocks/datws.mp3",
+      "transcript": "datws — sounds like: dat-oos",
+      "pronunciation_hint": "dat-oos",
+      "notes": "Mutated form of tatws — used after 'mwy o'"
+    },
+    {
+      "id": "block_diolch",
+      "welsh": "Diolch",
+      "english": "Thank you",
+      "type": "response",
+      "audio": "blocks/diolch.mp3",
+      "transcript": "Diolch — sounds like: dee-olch (ch as in loch)",
+      "pronunciation_hint": "dee-olch",
+      "notes": "High frequency. Works as standalone response in any topic."
+    },
+    {
+      "id": "block_dim_diolch",
+      "welsh": "Dim diolch",
+      "english": "No thank you",
+      "type": "response",
+      "audio": "blocks/dim-diolch.mp3",
+      "transcript": "Dim diolch — sounds like: dim dee-olch",
+      "pronunciation_hint": "dim dee-olch",
+      "notes": ""
+    },
+    {
+      "id": "block_os_gwelwch_yn_dda",
+      "welsh": "os gwelwch yn dda",
+      "english": "please",
+      "type": "connector",
+      "audio": "blocks/os-gwelwch-yn-dda.mp3",
+      "transcript": "os gwelwch yn dda — sounds like: os gwel-ooch un tha",
+      "pronunciation_hint": "os gwel-ooch un tha",
+      "notes": "Formal please. Informal: plîs"
+    },
+    {
+      "id": "block_dw_in_hoffi",
+      "welsh": "Dw i'n hoffi",
+      "english": "I like",
+      "type": "verb_phrase",
+      "audio": "blocks/dw-in-hoffi.mp3",
+      "transcript": "Dw i'n hoffi — sounds like: doo een HOFF-ee",
+      "pronunciation_hint": "doo een HOFF-ee",
+      "notes": "Present tense 'I like'. Followed by a noun. South Wales informal."
+    },
+    {
+      "id": "block_dw_i_ddim_yn_hoffi",
+      "welsh": "Dw i ddim yn hoffi",
+      "english": "I don't like",
+      "type": "verb_phrase",
+      "audio": "blocks/dw-i-ddim-yn-hoffi.mp3",
+      "transcript": "Dw i ddim yn hoffi — sounds like: doo ee thim un HOFF-ee (dd as in 'the')",
+      "pronunciation_hint": "doo ee thim un HOFF-ee",
+      "notes": "Negative of dw i'n hoffi. 'ddim' = not. dd sounds like 'th' in 'the'."
+    },
+    {
+      "id": "block_dw_in_llawn",
+      "welsh": "Dw i'n llawn",
+      "english": "I'm full",
+      "type": "verb_phrase",
+      "audio": "blocks/dw-in-llawn.mp3",
+      "transcript": "Dw i'n llawn — sounds like: doo een thlown (ll = breathy 'thl')",
+      "pronunciation_hint": "doo een thlown",
+      "notes": "Standalone phrase. Ll has no English equivalent — tongue to roof of mouth, breathe out the sides."
+    },
+    {
+      "id": "block_dw_in_llwgu",
+      "welsh": "Dw i'n llwgu",
+      "english": "I'm starving",
+      "type": "verb_phrase",
+      "audio": "blocks/dw-in-llwgu.mp3",
+      "transcript": "Dw i'n llwgu — sounds like: doo een THLOO-gee",
+      "pronunciation_hint": "doo een THLOO-gee",
+      "notes": "Literally 'I'm starving/famished'. Everyday hyperbole, kids love it. South Wales usage."
+    },
+    {
+      "id": "block_gai_r",
+      "welsh": "Ga i'r",
+      "english": "Can I have the",
+      "type": "verb_phrase",
+      "audio": "blocks/gai-r.mp3",
+      "transcript": "Ga i'r — sounds like: gah eer",
+      "pronunciation_hint": "gah eer",
+      "notes": "'Ga i' + 'yr' (the) contracted. The r elides before consonants in speech but is written. Use before a definite noun."
+    },
+    {
+      "id": "block_yn_fawr",
+      "welsh": "yn fawr",
+      "english": "very much / a lot",
+      "type": "modifier",
+      "audio": "blocks/yn-fawr.mp3",
+      "transcript": "yn fawr — sounds like: un vowr",
+      "pronunciation_hint": "un vowr",
+      "notes": "Intensifier. 'Dw i'n hoffi pasta yn fawr' = I like pasta a lot. fawr is mutated form of mawr."
+    },
+    {
+      "id": "block_plis",
+      "welsh": "plîs",
+      "english": "please",
+      "type": "connector",
+      "audio": "blocks/plis.mp3",
+      "transcript": "plîs — sounds like: pleece",
+      "pronunciation_hint": "pleece",
+      "notes": "Informal 'please', borrowed from English, extremely common in spoken South Wales. Formal alternative: os gwelwch yn dda."
+    },
+    {
+      "id": "block_datws_block",
+      "welsh": "tatws",
+      "english": "potatoes",
+      "type": "noun",
+      "audio": "blocks/tatws.mp3",
+      "transcript": "tatws — sounds like: TAT-oos",
+      "pronunciation_hint": "TAT-oos",
+      "notes": "Base (unmutated) form. The mutated form 'datws' is a separate block (block_tatws) used after 'mwy o'."
+    },
+    {
+      "id": "block_pys",
+      "welsh": "pys",
+      "english": "peas",
+      "type": "noun",
+      "audio": "blocks/pys.mp3",
+      "transcript": "pys — sounds like: pees",
+      "pronunciation_hint": "pees",
+      "notes": "Plural noun, no singular used at table."
+    },
+    {
+      "id": "block_cig",
+      "welsh": "cig",
+      "english": "meat",
+      "type": "noun",
+      "audio": "blocks/cig.mp3",
+      "transcript": "cig — sounds like: keeg",
+      "pronunciation_hint": "keeg",
+      "notes": ""
+    },
+    {
+      "id": "block_pasta",
+      "welsh": "pasta",
+      "english": "pasta",
+      "type": "noun",
+      "audio": "blocks/pasta.mp3",
+      "transcript": "pasta — sounds like: PAST-a",
+      "pronunciation_hint": "PAST-a",
+      "notes": "Borrowed word — easy win for parents."
+    },
+    {
+      "id": "block_llaeth",
+      "welsh": "llaeth",
+      "english": "milk",
+      "type": "noun",
+      "audio": "blocks/llaeth.mp3",
+      "transcript": "llaeth — sounds like: thleye-th (ll breathy, th as in 'thin')",
+      "pronunciation_hint": "thleye-th",
+      "notes": "South Wales word for milk. North Wales uses llefrith. Use llaeth throughout."
+    },
+    {
+      "id": "block_dwr",
+      "welsh": "dŵr",
+      "english": "water",
+      "type": "noun",
+      "audio": "blocks/dwr.mp3",
+      "transcript": "dŵr — sounds like: door",
+      "pronunciation_hint": "door",
+      "notes": "Circumflex = long vowel."
+    },
+    {
+      "id": "block_halen",
+      "welsh": "halen",
+      "english": "salt",
+      "type": "noun",
+      "audio": "blocks/halen.mp3",
+      "transcript": "halen — sounds like: HAL-en",
+      "pronunciation_hint": "HAL-en",
+      "notes": ""
+    },
+    {
+      "id": "block_maer_bwyd",
+      "welsh": "Mae'r bwyd",
+      "english": "The food is",
+      "type": "verb_phrase",
+      "audio": "blocks/maer-bwyd.mp3",
+      "transcript": "Mae'r bwyd — sounds like: mire boo-id",
+      "pronunciation_hint": "mire boo-id",
+      "notes": "'Mae'r' = is the. Sentence opener for stating something about the food."
+    },
+    {
+      "id": "block_bron_yn_barod",
+      "welsh": "bron yn barod",
+      "english": "almost ready",
+      "type": "modifier",
+      "audio": "blocks/bron-yn-barod.mp3",
+      "transcript": "bron yn barod — sounds like: bron un BAR-od",
+      "pronunciation_hint": "bron un BAR-od",
+      "notes": "'bron' = almost, 'yn barod' = ready."
+    },
+    {
+      "id": "block_yn_barod",
+      "welsh": "yn barod",
+      "english": "ready",
+      "type": "modifier",
+      "audio": "blocks/yn-barod.mp3",
+      "transcript": "yn barod — sounds like: un BAR-od",
+      "pronunciation_hint": "un BAR-od",
+      "notes": ""
+    },
+    {
+      "id": "block_swper",
+      "welsh": "swper",
+      "english": "supper / dinner",
+      "type": "noun",
+      "audio": "blocks/swper.mp3",
+      "transcript": "swper — sounds like: SOOP-er",
+      "pronunciation_hint": "SOOP-er",
+      "notes": "South Wales commonly uses swper for the evening meal. cinio = midday meal. FLAG FOR REVIEW: confirm swper vs te for the family's evening meal in target community."
+    },
+    {
+      "id": "block_aros",
+      "welsh": "Aros",
+      "english": "Wait",
+      "type": "verb_phrase",
+      "audio": "blocks/aros.mp3",
+      "transcript": "Aros — sounds like: AR-os",
+      "pronunciation_hint": "AR-os",
+      "notes": "Informal singular command (to one child). Plural/polite: Arhoswch. Parent-to-child register."
+    },
+    {
+      "id": "block_eistedda",
+      "welsh": "Eistedda",
+      "english": "Sit down",
+      "type": "verb_phrase",
+      "audio": "blocks/eistedda.mp3",
+      "transcript": "Eistedda — sounds like: ay-STED-a",
+      "pronunciation_hint": "ay-STED-a",
+      "notes": "Informal singular command. Plural/polite: Eisteddwch. Parent-to-child."
+    },
+    {
+      "id": "block_golcha_dy_ddwylo",
+      "welsh": "Golcha dy ddwylo",
+      "english": "Wash your hands",
+      "type": "verb_phrase",
+      "audio": "blocks/golcha-dy-ddwylo.mp3",
+      "transcript": "Golcha dy ddwylo — sounds like: GOL-cha duh THWEE-lo",
+      "pronunciation_hint": "GOL-cha duh THWEE-lo",
+      "notes": "Informal singular. 'dy' triggers soft mutation: dwylo -> ddwylo. Parent-to-child."
+    },
+    {
+      "id": "block_dewch_iw_fwyta",
+      "welsh": "Dewch i fwyta",
+      "english": "Come and eat",
+      "type": "verb_phrase",
+      "audio": "blocks/dewch-i-fwyta.mp3",
+      "transcript": "Dewch i fwyta — sounds like: dewch ee VOO-uh-ta",
+      "pronunciation_hint": "dewch ee VOO-uh-ta",
+      "notes": "'i' + bwyta -> fwyta (soft mutation). Dewch is plural/inclusive 'come' — natural when calling the whole family. FLAG FOR REVIEW."
+    }
+  ],
+  "topics": [
+    {
+      "id": "alphabet",
+      "title_welsh": "Yr Wyddor",
+      "title_english": "The Alphabet",
+      "dialect": "south_wales",
+      "version": "1.0",
+      "notes": "MVP topic. 29 letters. Sneaky sounds: Dd, Ng, Ph use type sound_pattern.",
+      "layers": {
+        "parent_reference": [
+          {
+            "type": "letter",
+            "id": "letter_a",
+            "letter": "A",
+            "name": "A",
+            "description": "Sounds like 'a' in 'father'",
+            "audio": "alphabet/letters/a.mp3",
+            "transcript": "A — sounds like 'a' in father",
+            "pronunciation_hint": "ah",
+            "words": [
+              {
+                "type": "word",
+                "id": "word_afal",
+                "welsh": "Afal",
+                "english": "Apple",
+                "category": "food",
+                "audio": "alphabet/words/afal.mp3",
+                "transcript": "Afal — sounds like: AV-al",
+                "pronunciation_hint": "AV-al",
+                "image": "alphabet/words/afal.svg",
+                "alt": "A red apple",
+                "notes": "F in Welsh sounds like English V",
+                "buildable": false,
+                "build_letters": []
+              },
+              {
+                "type": "word",
+                "id": "word_allwedd",
+                "welsh": "Allwedd",
+                "english": "Key",
+                "category": "home",
+                "audio": "alphabet/words/allwedd.mp3",
+                "transcript": "Allwedd — sounds like: ath-weth",
+                "pronunciation_hint": "ath-weth",
+                "image": "alphabet/words/allwedd.svg",
+                "alt": "A door key",
+                "notes": "",
+                "buildable": false,
+                "build_letters": []
+              },
+              {
+                "type": "word",
+                "id": "word_arian",
+                "welsh": "Arian",
+                "english": "Money / silver",
+                "category": "everyday",
+                "audio": "alphabet/words/arian.mp3",
+                "transcript": "Arian — sounds like: AR-ee-an",
+                "pronunciation_hint": "AR-ee-an",
+                "image": "alphabet/words/arian.svg",
+                "alt": "A handful of coins",
+                "notes": "Two meanings — both valid",
+                "buildable": false,
+                "build_letters": []
+              },
+              {
+                "type": "word",
+                "id": "word_adar",
+                "welsh": "Adar",
+                "english": "Birds",
+                "category": "garden",
+                "audio": "alphabet/words/adar.mp3",
+                "transcript": "Adar — sounds like: AD-ar",
+                "pronunciation_hint": "AD-ar",
+                "image": "alphabet/words/adar.svg",
+                "alt": "Two birds on a branch",
+                "notes": "",
+                "buildable": false,
+                "build_letters": []
+              }
+            ],
+            "notes": "",
+            "say_together_refs": [
+              "word_afal",
+              "word_allwedd",
+              "word_arian",
+              "word_adar"
+            ]
+          },
+          {
+            "type": "letter",
+            "id": "letter_b",
+            "letter": "B",
+            "name": "B",
+            "description": "Same as English B",
+            "audio": "alphabet/letters/b.mp3",
+            "transcript": "B — same as English B",
+            "pronunciation_hint": "b",
+            "words": [
+              {
+                "type": "word",
+                "id": "word_bwrdd",
+                "welsh": "Bwrdd",
+                "english": "Table",
+                "category": "home",
+                "audio": "alphabet/words/bwrdd.mp3",
+                "transcript": "Bwrdd — sounds like: boorth (rhymes with worth)",
+                "pronunciation_hint": "boorth",
+                "image": "alphabet/words/bwrdd.svg",
+                "alt": "A kitchen table",
+                "notes": "",
+                "buildable": false,
+                "build_letters": []
+              },
+              {
+                "type": "word",
+                "id": "word_bag",
+                "welsh": "Bag",
+                "english": "Bag",
+                "category": "everyday",
+                "audio": "alphabet/words/bag.mp3",
+                "transcript": "Bag — same as English",
+                "pronunciation_hint": "bag",
+                "image": "alphabet/words/bag.svg",
+                "alt": "A bag",
+                "notes": "Borrowed word — easy win for parents",
+                "buildable": true,
+                "build_letters": [
+                  "B",
+                  "A",
+                  "G",
+                  "R",
+                  "D"
+                ]
+              },
+              {
+                "type": "word",
+                "id": "word_bara",
+                "welsh": "Bara",
+                "english": "Bread",
+                "category": "food",
+                "audio": "alphabet/words/bara.mp3",
+                "transcript": "Bara — sounds like: BAR-a",
+                "pronunciation_hint": "BAR-a",
+                "image": "alphabet/words/bara.svg",
+                "alt": "A loaf of bread",
+                "notes": "",
+                "buildable": false,
+                "build_letters": []
+              },
+              {
+                "type": "word",
+                "id": "word_blodau",
+                "welsh": "Blodau",
+                "english": "Flowers",
+                "category": "garden",
+                "audio": "alphabet/words/blodau.mp3",
+                "transcript": "Blodau — sounds like: BLOD-eye",
+                "pronunciation_hint": "BLOD-eye",
+                "image": "alphabet/words/blodau.svg",
+                "alt": "A bunch of flowers",
+                "notes": "",
+                "buildable": false,
+                "build_letters": []
+              }
+            ],
+            "notes": "",
+            "say_together_refs": [
+              "word_bwrdd",
+              "word_bag",
+              "word_bara",
+              "word_blodau"
+            ]
+          },
+          {
+            "type": "letter",
+            "id": "letter_c",
+            "letter": "C",
+            "name": "C (always hard, like K)",
+            "description": "Always hard, like K — never like S",
+            "audio": "alphabet/letters/c.mp3",
+            "transcript": "C — always hard like K, never soft like S",
+            "pronunciation_hint": "k",
+            "words": [
+              {
+                "type": "word",
+                "id": "word_cadair",
+                "welsh": "Cadair",
+                "english": "Chair",
+                "category": "home",
+                "audio": "alphabet/words/cadair.mp3",
+                "transcript": "Cadair — sounds like: KAD-air",
+                "pronunciation_hint": "KAD-air",
+                "image": "alphabet/words/cadair.svg",
+                "alt": "A chair",
+                "notes": "",
+                "buildable": false,
+                "build_letters": []
+              },
+              {
+                "type": "word",
+                "id": "word_ci",
+                "welsh": "Ci",
+                "english": "Dog",
+                "category": "animal",
+                "audio": "alphabet/words/ci.mp3",
+                "transcript": "Ci — sounds like: kee",
+                "pronunciation_hint": "kee",
+                "image": "alphabet/words/ci.svg",
+                "alt": "A dog",
+                "notes": "",
+                "buildable": true,
+                "build_letters": [
+                  "C",
+                  "I",
+                  "A",
+                  "T"
+                ]
+              },
+              {
+                "type": "word",
+                "id": "word_cath",
+                "welsh": "Cath",
+                "english": "Cat",
+                "category": "animal",
+                "audio": "alphabet/words/cath.mp3",
+                "transcript": "Cath — sounds like: kath",
+                "pronunciation_hint": "kath",
+                "image": "alphabet/words/cath.svg",
+                "alt": "A cat",
+                "notes": "South Wales: short a",
+                "buildable": true,
+                "build_letters": [
+                  "C",
+                  "A",
+                  "T",
+                  "H",
+                  "I",
+                  "L"
+                ]
+              },
+              {
+                "type": "word",
+                "id": "word_cwpan",
+                "welsh": "Cwpan",
+                "english": "Cup",
+                "category": "home",
+                "audio": "alphabet/words/cwpan.mp3",
+                "transcript": "Cwpan — sounds like: KOO-pan",
+                "pronunciation_hint": "KOO-pan",
+                "image": "alphabet/words/cwpan.svg",
+                "alt": "A cup",
+                "notes": "",
+                "buildable": false,
+                "build_letters": []
+              }
+            ],
+            "notes": "",
+            "say_together_refs": [
+              "word_cadair",
+              "word_ci",
+              "word_cath",
+              "word_cwpan",
+              "word_cyllell_dinner",
+              "word_cig_dinner",
+              "word_caws_dinner"
+            ]
+          },
+          {
+            "type": "letter",
+            "id": "letter_ch",
+            "letter": "Ch",
+            "name": "Ch (like Scottish loch)",
+            "description": "Like the ch in Scottish 'loch' — a soft rasp at the back of the throat",
+            "audio": "alphabet/letters/ch.mp3",
+            "transcript": "Ch — like the ch in Scottish loch",
+            "pronunciation_hint": "ch as in loch",
+            "words": [
+              {
+                "type": "word",
+                "id": "word_chwech",
+                "welsh": "Chwech",
+                "english": "Six",
+                "category": "number",
+                "audio": "alphabet/words/chwech.mp3",
+                "transcript": "Chwech — sounds like: chooech",
+                "pronunciation_hint": "chooech",
+                "image": "alphabet/words/chwech.svg",
+                "alt": "The number six",
+                "notes": "",
+                "buildable": false,
+                "build_letters": []
+              },
+              {
+                "type": "word",
+                "id": "word_chwarae",
+                "welsh": "Chwarae",
+                "english": "Play",
+                "category": "action",
+                "audio": "alphabet/words/chwarae.mp3",
+                "transcript": "Chwarae — sounds like: choo-rye",
+                "pronunciation_hint": "choo-rye",
+                "image": "alphabet/words/chwarae.svg",
+                "alt": "Children playing",
+                "notes": "High frequency school word",
+                "buildable": false,
+                "build_letters": []
+              },
+              {
+                "type": "word",
+                "id": "word_chwaer",
+                "welsh": "Chwaer",
+                "english": "Sister",
+                "category": "family",
+                "audio": "alphabet/words/chwaer.mp3",
+                "transcript": "Chwaer — sounds like: choo-air",
+                "pronunciation_hint": "choo-air",
+                "image": "alphabet/words/chwaer.svg",
+                "alt": "Two sisters",
+                "notes": "",
+                "buildable": false,
+                "build_letters": []
+              },
+              {
+                "type": "word",
+                "id": "word_chwilen",
+                "welsh": "Chwilen",
+                "english": "Beetle",
+                "category": "garden",
+                "audio": "alphabet/words/chwilen.mp3",
+                "transcript": "Chwilen — sounds like: choo-IL-en",
+                "pronunciation_hint": "choo-IL-en",
+                "image": "alphabet/words/chwilen.svg",
+                "alt": "A beetle",
+                "notes": "Findable under pots and stones in the garden",
+                "buildable": false,
+                "build_letters": []
+              }
+            ],
+            "notes": "",
+            "say_together_refs": [
+              "word_chwech",
+              "word_chwarae",
+              "word_chwaer",
+              "word_chwilen"
+            ]
+          },
+          {
+            "type": "letter",
+            "id": "letter_d",
+            "letter": "D",
+            "name": "D",
+            "description": "Same as English D",
+            "audio": "alphabet/letters/d.mp3",
+            "transcript": "D — same as English D",
+            "pronunciation_hint": "d",
+            "words": [
+              {
+                "type": "word",
+                "id": "word_drws",
+                "welsh": "Drws",
+                "english": "Door",
+                "category": "home",
+                "audio": "alphabet/words/drws.mp3",
+                "transcript": "Drws — sounds like: droos",
+                "pronunciation_hint": "droos",
+                "image": "alphabet/words/drws.svg",
+                "alt": "A front door",
+                "notes": "",
+                "buildable": false,
+                "build_letters": []
+              },
+              {
+                "type": "word",
+                "id": "word_dwr",
+                "welsh": "Dŵr",
+                "english": "Water",
+                "category": "everyday",
+                "audio": "alphabet/words/dwr.mp3",
+                "transcript": "Dŵr — sounds like: dooer",
+                "pronunciation_hint": "dooer",
+                "image": "alphabet/words/dwr.svg",
+                "alt": "A glass of water",
+                "notes": "Circumflex signals long vowel",
+                "buildable": false,
+                "build_letters": []
+              },
+              {
+                "type": "word",
+                "id": "word_desg",
+                "welsh": "Desg",
+                "english": "Desk",
+                "category": "home",
+                "audio": "alphabet/words/desg.mp3",
+                "transcript": "Desg — sounds like: desk",
+                "pronunciation_hint": "desk",
+                "image": "alphabet/words/desg.svg",
+                "alt": "A desk",
+                "notes": "",
+                "buildable": false,
+                "build_letters": []
+              },
+              {
+                "type": "word",
+                "id": "word_dysgl",
+                "welsh": "Dysgl",
+                "english": "Bowl / dish",
+                "category": "home",
+                "audio": "alphabet/words/dysgl.mp3",
+                "transcript": "Dysgl — sounds like: DUS-gl",
+                "pronunciation_hint": "DUS-gl",
+                "image": "alphabet/words/dysgl.svg",
+                "alt": "A bowl",
+                "notes": "",
+                "buildable": false,
+                "build_letters": []
+              }
+            ],
+            "notes": "",
+            "say_together_refs": [
+              "word_drws",
+              "word_dwr",
+              "word_desg",
+              "word_dysgl"
+            ]
+          },
+          {
+            "type": "sound_pattern",
+            "id": "letter_dd",
+            "letter": "Dd",
+            "name": "Dd (like 'th' in 'the')",
+            "description": "A sneaky sound — rarely starts a word, hides in the middle",
+            "audio": "alphabet/letters/dd.mp3",
+            "transcript": "Dd — like the th in the or this. Never like think.",
+            "pronunciation_hint": "th as in 'the'",
+            "examples": [
+              {
+                "welsh": "Ddaear",
+                "english": "Earth / ground",
+                "highlight_chars": [
+                  0,
+                  1
+                ],
+                "audio": "alphabet/words/ddaear.mp3",
+                "transcript": "Ddaear — sounds like: tha-ear",
+                "image": "alphabet/words/daear.svg",
+                "alt": "A handful of garden soil",
+                "notes": "Starts with Dd — findable in any garden"
+              },
+              {
+                "welsh": "dydd",
+                "english": "day",
+                "highlight_chars": [
+                  2,
+                  3
+                ],
+                "audio": "alphabet/words/dydd.mp3",
+                "transcript": "dydd — sounds like: deethe",
+                "image": "alphabet/words/dydd.svg",
+                "alt": "A sun representing daytime",
+                "notes": ""
+              },
+              {
+                "welsh": "mynydd",
+                "english": "mountain",
+                "highlight_chars": [
+                  4,
+                  5
+                ],
+                "audio": "alphabet/words/mynydd.mp3",
+                "transcript": "mynydd — sounds like: MUN-ith",
+                "image": "alphabet/words/mynydd.svg",
+                "alt": "A mountain",
+                "notes": ""
+              },
+              {
+                "welsh": "padden",
+                "english": "toad",
+                "highlight_chars": [
+                  2,
+                  3
+                ],
+                "audio": "alphabet/words/padden.mp3",
+                "transcript": "padden — sounds like: PATH-en",
+                "image": "alphabet/words/padden.svg",
+                "alt": "A toad in a garden",
+                "notes": ""
+              }
+            ],
+            "notes": "Sneaky sound. Show Option C copy in UI.",
+            "say_together_refs": []
+          },
+          {
+            "type": "letter",
+            "id": "letter_e",
+            "letter": "E",
+            "name": "E",
+            "description": "Like 'e' in 'bed'",
+            "audio": "alphabet/letters/e.mp3",
+            "transcript": "E — like e in bed",
+            "pronunciation_hint": "eh",
+            "words": [
+              {
+                "type": "word",
+                "id": "word_esgid",
+                "welsh": "Esgid",
+                "english": "Shoe",
+                "category": "clothing",
+                "audio": "alphabet/words/esgid.mp3",
+                "transcript": "Esgid — sounds like: ES-gid",
+                "pronunciation_hint": "ES-gid",
+                "image": "alphabet/words/esgid.svg",
+                "alt": "A shoe",
+                "notes": "",
+                "buildable": false,
+                "build_letters": []
+              },
+              {
+                "type": "word",
+                "id": "word_eira",
+                "welsh": "Eira",
+                "english": "Snow",
+                "category": "nature",
+                "audio": "alphabet/words/eira.mp3",
+                "transcript": "Eira — sounds like: AY-ra",
+                "pronunciation_hint": "AY-ra",
+                "image": "alphabet/words/eira.svg",
+                "alt": "Snow falling",
+                "notes": "",
+                "buildable": false,
+                "build_letters": []
+              },
+              {
+                "type": "word",
+                "id": "word_efail",
+                "welsh": "Efail",
+                "english": "Smithy / forge",
+                "category": "place",
+                "audio": "alphabet/words/efail.mp3",
+                "transcript": "Efail — sounds like: EV-ile",
+                "pronunciation_hint": "EV-ile",
+                "image": "alphabet/words/efail.svg",
+                "alt": "A blacksmith's forge",
+                "notes": "Common in local Welsh place names",
+                "buildable": false,
+                "build_letters": []
+              },
+              {
+                "type": "word",
+                "id": "word_ewin",
+                "welsh": "Ewin",
+                "english": "Nail / claw",
+                "category": "body",
+                "audio": "alphabet/words/ewin.mp3",
+                "transcript": "Ewin — sounds like: EH-win",
+                "pronunciation_hint": "EH-win",
+                "image": "alphabet/words/ewin.svg",
+                "alt": "A fingernail",
+                "notes": "Fingernails — findable on any person",
+                "buildable": false,
+                "build_letters": []
+              }
+            ],
+            "notes": "",
+            "say_together_refs": [
+              "word_esgid",
+              "word_eira",
+              "word_efail",
+              "word_ewin"
+            ]
+          },
+          {
+            "type": "letter",
+            "id": "letter_f",
+            "letter": "F",
+            "name": "F (sounds like English V)",
+            "description": "Sounds like English V — not like English F",
+            "audio": "alphabet/letters/f.mp3",
+            "transcript": "F in Welsh sounds like English V",
+            "pronunciation_hint": "v",
+            "words": [
+              {
+                "type": "word",
+                "id": "word_ffon_f",
+                "welsh": "Ffon",
+                "english": "Phone / stick",
+                "category": "home",
+                "audio": "alphabet/words/ffon.mp3",
+                "transcript": "Ffon — sounds like: fon",
+                "pronunciation_hint": "fon",
+                "image": "alphabet/words/ffon.svg",
+                "alt": "A mobile phone",
+                "notes": "Note: starts with Ff not F — F entry uses mutation examples",
+                "buildable": false,
+                "build_letters": []
+              },
+              {
+                "type": "word",
+                "id": "word_fam",
+                "welsh": "Fam",
+                "english": "Mum (mutated form)",
+                "category": "family",
+                "audio": "alphabet/words/fam.mp3",
+                "transcript": "Fam — sounds like: vam",
+                "pronunciation_hint": "vam",
+                "image": "alphabet/words/fam.svg",
+                "alt": "A mum with a child",
+                "notes": "Mutated form of mam",
+                "buildable": false,
+                "build_letters": []
+              },
+              {
+                "type": "word",
+                "id": "word_fasged",
+                "welsh": "Fasged",
+                "english": "Basket (mutated)",
+                "category": "home",
+                "audio": "alphabet/words/fasged.mp3",
+                "transcript": "Fasged — sounds like: VAS-ged",
+                "pronunciation_hint": "VAS-ged",
+                "image": "alphabet/words/fasged.svg",
+                "alt": "A wicker basket",
+                "notes": "Base form is basged",
+                "buildable": false,
+                "build_letters": []
+              },
+              {
+                "type": "word",
+                "id": "word_fenest",
+                "welsh": "Fenest",
+                "english": "Window (mutated)",
+                "category": "home",
+                "audio": "alphabet/words/fenest.mp3",
+                "transcript": "Fenest — sounds like: VEN-est",
+                "pronunciation_hint": "VEN-est",
+                "image": "alphabet/words/fenest.svg",
+                "alt": "A window",
+                "notes": "Mutated form of ffenest",
+                "buildable": false,
+                "build_letters": []
+              }
+            ],
+            "notes": "F in Welsh = English V sound. All words here are mutated forms.",
+            "say_together_refs": [
+              "word_fam",
+              "word_fasged",
+              "word_fenest"
+            ]
+          },
+          {
+            "type": "letter",
+            "id": "letter_ff",
+            "letter": "Ff",
+            "name": "Ff (sounds like English F)",
+            "description": "Sounds like English F",
+            "audio": "alphabet/letters/ff.mp3",
+            "transcript": "Ff — sounds like English F",
+            "pronunciation_hint": "f",
+            "words": [
+              {
+                "type": "word",
+                "id": "word_ffenest",
+                "welsh": "Ffenest",
+                "english": "Window",
+                "category": "home",
+                "audio": "alphabet/words/ffenest.mp3",
+                "transcript": "Ffenest — sounds like: FEN-est",
+                "pronunciation_hint": "FEN-est",
+                "image": "alphabet/words/ffenest.svg",
+                "alt": "A window",
+                "notes": "South Wales preferred form",
+                "buildable": false,
+                "build_letters": []
+              },
+              {
+                "type": "word",
+                "id": "word_ffordd",
+                "welsh": "Ffordd",
+                "english": "Road / way",
+                "category": "place",
+                "audio": "alphabet/words/ffordd.mp3",
+                "transcript": "Ffordd — sounds like: forth",
+                "pronunciation_hint": "forth",
+                "image": "alphabet/words/ffordd.svg",
+                "alt": "A road",
+                "notes": "Appears in many local place names",
+                "buildable": false,
+                "build_letters": []
+              },
+              {
+                "type": "word",
+                "id": "word_ffon",
+                "welsh": "Ffôn",
+                "english": "Phone",
+                "category": "home",
+                "audio": "alphabet/words/ffon.mp3",
+                "transcript": "Ffôn — sounds like: fohn",
+                "pronunciation_hint": "fohn",
+                "image": "alphabet/words/ffon.svg",
+                "alt": "A mobile phone",
+                "notes": "Circumflex = long vowel",
+                "buildable": false,
+                "build_letters": []
+              },
+              {
+                "type": "word",
+                "id": "word_fforc",
+                "welsh": "Fforc",
+                "english": "Fork",
+                "category": "home",
+                "audio": "alphabet/words/fforc.mp3",
+                "transcript": "Fforc — sounds like: fork",
+                "pronunciation_hint": "fork",
+                "image": "alphabet/words/fforc.svg",
+                "alt": "A fork",
+                "notes": "On the kitchen table every day",
+                "buildable": false,
+                "build_letters": []
+              }
+            ],
+            "notes": "",
+            "say_together_refs": [
+              "word_ffon_f",
+              "word_ffenest",
+              "word_ffordd",
+              "word_ffon",
+              "word_fforc"
+            ]
+          },
+          {
+            "type": "letter",
+            "id": "letter_g",
+            "letter": "G",
+            "name": "G (always hard)",
+            "description": "Always hard, like G in 'go' — never soft",
+            "audio": "alphabet/letters/g.mp3",
+            "transcript": "G — always hard like G in go",
+            "pronunciation_hint": "g as in go",
+            "words": [
+              {
+                "type": "word",
+                "id": "word_gardd",
+                "welsh": "Gardd",
+                "english": "Garden",
+                "category": "home",
+                "audio": "alphabet/words/gardd.mp3",
+                "transcript": "Gardd — sounds like: garth",
+                "pronunciation_hint": "garth",
+                "image": "alphabet/words/gardd.svg",
+                "alt": "A garden",
+                "notes": "",
+                "buildable": false,
+                "build_letters": []
+              },
+              {
+                "type": "word",
+                "id": "word_gwely",
+                "welsh": "Gwely",
+                "english": "Bed",
+                "category": "home",
+                "audio": "alphabet/words/gwely.mp3",
+                "transcript": "Gwely — sounds like: GWEL-ee",
+                "pronunciation_hint": "GWEL-ee",
+                "image": "alphabet/words/gwely.svg",
+                "alt": "A bed",
+                "notes": "",
+                "buildable": false,
+                "build_letters": []
+              },
+              {
+                "type": "word",
+                "id": "word_gwydr",
+                "welsh": "Gwydr",
+                "english": "Glass",
+                "category": "home",
+                "audio": "alphabet/words/gwydr.mp3",
+                "transcript": "Gwydr — sounds like: GWID-r",
+                "pronunciation_hint": "GWID-r",
+                "image": "alphabet/words/gwydr.svg",
+                "alt": "A drinking glass",
+                "notes": "",
+                "buildable": false,
+                "build_letters": []
+              },
+              {
+                "type": "word",
+                "id": "word_golau",
+                "welsh": "Golau",
+                "english": "Light",
+                "category": "home",
+                "audio": "alphabet/words/golau.mp3",
+                "transcript": "Golau — sounds like: GOL-eye",
+                "pronunciation_hint": "GOL-eye",
+                "image": "alphabet/words/golau.svg",
+                "alt": "A light switch or lamp",
+                "notes": "Light switch — in every room",
+                "buildable": false,
+                "build_letters": []
+              }
+            ],
+            "notes": "",
+            "say_together_refs": [
+              "word_gardd",
+              "word_gwely",
+              "word_gwydr",
+              "word_golau"
+            ]
+          },
+          {
+            "type": "sound_pattern",
+            "id": "letter_ng",
+            "letter": "Ng",
+            "name": "Ng (like 'sing')",
+            "description": "A sneaky sound — like the ng in sing, hiding in the middle and end of words",
+            "audio": "alphabet/letters/ng.mp3",
+            "transcript": "Ng — like the ng at the end of sing",
+            "pronunciation_hint": "ng as in sing",
+            "examples": [
+              {
+                "welsh": "angen",
+                "english": "need",
+                "highlight_chars": [
+                  1,
+                  2
+                ],
+                "audio": "alphabet/words/angen.mp3",
+                "transcript": "angen — sounds like: ANG-en",
+                "image": "alphabet/words/angen.svg",
+                "alt": "A hand reaching out, representing need",
+                "notes": "Very high frequency — children hear this constantly"
+              },
+              {
+                "welsh": "dangos",
+                "english": "to show",
+                "highlight_chars": [
+                  2,
+                  3
+                ],
+                "audio": "alphabet/words/dangos.mp3",
+                "transcript": "dangos — sounds like: DANG-os",
+                "image": "alphabet/words/dangos.svg",
+                "alt": "A hand pointing, representing showing something",
+                "notes": "Common school word"
+              },
+              {
+                "welsh": "llong",
+                "english": "ship",
+                "highlight_chars": [
+                  3,
+                  4
+                ],
+                "audio": "alphabet/words/llong.mp3",
+                "transcript": "llong — sounds like: thlong",
+                "image": "alphabet/words/llong.svg",
+                "alt": "A ship",
+                "notes": "Hear it at the end"
+              },
+              {
+                "welsh": "mynydd",
+                "english": "mountain",
+                "highlight_chars": [
+                  2,
+                  3
+                ],
+                "audio": "alphabet/words/mynydd.mp3",
+                "transcript": "mynydd — sounds like: MUN-ith",
+                "image": "alphabet/words/mynydd.svg",
+                "alt": "A mountain",
+                "notes": "Hear ng in the middle — myn-ydd"
+              }
+            ],
+            "notes": "Sneaky sound. Show Option C copy in UI.",
+            "say_together_refs": []
+          },
+          {
+            "type": "letter",
+            "id": "letter_h",
+            "letter": "H",
+            "name": "H",
+            "description": "Same as English H",
+            "audio": "alphabet/letters/h.mp3",
+            "transcript": "H — same as English H",
+            "pronunciation_hint": "h",
+            "words": [
+              {
+                "type": "word",
+                "id": "word_haul",
+                "welsh": "Haul",
+                "english": "Sun",
+                "category": "nature",
+                "audio": "alphabet/words/haul.mp3",
+                "transcript": "Haul — sounds like: hile (rhymes with mile)",
+                "pronunciation_hint": "hile",
+                "image": "alphabet/words/haul.svg",
+                "alt": "The sun",
+                "notes": "",
+                "buildable": false,
+                "build_letters": []
+              },
+              {
+                "type": "word",
+                "id": "word_haf",
+                "welsh": "Haf",
+                "english": "Summer",
+                "category": "nature",
+                "audio": "alphabet/words/haf.mp3",
+                "transcript": "Haf — sounds like: hav",
+                "pronunciation_hint": "hav",
+                "image": "alphabet/words/haf.svg",
+                "alt": "A sunny summer scene",
+                "notes": "",
+                "buildable": false,
+                "build_letters": []
+              },
+              {
+                "type": "word",
+                "id": "word_het",
+                "welsh": "Het",
+                "english": "Hat",
+                "category": "clothing",
+                "audio": "alphabet/words/het.mp3",
+                "transcript": "Het — sounds like: het",
+                "pronunciation_hint": "het",
+                "image": "alphabet/words/het.svg",
+                "alt": "A hat",
+                "notes": "Borrowed word — easy for parents",
+                "buildable": true,
+                "build_letters": [
+                  "H",
+                  "E",
+                  "T",
+                  "A",
+                  "N"
+                ]
+              },
+              {
+                "type": "word",
+                "id": "word_halen",
+                "welsh": "Halen",
+                "english": "Salt",
+                "category": "home",
+                "audio": "alphabet/words/halen.mp3",
+                "transcript": "Halen — sounds like: HAL-en",
+                "pronunciation_hint": "HAL-en",
+                "image": "alphabet/words/halen.svg",
+                "alt": "A salt shaker",
+                "notes": "On the kitchen table",
+                "buildable": false,
+                "build_letters": []
+              }
+            ],
+            "notes": "",
+            "say_together_refs": [
+              "word_haul",
+              "word_haf",
+              "word_het",
+              "word_halen"
+            ]
+          },
+          {
+            "type": "letter",
+            "id": "letter_i",
+            "letter": "I",
+            "name": "I",
+            "description": "Like 'ee' in 'see' or 'i' in 'bit'",
+            "audio": "alphabet/letters/i.mp3",
+            "transcript": "I — like ee in see or i in bit",
+            "pronunciation_hint": "ee or i",
+            "words": [
+              {
+                "type": "word",
+                "id": "word_iard",
+                "welsh": "Iard",
+                "english": "Yard / playground",
+                "category": "place",
+                "audio": "alphabet/words/iard.mp3",
+                "transcript": "Iard — sounds like: yard",
+                "pronunciation_hint": "yard",
+                "image": "alphabet/words/iard.svg",
+                "alt": "A playground",
+                "notes": "School-relevant",
+                "buildable": false,
+                "build_letters": []
+              },
+              {
+                "type": "word",
+                "id": "word_ia",
+                "welsh": "Iâ",
+                "english": "Ice",
+                "category": "nature",
+                "audio": "alphabet/words/ia.mp3",
+                "transcript": "Iâ — sounds like: ee-ah",
+                "pronunciation_hint": "ee-ah",
+                "image": "alphabet/words/ia.svg",
+                "alt": "Ice cubes",
+                "notes": "Circumflex = long vowel",
+                "buildable": true,
+                "build_letters": [
+                  "I",
+                  "Â",
+                  "W",
+                  "E"
+                ]
+              },
+              {
+                "type": "word",
+                "id": "word_iawn",
+                "welsh": "Iawn",
+                "english": "Fine / very / right",
+                "category": "everyday",
+                "audio": "alphabet/words/iawn.mp3",
+                "transcript": "Iawn — sounds like: yown (rhymes with town)",
+                "pronunciation_hint": "yown",
+                "image": "alphabet/words/iawn.svg",
+                "alt": "A thumbs up",
+                "notes": "Super high frequency — worth including",
+                "buildable": false,
+                "build_letters": []
+              },
+              {
+                "type": "word",
+                "id": "word_inc",
+                "welsh": "Inc",
+                "english": "Ink",
+                "category": "home",
+                "audio": "alphabet/words/inc.mp3",
+                "transcript": "Inc — sounds like: ink",
+                "pronunciation_hint": "ink",
+                "image": "alphabet/words/inc.svg",
+                "alt": "A pen with ink",
+                "notes": "",
+                "buildable": false,
+                "build_letters": []
+              }
+            ],
+            "notes": "",
+            "say_together_refs": [
+              "word_iard",
+              "word_ia",
+              "word_iawn",
+              "word_inc"
+            ]
+          },
+          {
+            "type": "letter",
+            "id": "letter_j",
+            "letter": "J",
+            "name": "J (borrowed sounds)",
+            "description": "Borrowed into Welsh — same as English J",
+            "audio": "alphabet/letters/j.mp3",
+            "transcript": "J — same as English J, used in borrowed words",
+            "pronunciation_hint": "j",
+            "words": [
+              {
+                "type": "word",
+                "id": "word_jam",
+                "welsh": "Jam",
+                "english": "Jam",
+                "category": "food",
+                "audio": "alphabet/words/jam.mp3",
+                "transcript": "Jam — same as English",
+                "pronunciation_hint": "jam",
+                "image": "alphabet/words/jam.svg",
+                "alt": "A jar of jam",
+                "notes": "Borrowed word",
+                "buildable": true,
+                "build_letters": [
+                  "J",
+                  "A",
+                  "M",
+                  "B",
+                  "R"
+                ]
+              },
+              {
+                "type": "word",
+                "id": "word_jins",
+                "welsh": "Jîns",
+                "english": "Jeans",
+                "category": "clothing",
+                "audio": "alphabet/words/jins.mp3",
+                "transcript": "Jîns — sounds like: jeens",
+                "pronunciation_hint": "jeens",
+                "image": "alphabet/words/jins.svg",
+                "alt": "A pair of jeans",
+                "notes": "Borrowed word",
+                "buildable": false,
+                "build_letters": []
+              },
+              {
+                "type": "word",
+                "id": "word_jwg",
+                "welsh": "Jwg",
+                "english": "Jug",
+                "category": "home",
+                "audio": "alphabet/words/jwg.mp3",
+                "transcript": "Jwg — sounds like: joog",
+                "pronunciation_hint": "joog",
+                "image": "alphabet/words/jwg.svg",
+                "alt": "A jug",
+                "notes": "",
+                "buildable": false,
+                "build_letters": []
+              },
+              {
+                "type": "word",
+                "id": "word_jar",
+                "welsh": "Jar",
+                "english": "Jar",
+                "category": "home",
+                "audio": "alphabet/words/jar.mp3",
+                "transcript": "Jar — same as English",
+                "pronunciation_hint": "jar",
+                "image": "alphabet/words/jar.svg",
+                "alt": "A glass jar",
+                "notes": "Borrowed word",
+                "buildable": false,
+                "build_letters": []
+              }
+            ],
+            "notes": "",
+            "say_together_refs": [
+              "word_jam",
+              "word_jins",
+              "word_jwg",
+              "word_jar"
+            ]
+          },
+          {
+            "type": "letter",
+            "id": "letter_l",
+            "letter": "L",
+            "name": "L",
+            "description": "Same as English L",
+            "audio": "alphabet/letters/l.mp3",
+            "transcript": "L — same as English L",
+            "pronunciation_hint": "l",
+            "words": [
+              {
+                "type": "word",
+                "id": "word_lori",
+                "welsh": "Lori",
+                "english": "Lorry / truck",
+                "category": "transport",
+                "audio": "alphabet/words/lori.mp3",
+                "transcript": "Lori — sounds like: LOR-ee",
+                "pronunciation_hint": "LOR-ee",
+                "image": "alphabet/words/lori.svg",
+                "alt": "A lorry or truck",
+                "notes": "",
+                "buildable": false,
+                "build_letters": []
+              },
+              {
+                "type": "word",
+                "id": "word_lamp",
+                "welsh": "Lamp",
+                "english": "Lamp",
+                "category": "home",
+                "audio": "alphabet/words/lamp.mp3",
+                "transcript": "Lamp — same as English",
+                "pronunciation_hint": "lamp",
+                "image": "alphabet/words/lamp.svg",
+                "alt": "A lamp",
+                "notes": "Borrowed — easy for parents",
+                "buildable": false,
+                "build_letters": []
+              },
+              {
+                "type": "word",
+                "id": "word_llawr",
+                "welsh": "Llawr",
+                "english": "Floor",
+                "category": "home",
+                "audio": "alphabet/words/llawr.mp3",
+                "transcript": "Llawr — sounds like: thlour",
+                "pronunciation_hint": "thlour",
+                "image": "alphabet/words/llawr.svg",
+                "alt": "A floor",
+                "notes": "Starts with Ll but listed under L for accessibility",
+                "buildable": false,
+                "build_letters": []
+              },
+              {
+                "type": "word",
+                "id": "word_lawnt",
+                "welsh": "Lawnt",
+                "english": "Lawn",
+                "category": "garden",
+                "audio": "alphabet/words/lawnt.mp3",
+                "transcript": "Lawnt — sounds like: lownt",
+                "pronunciation_hint": "lownt",
+                "image": "alphabet/words/lawnt.svg",
+                "alt": "A garden lawn",
+                "notes": "Borrowed word",
+                "buildable": false,
+                "build_letters": []
+              }
+            ],
+            "notes": "",
+            "say_together_refs": [
+              "word_lori",
+              "word_lamp",
+              "word_lawnt"
+            ]
+          },
+          {
+            "type": "letter",
+            "id": "letter_ll",
+            "letter": "Ll",
+            "name": "Ll (no English equivalent — side of tongue)",
+            "description": "No English equivalent — place your tongue as if to say L, then breathe out from the sides",
+            "audio": "alphabet/letters/ll.mp3",
+            "transcript": "Ll — no English equivalent. Tongue to the roof of the mouth, breathe out from the sides.",
+            "pronunciation_hint": "th-l (tongue to roof, breathe sideways)",
+            "words": [
+              {
+                "type": "word",
+                "id": "word_llaeth",
+                "welsh": "Llaeth",
+                "english": "Milk",
+                "category": "food",
+                "audio": "alphabet/words/llaeth.mp3",
+                "transcript": "Llaeth — sounds like: thlaith",
+                "pronunciation_hint": "thlaith",
+                "image": "alphabet/words/llaeth.svg",
+                "alt": "A glass of milk",
+                "notes": "South Wales preferred over llefrith",
+                "buildable": false,
+                "build_letters": []
+              },
+              {
+                "type": "word",
+                "id": "word_llwy",
+                "welsh": "Llwy",
+                "english": "Spoon",
+                "category": "home",
+                "audio": "alphabet/words/llwy.mp3",
+                "transcript": "Llwy — sounds like: thlooee",
+                "pronunciation_hint": "thlooee",
+                "image": "alphabet/words/llwy.svg",
+                "alt": "A spoon",
+                "notes": "",
+                "buildable": false,
+                "build_letters": []
+              },
+              {
+                "type": "word",
+                "id": "word_llaw",
+                "welsh": "Llaw",
+                "english": "Hand",
+                "category": "body",
+                "audio": "alphabet/words/llaw.mp3",
+                "transcript": "Llaw — sounds like: thlow",
+                "pronunciation_hint": "thlow",
+                "image": "alphabet/words/llaw.svg",
+                "alt": "An open hand",
+                "notes": "",
+                "buildable": false,
+                "build_letters": []
+              },
+              {
+                "type": "word",
+                "id": "word_lliain",
+                "welsh": "Lliain",
+                "english": "Cloth / towel",
+                "category": "home",
+                "audio": "alphabet/words/lliain.mp3",
+                "transcript": "Lliain — sounds like: thleeain",
+                "pronunciation_hint": "thleeain",
+                "image": "alphabet/words/lliain.svg",
+                "alt": "A tea towel",
+                "notes": "Tea towel — in every kitchen",
+                "buildable": false,
+                "build_letters": []
+              }
+            ],
+            "notes": "",
+            "say_together_refs": [
+              "word_llawr",
+              "word_llaeth",
+              "word_llwy",
+              "word_llaw",
+              "word_lliain",
+              "word_llysiau_dinner"
+            ]
+          },
+          {
+            "type": "letter",
+            "id": "letter_m",
+            "letter": "M",
+            "name": "M",
+            "description": "Same as English M",
+            "audio": "alphabet/letters/m.mp3",
+            "transcript": "M — same as English M",
+            "pronunciation_hint": "m",
+            "words": [
+              {
+                "type": "word",
+                "id": "word_mam",
+                "welsh": "Mam",
+                "english": "Mam / Mum",
+                "category": "family",
+                "audio": "alphabet/words/mam.mp3",
+                "transcript": "Mam — same as English Mam",
+                "pronunciation_hint": "mam",
+                "image": "alphabet/words/mam.svg",
+                "alt": "A mum with a child",
+                "notes": "South Wales: always mam not mami",
+                "buildable": true,
+                "build_letters": [
+                  "M",
+                  "A",
+                  "M",
+                  "B",
+                  "R"
+                ]
+              },
+              {
+                "type": "word",
+                "id": "word_maes",
+                "welsh": "Maes",
+                "english": "Field / square",
+                "category": "place",
+                "audio": "alphabet/words/maes.mp3",
+                "transcript": "Maes — sounds like: mice",
+                "pronunciation_hint": "mice",
+                "image": "alphabet/words/maes.svg",
+                "alt": "An open field or town square",
+                "notes": "In many local Welsh place names",
+                "buildable": false,
+                "build_letters": []
+              },
+              {
+                "type": "word",
+                "id": "word_moch",
+                "welsh": "Moch",
+                "english": "Pigs",
+                "category": "animal",
+                "audio": "alphabet/words/moch.mp3",
+                "transcript": "Moch — sounds like: moch (ch as in loch)",
+                "pronunciation_hint": "moch",
+                "image": "alphabet/words/moch.svg",
+                "alt": "A pig",
+                "notes": "",
+                "buildable": false,
+                "build_letters": []
+              },
+              {
+                "type": "word",
+                "id": "word_mwg",
+                "welsh": "Mwg",
+                "english": "Mug",
+                "category": "home",
+                "audio": "alphabet/words/mwg.mp3",
+                "transcript": "Mwg — sounds like: moog",
+                "pronunciation_hint": "moog",
+                "image": "alphabet/words/mwg.svg",
+                "alt": "A mug",
+                "notes": "On every Welsh kitchen counter",
+                "buildable": true,
+                "build_letters": [
+                  "M",
+                  "W",
+                  "G",
+                  "A",
+                  "L"
+                ]
+              }
+            ],
+            "notes": "",
+            "say_together_refs": [
+              "word_mam",
+              "word_maes",
+              "word_moch",
+              "word_mwg"
+            ]
+          },
+          {
+            "type": "letter",
+            "id": "letter_n",
+            "letter": "N",
+            "name": "N",
+            "description": "Same as English N",
+            "audio": "alphabet/letters/n.mp3",
+            "transcript": "N — same as English N",
+            "pronunciation_hint": "n",
+            "words": [
+              {
+                "type": "word",
+                "id": "word_nos",
+                "welsh": "Nos",
+                "english": "Night",
+                "category": "time",
+                "audio": "alphabet/words/nos.mp3",
+                "transcript": "Nos — sounds like: nohs",
+                "pronunciation_hint": "nohs",
+                "image": "alphabet/words/nos.svg",
+                "alt": "A night sky with stars",
+                "notes": "Nos da = good night — high value phrase",
+                "buildable": true,
+                "build_letters": [
+                  "N",
+                  "O",
+                  "S",
+                  "A",
+                  "T"
+                ]
+              },
+              {
+                "type": "word",
+                "id": "word_neidr",
+                "welsh": "Neidr",
+                "english": "Snake",
+                "category": "animal",
+                "audio": "alphabet/words/neidr.mp3",
+                "transcript": "Neidr — sounds like: NAY-dr",
+                "pronunciation_hint": "NAY-dr",
+                "image": "alphabet/words/neidr.svg",
+                "alt": "A snake",
+                "notes": "",
+                "buildable": false,
+                "build_letters": []
+              },
+              {
+                "type": "word",
+                "id": "word_nyth",
+                "welsh": "Nyth",
+                "english": "Nest",
+                "category": "garden",
+                "audio": "alphabet/words/nyth.mp3",
+                "transcript": "Nyth — sounds like: nith",
+                "pronunciation_hint": "nith",
+                "image": "alphabet/words/nyth.svg",
+                "alt": "A bird's nest",
+                "notes": "Findable in hedges and trees",
+                "buildable": false,
+                "build_letters": []
+              },
+              {
+                "type": "word",
+                "id": "word_napcin",
+                "welsh": "Napcin",
+                "english": "Napkin",
+                "category": "home",
+                "audio": "alphabet/words/napcin.mp3",
+                "transcript": "Napcin — sounds like: NAP-kin",
+                "pronunciation_hint": "NAP-kin",
+                "image": "alphabet/words/napcin.svg",
+                "alt": "A folded napkin",
+                "notes": "Borrowed word",
+                "buildable": false,
+                "build_letters": []
+              }
+            ],
+            "notes": "",
+            "say_together_refs": [
+              "word_nos",
+              "word_neidr",
+              "word_nyth",
+              "word_napcin"
+            ]
+          },
+          {
+            "type": "letter",
+            "id": "letter_o",
+            "letter": "O",
+            "name": "O",
+            "description": "Like 'o' in 'hot'",
+            "audio": "alphabet/letters/o.mp3",
+            "transcript": "O — like o in hot",
+            "pronunciation_hint": "oh",
+            "words": [
+              {
+                "type": "word",
+                "id": "word_oren",
+                "welsh": "Oren",
+                "english": "Orange",
+                "category": "food",
+                "audio": "alphabet/words/oren.mp3",
+                "transcript": "Oren — sounds like: OR-en",
+                "pronunciation_hint": "OR-en",
+                "image": "alphabet/words/oren.svg",
+                "alt": "An orange",
+                "notes": "Colour and fruit — double value",
+                "buildable": false,
+                "build_letters": []
+              },
+              {
+                "type": "word",
+                "id": "word_ochr",
+                "welsh": "Ochr",
+                "english": "Side",
+                "category": "everyday",
+                "audio": "alphabet/words/ochr.mp3",
+                "transcript": "Ochr — sounds like: OCH-r (ch as in loch)",
+                "pronunciation_hint": "OCH-r",
+                "image": "alphabet/words/ochr.svg",
+                "alt": "An arrow pointing to the side",
+                "notes": "",
+                "buildable": false,
+                "build_letters": []
+              },
+              {
+                "type": "word",
+                "id": "word_ogof",
+                "welsh": "Ogof",
+                "english": "Cave",
+                "category": "place",
+                "audio": "alphabet/words/ogof.mp3",
+                "transcript": "Ogof — sounds like: OG-ov",
+                "pronunciation_hint": "OG-ov",
+                "image": "alphabet/words/ogof.svg",
+                "alt": "A cave entrance",
+                "notes": "Many named caves in Wales",
+                "buildable": false,
+                "build_letters": []
+              },
+              {
+                "type": "word",
+                "id": "word_olwyn",
+                "welsh": "Olwyn",
+                "english": "Wheel",
+                "category": "home",
+                "audio": "alphabet/words/olwyn.mp3",
+                "transcript": "Olwyn — sounds like: OL-win",
+                "pronunciation_hint": "OL-win",
+                "image": "alphabet/words/olwyn.svg",
+                "alt": "A wheel",
+                "notes": "On bikes and toy cars — findable in most homes",
+                "buildable": false,
+                "build_letters": []
+              }
+            ],
+            "notes": "",
+            "say_together_refs": [
+              "word_oren",
+              "word_ochr",
+              "word_ogof",
+              "word_olwyn"
+            ]
+          },
+          {
+            "type": "letter",
+            "id": "letter_p",
+            "letter": "P",
+            "name": "P",
+            "description": "Same as English P",
+            "audio": "alphabet/letters/p.mp3",
+            "transcript": "P — same as English P",
+            "pronunciation_hint": "p",
+            "words": [
+              {
+                "type": "word",
+                "id": "word_pel",
+                "welsh": "Pêl",
+                "english": "Ball",
+                "category": "play",
+                "audio": "alphabet/words/pel.mp3",
+                "transcript": "Pêl — sounds like: pail",
+                "pronunciation_hint": "pail",
+                "image": "alphabet/words/pel.svg",
+                "alt": "A ball",
+                "notes": "Circumflex = long vowel",
+                "buildable": true,
+                "build_letters": [
+                  "P",
+                  "Ê",
+                  "L",
+                  "A",
+                  "T"
+                ]
+              },
+              {
+                "type": "word",
+                "id": "word_pensil",
+                "welsh": "Pensil",
+                "english": "Pencil",
+                "category": "school",
+                "audio": "alphabet/words/pensil.mp3",
+                "transcript": "Pensil — sounds like: PEN-sil",
+                "pronunciation_hint": "PEN-sil",
+                "image": "alphabet/words/pensil.svg",
+                "alt": "A pencil",
+                "notes": "",
+                "buildable": false,
+                "build_letters": []
+              },
+              {
+                "type": "word",
+                "id": "word_plat",
+                "welsh": "Plât",
+                "english": "Plate",
+                "category": "home",
+                "audio": "alphabet/words/plat.mp3",
+                "transcript": "Plât — sounds like: plaht",
+                "pronunciation_hint": "plaht",
+                "image": "alphabet/words/plat.svg",
+                "alt": "A dinner plate",
+                "notes": "Circumflex = long vowel",
+                "buildable": false,
+                "build_letters": []
+              },
+              {
+                "type": "word",
+                "id": "word_pot",
+                "welsh": "Pot",
+                "english": "Pot",
+                "category": "garden",
+                "audio": "alphabet/words/pot.mp3",
+                "transcript": "Pot — same as English",
+                "pronunciation_hint": "pot",
+                "image": "alphabet/words/pot.svg",
+                "alt": "A flower pot",
+                "notes": "Borrowed word — flower pots in every garden",
+                "buildable": true,
+                "build_letters": [
+                  "P",
+                  "O",
+                  "T",
+                  "A",
+                  "L"
+                ]
+              }
+            ],
+            "notes": "",
+            "say_together_refs": [
+              "word_pel",
+              "word_pensil",
+              "word_plat",
+              "word_pot",
+              "word_pys_dinner",
+              "word_pasta_dinner"
+            ]
+          },
+          {
+            "type": "sound_pattern",
+            "id": "letter_ph",
+            "letter": "Ph",
+            "name": "Ph (sounds like F — only appears through mutation)",
+            "description": "A sneaky sound — Ph is what P becomes after certain words. It always sounds like F.",
+            "audio": "alphabet/letters/ph.mp3",
+            "transcript": "Ph sounds like F. It appears when P changes shape after certain words — this is called mutation.",
+            "pronunciation_hint": "f",
+            "examples": [
+              {
+                "welsh": "ei phêl hi",
+                "english": "her ball",
+                "highlight_chars": [
+                  3,
+                  4
+                ],
+                "audio": "alphabet/phrases/ei-phel-hi.mp3",
+                "transcript": "ei phêl hi — sounds like: ay fail hee",
+                "image": "alphabet/words/pel.svg",
+                "alt": "A ball belonging to a girl",
+                "notes": "P becomes Ph after 'ei' (her)"
+              },
+              {
+                "welsh": "ei phensil hi",
+                "english": "her pencil",
+                "highlight_chars": [
+                  3,
+                  4
+                ],
+                "audio": "alphabet/phrases/ei-phensil-hi.mp3",
+                "transcript": "ei phensil hi — sounds like: ay FEN-sil hee",
+                "image": "alphabet/words/pensil.svg",
+                "alt": "A pencil belonging to a girl",
+                "notes": "Same mutation pattern — very common in school"
+              },
+              {
+                "welsh": "ei phlât hi",
+                "english": "her plate",
+                "highlight_chars": [
+                  3,
+                  4
+                ],
+                "audio": "alphabet/phrases/ei-phlat-hi.mp3",
+                "transcript": "ei phlât hi — sounds like: ay thlat hee",
+                "image": "alphabet/words/plat.svg",
+                "alt": "A plate belonging to a girl",
+                "notes": "Another everyday example of the same mutation"
+              }
+            ],
+            "notes": "Sneaky sound. Show Option C copy in UI. Ph only appears through mutation — never in base word forms.",
+            "say_together_refs": []
+          },
+          {
+            "type": "letter",
+            "id": "letter_r",
+            "letter": "R",
+            "name": "R (rolled)",
+            "description": "Rolled — like a Scottish or Spanish R",
+            "audio": "alphabet/letters/r.mp3",
+            "transcript": "R — rolled, like a Scottish or Spanish R",
+            "pronunciation_hint": "rolled r",
+            "words": [
+              {
+                "type": "word",
+                "id": "word_radio",
+                "welsh": "Radio",
+                "english": "Radio",
+                "category": "home",
+                "audio": "alphabet/words/radio.mp3",
+                "transcript": "Radio — sounds like: RAD-ee-oh",
+                "pronunciation_hint": "RAD-ee-oh",
+                "image": "alphabet/words/radio.svg",
+                "alt": "A radio",
+                "notes": "",
+                "buildable": false,
+                "build_letters": []
+              },
+              {
+                "type": "word",
+                "id": "word_rhedeg",
+                "welsh": "Rhedeg",
+                "english": "To run",
+                "category": "action",
+                "audio": "alphabet/words/rhedeg.mp3",
+                "transcript": "Rhedeg — sounds like: RHEH-deg",
+                "pronunciation_hint": "RHEH-deg",
+                "image": "alphabet/words/rhedeg.svg",
+                "alt": "Someone running",
+                "notes": "Starts with Rh — see Rh entry",
+                "buildable": false,
+                "build_letters": []
+              },
+              {
+                "type": "word",
+                "id": "word_rwber",
+                "welsh": "Rwber",
+                "english": "Rubber / eraser",
+                "category": "home",
+                "audio": "alphabet/words/rwber.mp3",
+                "transcript": "Rwber — sounds like: ROO-ber",
+                "pronunciation_hint": "ROO-ber",
+                "image": "alphabet/words/rwber.svg",
+                "alt": "A rubber eraser",
+                "notes": "Borrowed — pencil case staple",
+                "buildable": false,
+                "build_letters": []
+              },
+              {
+                "type": "word",
+                "id": "word_rholyn",
+                "welsh": "Rholyn",
+                "english": "Roll / roller",
+                "category": "home",
+                "audio": "alphabet/words/rholyn.mp3",
+                "transcript": "Rholyn — sounds like: RHOL-in",
+                "pronunciation_hint": "RHOL-in",
+                "image": "alphabet/words/rholyn.svg",
+                "alt": "A rolling pin or roller",
+                "notes": "",
+                "buildable": false,
+                "build_letters": []
+              }
+            ],
+            "notes": "",
+            "say_together_refs": [
+              "word_radio",
+              "word_rwber"
+            ]
+          },
+          {
+            "type": "letter",
+            "id": "letter_rh",
+            "letter": "Rh",
+            "name": "Rh (breathy R — no English equivalent)",
+            "description": "A breathy R — no English equivalent. Like R but with a puff of air.",
+            "audio": "alphabet/letters/rh.mp3",
+            "transcript": "Rh — a breathy R with no English equivalent",
+            "pronunciation_hint": "breathy r",
+            "words": [
+              {
+                "type": "word",
+                "id": "word_rhew",
+                "welsh": "Rhew",
+                "english": "Frost / ice",
+                "category": "nature",
+                "audio": "alphabet/words/rhew.mp3",
+                "transcript": "Rhew — sounds like: rhew (breathy r, then ew as in dew)",
+                "pronunciation_hint": "rhew",
+                "image": "alphabet/words/rhew.svg",
+                "alt": "Frost on a window",
+                "notes": "",
+                "buildable": false,
+                "build_letters": []
+              },
+              {
+                "type": "word",
+                "id": "word_rhif",
+                "welsh": "Rhif",
+                "english": "Number",
+                "category": "school",
+                "audio": "alphabet/words/rhif.mp3",
+                "transcript": "Rhif — sounds like: rheev",
+                "pronunciation_hint": "rheev",
+                "image": "alphabet/words/rhif.svg",
+                "alt": "Numbers on a page",
+                "notes": "School-relevant",
+                "buildable": false,
+                "build_letters": []
+              },
+              {
+                "type": "word",
+                "id": "word_rhaff",
+                "welsh": "Rhaff",
+                "english": "Rope",
+                "category": "play",
+                "audio": "alphabet/words/rhaff.mp3",
+                "transcript": "Rhaff — sounds like: rhaf",
+                "pronunciation_hint": "rhaf",
+                "image": "alphabet/words/rhaff.svg",
+                "alt": "A coil of rope",
+                "notes": "",
+                "buildable": false,
+                "build_letters": []
+              },
+              {
+                "type": "word",
+                "id": "word_rhaw",
+                "welsh": "Rhaw",
+                "english": "Spade / shovel",
+                "category": "garden",
+                "audio": "alphabet/words/rhaw.mp3",
+                "transcript": "Rhaw — sounds like: rhow (rhymes with cow)",
+                "pronunciation_hint": "rhow",
+                "image": "alphabet/words/rhaw.svg",
+                "alt": "A garden spade",
+                "notes": "In every Welsh garden shed",
+                "buildable": false,
+                "build_letters": []
+              }
+            ],
+            "notes": "",
+            "say_together_refs": [
+              "word_rhedeg",
+              "word_rholyn",
+              "word_rhew",
+              "word_rhif",
+              "word_rhaff",
+              "word_rhaw"
+            ]
+          },
+          {
+            "type": "letter",
+            "id": "letter_s",
+            "letter": "S",
+            "name": "S (always unvoiced — never Z sound)",
+            "description": "Always the hiss of S — never buzzes like Z",
+            "audio": "alphabet/letters/s.mp3",
+            "transcript": "S — always unvoiced like S in sun, never like Z",
+            "pronunciation_hint": "s as in sun",
+            "words": [
+              {
+                "type": "word",
+                "id": "word_seren",
+                "welsh": "Seren",
+                "english": "Star",
+                "category": "nature",
+                "audio": "alphabet/words/seren.mp3",
+                "transcript": "Seren — sounds like: SER-en",
+                "pronunciation_hint": "SER-en",
+                "image": "alphabet/words/seren.svg",
+                "alt": "A star in the night sky",
+                "notes": "",
+                "buildable": false,
+                "build_letters": []
+              },
+              {
+                "type": "word",
+                "id": "word_siocled",
+                "welsh": "Siocled",
+                "english": "Chocolate",
+                "category": "food",
+                "audio": "alphabet/words/siocled.mp3",
+                "transcript": "Siocled — sounds like: SHOK-led",
+                "pronunciation_hint": "SHOK-led",
+                "image": "alphabet/words/siocled.svg",
+                "alt": "A bar of chocolate",
+                "notes": "Si = sh sound in South Wales",
+                "buildable": false,
+                "build_letters": []
+              },
+              {
+                "type": "word",
+                "id": "word_sgwar",
+                "welsh": "Sgwâr",
+                "english": "Square / town square",
+                "category": "place",
+                "audio": "alphabet/words/sgwar.mp3",
+                "transcript": "Sgwâr — sounds like: sgwar",
+                "pronunciation_hint": "sgwar",
+                "image": "alphabet/words/sgwar.svg",
+                "alt": "A town square",
+                "notes": "Very South Wales",
+                "buildable": false,
+                "build_letters": []
+              },
+              {
+                "type": "word",
+                "id": "word_soser",
+                "welsh": "Soser",
+                "english": "Saucer",
+                "category": "home",
+                "audio": "alphabet/words/soser.mp3",
+                "transcript": "Soser — sounds like: SOS-er",
+                "pronunciation_hint": "SOS-er",
+                "image": "alphabet/words/soser.svg",
+                "alt": "A cup and saucer",
+                "notes": "On every Welsh tea tray",
+                "buildable": false,
+                "build_letters": []
+              }
+            ],
+            "notes": "",
+            "say_together_refs": [
+              "word_seren",
+              "word_siocled",
+              "word_sgwar",
+              "word_soser",
+              "word_sos_dinner"
+            ]
+          },
+          {
+            "type": "letter",
+            "id": "letter_t",
+            "letter": "T",
+            "name": "T",
+            "description": "Same as English T",
+            "audio": "alphabet/letters/t.mp3",
+            "transcript": "T — same as English T",
+            "pronunciation_hint": "t",
+            "words": [
+              {
+                "type": "word",
+                "id": "word_ty",
+                "welsh": "Tŷ",
+                "english": "House",
+                "category": "home",
+                "audio": "alphabet/words/ty.mp3",
+                "transcript": "Tŷ — sounds like: tee",
+                "pronunciation_hint": "tee",
+                "image": "alphabet/words/ty.svg",
+                "alt": "A house",
+                "notes": "Circumflex = long vowel. Very high frequency.",
+                "buildable": true,
+                "build_letters": [
+                  "T",
+                  "Ŷ",
+                  "A",
+                  "R"
+                ]
+              },
+              {
+                "type": "word",
+                "id": "word_tad",
+                "welsh": "Tad",
+                "english": "Dad / Father",
+                "category": "family",
+                "audio": "alphabet/words/tad.mp3",
+                "transcript": "Tad — sounds like: tahd",
+                "pronunciation_hint": "tahd",
+                "image": "alphabet/words/tad.svg",
+                "alt": "A dad with a child",
+                "notes": "",
+                "buildable": true,
+                "build_letters": [
+                  "T",
+                  "A",
+                  "D",
+                  "M",
+                  "R"
+                ]
+              },
+              {
+                "type": "word",
+                "id": "word_tren",
+                "welsh": "Tren",
+                "english": "Train",
+                "category": "transport",
+                "audio": "alphabet/words/tren.mp3",
+                "transcript": "Tren — sounds like: tren",
+                "pronunciation_hint": "tren",
+                "image": "alphabet/words/tren.svg",
+                "alt": "A train",
+                "notes": "",
+                "buildable": false,
+                "build_letters": []
+              },
+              {
+                "type": "word",
+                "id": "word_tegell",
+                "welsh": "Tegell",
+                "english": "Kettle",
+                "category": "home",
+                "audio": "alphabet/words/tegell.mp3",
+                "transcript": "Tegell — sounds like: TEG-eth",
+                "pronunciation_hint": "TEG-eth",
+                "image": "alphabet/words/tegell.svg",
+                "alt": "A kettle",
+                "notes": "The most Welsh of all home objects",
+                "buildable": false,
+                "build_letters": []
+              }
+            ],
+            "notes": "",
+            "say_together_refs": [
+              "word_ty",
+              "word_tad",
+              "word_tren",
+              "word_tegell",
+              "word_torth",
+              "word_tlws",
+              "word_tatws_dinner"
+            ]
+          },
+          {
+            "type": "letter",
+            "id": "letter_th",
+            "letter": "Th",
+            "name": "Th (like 'think' — never voiced)",
+            "description": "Like 'th' in 'think' — never voiced like 'the'",
+            "audio": "alphabet/letters/th.mp3",
+            "transcript": "Th — like th in think, never like th in the",
+            "pronunciation_hint": "th as in think",
+            "words": [
+              {
+                "type": "word",
+                "id": "word_theatr",
+                "welsh": "Theatr",
+                "english": "Theatre",
+                "category": "place",
+                "audio": "alphabet/words/theatr.mp3",
+                "transcript": "Theatr — sounds like: THEH-atr",
+                "pronunciation_hint": "THEH-atr",
+                "image": "alphabet/words/theatr.svg",
+                "alt": "A theatre building",
+                "notes": "",
+                "buildable": false,
+                "build_letters": []
+              },
+              {
+                "type": "word",
+                "id": "word_thermomedr",
+                "welsh": "Thermomedr",
+                "english": "Thermometer",
+                "category": "home",
+                "audio": "alphabet/words/thermomedr.mp3",
+                "transcript": "Thermomedr — sounds like: ther-MOM-edr",
+                "pronunciation_hint": "ther-MOM-edr",
+                "image": "alphabet/words/thermomedr.svg",
+                "alt": "A thermometer",
+                "notes": "Borrowed — easy connection for parents",
+                "buildable": false,
+                "build_letters": []
+              },
+              {
+                "type": "word",
+                "id": "word_torth",
+                "welsh": "Torth",
+                "english": "Loaf",
+                "category": "food",
+                "audio": "alphabet/words/torth.mp3",
+                "transcript": "Torth — sounds like: torth",
+                "pronunciation_hint": "torth",
+                "image": "alphabet/words/torth.svg",
+                "alt": "A loaf of bread",
+                "notes": "Torth fara (loaf of bread) is very common",
+                "buildable": false,
+                "build_letters": []
+              },
+              {
+                "type": "word",
+                "id": "word_tlws",
+                "welsh": "Tlws",
+                "english": "Pretty / brooch",
+                "category": "home",
+                "audio": "alphabet/words/tlws.mp3",
+                "transcript": "Tlws — sounds like: tlooss",
+                "pronunciation_hint": "tlooss",
+                "image": "alphabet/words/tlws.svg",
+                "alt": "A decorative brooch",
+                "notes": "Covers both an adjective and a findable object",
+                "buildable": false,
+                "build_letters": []
+              }
+            ],
+            "notes": "",
+            "say_together_refs": [
+              "word_theatr",
+              "word_thermomedr"
+            ]
+          },
+          {
+            "type": "letter",
+            "id": "letter_u",
+            "letter": "U",
+            "name": "U (South Wales: sounds like I in 'bit')",
+            "description": "In South Wales, sounds like the I in 'bit'",
+            "audio": "alphabet/letters/u.mp3",
+            "transcript": "U — in South Wales sounds like i in bit",
+            "pronunciation_hint": "i as in bit",
+            "words": [
+              {
+                "type": "word",
+                "id": "word_un",
+                "welsh": "Un",
+                "english": "One",
+                "category": "number",
+                "audio": "alphabet/words/un.mp3",
+                "transcript": "Un — sounds like: een",
+                "pronunciation_hint": "een",
+                "image": "alphabet/words/un.svg",
+                "alt": "The number one",
+                "notes": "",
+                "buildable": false,
+                "build_letters": []
+              },
+              {
+                "type": "word",
+                "id": "word_uchel",
+                "welsh": "Uchel",
+                "english": "High / loud",
+                "category": "everyday",
+                "audio": "alphabet/words/uchel.mp3",
+                "transcript": "Uchel — sounds like: ICH-el",
+                "pronunciation_hint": "ICH-el",
+                "image": "alphabet/words/uchel.svg",
+                "alt": "An arrow pointing high up",
+                "notes": "Great for play — how high, how loud?",
+                "buildable": false,
+                "build_letters": []
+              },
+              {
+                "type": "word",
+                "id": "word_uwch",
+                "welsh": "Uwch",
+                "english": "Above / higher",
+                "category": "everyday",
+                "audio": "alphabet/words/uwch.mp3",
+                "transcript": "Uwch — sounds like: ooch",
+                "pronunciation_hint": "ooch",
+                "image": "alphabet/words/uwch.svg",
+                "alt": "An arrow pointing upward",
+                "notes": "",
+                "buildable": false,
+                "build_letters": []
+              },
+              {
+                "type": "word",
+                "id": "word_unfan",
+                "welsh": "Unfan",
+                "english": "Same spot / on the spot",
+                "category": "action",
+                "audio": "alphabet/words/unfan.mp3",
+                "transcript": "Unfan — sounds like: IN-van",
+                "pronunciation_hint": "IN-van",
+                "image": "alphabet/words/unfan.svg",
+                "alt": "Feet jumping on the spot",
+                "notes": "Neidio ar yr unfan — jumping on the spot — school PE word",
+                "buildable": false,
+                "build_letters": []
+              }
+            ],
+            "notes": "",
+            "say_together_refs": [
+              "word_un",
+              "word_uchel",
+              "word_uwch",
+              "word_unfan"
+            ]
+          },
+          {
+            "type": "letter",
+            "id": "letter_w",
+            "letter": "W",
+            "name": "W (vowel — like 'oo' in book)",
+            "description": "Acts as a vowel — sounds like 'oo' in book",
+            "audio": "alphabet/letters/w.mp3",
+            "transcript": "W — acts as a vowel, sounds like oo in book",
+            "pronunciation_hint": "oo as in book",
+            "words": [
+              {
+                "type": "word",
+                "id": "word_wy",
+                "welsh": "Wy",
+                "english": "Egg",
+                "category": "food",
+                "audio": "alphabet/words/wy.mp3",
+                "transcript": "Wy — sounds like: ooee",
+                "pronunciation_hint": "ooee",
+                "image": "alphabet/words/wy.svg",
+                "alt": "An egg",
+                "notes": "",
+                "buildable": true,
+                "build_letters": [
+                  "W",
+                  "Y",
+                  "A",
+                  "I"
+                ]
+              },
+              {
+                "type": "word",
+                "id": "word_wrth",
+                "welsh": "Wrth",
+                "english": "By / next to",
+                "category": "everyday",
+                "audio": "alphabet/words/wrth.mp3",
+                "transcript": "Wrth — sounds like: oorth",
+                "pronunciation_hint": "oorth",
+                "image": "alphabet/words/wrth.svg",
+                "alt": "An object next to another",
+                "notes": "High-frequency location word",
+                "buildable": false,
+                "build_letters": []
+              },
+              {
+                "type": "word",
+                "id": "word_wyneb",
+                "welsh": "Wyneb",
+                "english": "Face",
+                "category": "body",
+                "audio": "alphabet/words/wyneb.mp3",
+                "transcript": "Wyneb — sounds like: UN-eb",
+                "pronunciation_hint": "UN-eb",
+                "image": "alphabet/words/wyneb.svg",
+                "alt": "A smiling face",
+                "notes": "",
+                "buildable": false,
+                "build_letters": []
+              },
+              {
+                "type": "word",
+                "id": "word_wal",
+                "welsh": "Wal",
+                "english": "Wall",
+                "category": "home",
+                "audio": "alphabet/words/wal.mp3",
+                "transcript": "Wal — sounds like: wahl",
+                "pronunciation_hint": "wahl",
+                "image": "alphabet/words/wal.svg",
+                "alt": "A wall",
+                "notes": "In every room — great for pointing games",
+                "buildable": true,
+                "build_letters": [
+                  "W",
+                  "A",
+                  "L",
+                  "R",
+                  "N"
+                ]
+              }
+            ],
+            "notes": "",
+            "say_together_refs": [
+              "word_wy",
+              "word_wrth",
+              "word_wyneb",
+              "word_wal"
+            ]
+          },
+          {
+            "type": "letter",
+            "id": "letter_y",
+            "letter": "Y",
+            "name": "Y (two sounds — 'uh' and 'ee')",
+            "description": "Makes two sounds: 'uh' in the middle of longer words, 'ee' at the end or in short words",
+            "audio": "alphabet/letters/y.mp3",
+            "transcript": "Y — two sounds: uh in the middle of longer words, ee at the end",
+            "pronunciation_hint": "uh or ee depending on position",
+            "words": [
+              {
+                "type": "word",
+                "id": "word_ysgol",
+                "welsh": "Ysgol",
+                "english": "School / ladder",
+                "category": "place",
+                "audio": "alphabet/words/ysgol.mp3",
+                "transcript": "Ysgol — sounds like: US-gol",
+                "pronunciation_hint": "US-gol",
+                "image": "alphabet/words/ysgol.svg",
+                "alt": "A school building",
+                "notes": "Dual meaning — school and ladder",
+                "buildable": false,
+                "build_letters": []
+              },
+              {
+                "type": "word",
+                "id": "word_ysbyty",
+                "welsh": "Ysbyty",
+                "english": "Hospital",
+                "category": "place",
+                "audio": "alphabet/words/ysbyty.mp3",
+                "transcript": "Ysbyty — sounds like: us-BUH-tee",
+                "pronunciation_hint": "us-BUH-tee",
+                "image": "alphabet/words/ysbyty.svg",
+                "alt": "A hospital building",
+                "notes": "",
+                "buildable": false,
+                "build_letters": []
+              },
+              {
+                "type": "word",
+                "id": "word_ymlaen",
+                "welsh": "Ymlaen",
+                "english": "Forward / on",
+                "category": "everyday",
+                "audio": "alphabet/words/ymlaen.mp3",
+                "transcript": "Ymlaen — sounds like: um-LAIN",
+                "pronunciation_hint": "um-LAIN",
+                "image": "alphabet/words/ymlaen.svg",
+                "alt": "An arrow pointing forward",
+                "notes": "Common school instruction",
+                "buildable": false,
+                "build_letters": []
+              },
+              {
+                "type": "word",
+                "id": "word_ystafell",
+                "welsh": "Ystafell",
+                "english": "Room",
+                "category": "home",
+                "audio": "alphabet/words/ystafell.mp3",
+                "transcript": "Ystafell — sounds like: us-TAV-eth",
+                "pronunciation_hint": "us-TAV-eth",
+                "image": "alphabet/words/ystafell.svg",
+                "alt": "A room in a house",
+                "notes": "Ystafell wely (bedroom) is an early school phrase",
+                "buildable": false,
+                "build_letters": []
+              }
+            ],
+            "notes": "",
+            "say_together_refs": [
+              "word_ysgol",
+              "word_ysbyty",
+              "word_ymlaen",
+              "word_ystafell"
+            ]
+          }
+        ],
+        "parent_supplemental": [
+          {
+            "type": "supplemental_activity",
+            "id": "supp_listen_identify",
+            "title": "Listen and find",
+            "mechanic": "listen_identify",
+            "prompt": "Tap the letter you hear",
+            "content_refs": [
+              "letter_a",
+              "letter_b",
+              "letter_c",
+              "letter_d",
+              "letter_e"
+            ],
+            "alternative": "Read the letters aloud in order instead",
+            "notes": "Randomly selects a letter from content_refs each session, then pulls that letter's words from its say_together_refs pool so the practice words always match the letter shown.",
+            "trackable": true
+          }
+        ],
+        "family_activity": [
+          {
+            "type": "family_activity",
+            "id": "activity_say_together",
+            "title": "Say it together",
+            "mechanic": "record_playback",
+            "prompt": "Everyone say it at the same time. Ready?",
+            "prompt_welsh": "Pawb gyda'i gilydd. Barod?",
+            "content_ref": null,
+            "content_refs": null,
+            "alternative": "Point to something beginning with this letter instead",
+            "notes": "App selects the current letter, then draws words from that letter's say_together_refs (its own examples plus any platform-wide words that genuinely start with the letter, digraph-aware). content_ref set at runtime from that pool.",
+            "feedback": {
+              "thumbs": null,
+              "topic_feedback": true
+            }
+          },
+          {
+            "type": "family_activity",
+            "id": "activity_word_builder_arrange",
+            "title": "Build the word",
+            "mechanic": "word_builder_arrange",
+            "prompt": "The letters are all here — put them in the right order to make the Welsh word",
+            "prompt_welsh": "Trefnwch y llythrennau i wneud y gair",
+            "content_refs": [
+              "word_ci",
+              "word_cath",
+              "word_mam",
+              "word_tad",
+              "word_wy",
+              "word_ty",
+              "word_bag",
+              "word_jam",
+              "word_het",
+              "word_pel",
+              "word_nos",
+              "word_ia",
+              "word_wal",
+              "word_mwg",
+              "word_pot"
+            ],
+            "alternative": "Say the word aloud while someone else arranges the letters",
+            "notes": "Easier mechanic — all letters provided including decoys. App selects word from buildable subset.",
+            "feedback": {
+              "thumbs": null,
+              "topic_feedback": true
+            }
+          },
+          {
+            "type": "family_activity",
+            "id": "activity_word_builder_tap",
+            "title": "Spell it out",
+            "mechanic": "word_builder_tap",
+            "prompt": "Tap the letters one by one to spell the Welsh word",
+            "prompt_welsh": "Tapiwch y llythrennau i sillafu'r gair",
+            "content_refs": [
+              "word_ci",
+              "word_cath",
+              "word_mam",
+              "word_tad",
+              "word_wy",
+              "word_ty",
+              "word_bag",
+              "word_jam",
+              "word_het",
+              "word_pel",
+              "word_nos",
+              "word_ia",
+              "word_wal",
+              "word_mwg",
+              "word_pot"
+            ],
+            "alternative": "Point to each letter in order instead of tapping",
+            "notes": "Harder mechanic — tap from full alphabet. Unlocks after word_builder_arrange completed once.",
+            "feedback": {
+              "thumbs": null,
+              "topic_feedback": true
+            }
+          }
+        ],
+        "family_challenge": [
+          {
+            "type": "family_challenge",
+            "id": "challenge_secret_letter",
+            "title": "Secret letter",
+            "category": "observation",
+            "prompt": "One person picks a secret letter. Everyone else has to find something in the room beginning with that letter. First to find one wins.",
+            "content_ref": null,
+            "content_refs": null,
+            "duration": "instant",
+            "alternative": "Point to things instead of naming them — family guesses the letter",
+            "notes": "No Welsh required. Works on first use.",
+            "feedback": {
+              "thumbs": null,
+              "topic_feedback": true
+            }
+          },
+          {
+            "type": "family_challenge",
+            "id": "challenge_repeat_and_beat",
+            "title": "Repeat and beat",
+            "category": "competitive",
+            "prompt": "One person says a Welsh word. The next person repeats it and adds one more. How long can the chain get?",
+            "content_ref": null,
+            "content_refs": null,
+            "duration": "instant",
+            "alternative": "Take turns pointing to things instead — no speaking required",
+            "notes": "Core play challenge. Memory game mechanic.",
+            "feedback": {
+              "thumbs": null,
+              "topic_feedback": true
+            }
+          },
+          {
+            "type": "family_challenge",
+            "id": "challenge_letter_of_the_day",
+            "title": "Letter of the day",
+            "category": "ritual",
+            "prompt": "This is today's letter. Every time someone spots something beginning with it — inside or outside — call it out in Welsh.",
+            "content_ref": null,
+            "content_refs": null,
+            "duration": "one_day",
+            "alternative": "Just point when you spot something — no Welsh needed to join in",
+            "notes": "Ritual mechanic. App selects the letter. Designed to recur daily.",
+            "feedback": {
+              "thumbs": null,
+              "topic_feedback": true
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "dinner",
+      "title_welsh": "Amser Bwyd",
+      "title_english": "Dinner Time",
+      "dialect": "south_wales",
+      "version": "1.1",
+      "notes": "Full topic. Evening family meal at home. Ages 3-5 child, parent as primary learner. Everyday foods, drinks/extras, and likes/dislikes/fullness phrases. Two new mechanics: plate_builder, menu_roleplay. Two new real-world challenges: taste_test, clear_the_table. All Welsh to be verified by a native South Wales speaker before release — see FLAG FOR REVIEW notes. v1.1: added mealtime instruction phrases (almost ready, ready, wait, come and eat, wash hands, sit down) in parent-to-child South Wales register.",
+      "layers": {
+        "parent_reference": [
+          {
+            "type": "word",
+            "id": "word_plat_dinner",
+            "welsh": "Plât",
+            "english": "Plate",
+            "category": "table",
+            "audio": "dinner/words/plat.mp3",
+            "transcript": "Plât — sounds like: plaht",
+            "pronunciation_hint": "plaht",
+            "image": "dinner/words/plat.svg",
+            "alt": "A dinner plate",
+            "notes": "Circumflex = long vowel"
+          },
+          {
+            "type": "word",
+            "id": "word_cwpan_dinner",
+            "welsh": "Cwpan",
+            "english": "Cup",
+            "category": "table",
+            "audio": "dinner/words/cwpan.mp3",
+            "transcript": "Cwpan — sounds like: KOO-pan",
+            "pronunciation_hint": "KOO-pan",
+            "image": "dinner/words/cwpan.svg",
+            "alt": "A cup",
+            "notes": ""
+          },
+          {
+            "type": "word",
+            "id": "word_fforc_dinner",
+            "welsh": "Fforc",
+            "english": "Fork",
+            "category": "table",
+            "audio": "dinner/words/fforc.mp3",
+            "transcript": "Fforc — sounds like: fork",
+            "pronunciation_hint": "fork",
+            "image": "dinner/words/fforc.svg",
+            "alt": "A fork",
+            "notes": "Ff sounds like English F"
+          },
+          {
+            "type": "word",
+            "id": "word_llwy_dinner",
+            "welsh": "Llwy",
+            "english": "Spoon",
+            "category": "table",
+            "audio": "dinner/words/llwy.mp3",
+            "transcript": "Llwy — sounds like: thlooee",
+            "pronunciation_hint": "thlooee",
+            "image": "dinner/words/llwy.svg",
+            "alt": "A spoon",
+            "notes": "Ll has no English equivalent — tongue to roof of mouth, breathe out the sides"
+          },
+          {
+            "type": "word",
+            "id": "word_cyllell_dinner",
+            "welsh": "Cyllell",
+            "english": "Knife",
+            "category": "table",
+            "audio": "dinner/words/cyllell.mp3",
+            "transcript": "Cyllell — sounds like: KUTH-eth (ll breathy both times)",
+            "pronunciation_hint": "KUTH-eth",
+            "image": "dinner/words/cyllell.svg",
+            "alt": "A table knife",
+            "notes": "Two Ll sounds. Worth a pronunciation note in UI."
+          },
+          {
+            "type": "word",
+            "id": "word_bwrdd_dinner",
+            "welsh": "Bwrdd",
+            "english": "Table",
+            "category": "table",
+            "audio": "dinner/words/bwrdd.mp3",
+            "transcript": "Bwrdd — sounds like: boorth (rhymes with worth)",
+            "pronunciation_hint": "boorth",
+            "image": "dinner/words/bwrdd.svg",
+            "alt": "A dinner table laid for a meal",
+            "notes": "Same word as alphabet topic — audio can be shared"
+          },
+          {
+            "type": "word",
+            "id": "word_tatws_dinner",
+            "welsh": "Tatws",
+            "english": "Potatoes",
+            "category": "food",
+            "audio": "dinner/words/tatws.mp3",
+            "transcript": "Tatws — sounds like: TAT-oos",
+            "pronunciation_hint": "TAT-oos",
+            "image": "dinner/words/tatws.svg",
+            "alt": "A pile of potatoes",
+            "notes": "Base form. Mutates to datws after mwy o."
+          },
+          {
+            "type": "word",
+            "id": "word_pys_dinner",
+            "welsh": "Pys",
+            "english": "Peas",
+            "category": "food",
+            "audio": "dinner/words/pys.mp3",
+            "transcript": "Pys — sounds like: pees",
+            "pronunciation_hint": "pees",
+            "image": "dinner/words/pys.svg",
+            "alt": "A spoonful of green peas",
+            "notes": ""
+          },
+          {
+            "type": "word",
+            "id": "word_cig_dinner",
+            "welsh": "Cig",
+            "english": "Meat",
+            "category": "food",
+            "audio": "dinner/words/cig.mp3",
+            "transcript": "Cig — sounds like: keeg",
+            "pronunciation_hint": "keeg",
+            "image": "dinner/words/cig.svg",
+            "alt": "A portion of cooked meat",
+            "notes": ""
+          },
+          {
+            "type": "word",
+            "id": "word_pasta_dinner",
+            "welsh": "Pasta",
+            "english": "Pasta",
+            "category": "food",
+            "audio": "dinner/words/pasta.mp3",
+            "transcript": "Pasta — sounds like: PAST-a",
+            "pronunciation_hint": "PAST-a",
+            "image": "dinner/words/pasta.svg",
+            "alt": "A bowl of pasta",
+            "notes": "Borrowed word — easy win for parents"
+          },
+          {
+            "type": "word",
+            "id": "word_llysiau_dinner",
+            "welsh": "Llysiau",
+            "english": "Vegetables",
+            "category": "food",
+            "audio": "dinner/words/llysiau.mp3",
+            "transcript": "Llysiau — sounds like: THLUS-yeye",
+            "pronunciation_hint": "THLUS-yeye",
+            "image": "dinner/words/llysiau.svg",
+            "alt": "An assortment of vegetables",
+            "notes": ""
+          },
+          {
+            "type": "word",
+            "id": "word_caws_dinner",
+            "welsh": "Caws",
+            "english": "Cheese",
+            "category": "food",
+            "audio": "dinner/words/caws.mp3",
+            "transcript": "Caws — sounds like: kowss",
+            "pronunciation_hint": "kowss",
+            "image": "dinner/words/caws.svg",
+            "alt": "A wedge of cheese",
+            "notes": ""
+          },
+          {
+            "type": "word",
+            "id": "word_bara_dinner",
+            "welsh": "Bara",
+            "english": "Bread",
+            "category": "food",
+            "audio": "dinner/words/bara.mp3",
+            "transcript": "Bara — sounds like: BAR-a",
+            "pronunciation_hint": "BAR-a",
+            "image": "dinner/words/bara.svg",
+            "alt": "Slices of bread",
+            "notes": "Shared with alphabet topic"
+          },
+          {
+            "type": "word",
+            "id": "word_llaeth_dinner",
+            "welsh": "Llaeth",
+            "english": "Milk",
+            "category": "food",
+            "audio": "dinner/words/llaeth.mp3",
+            "transcript": "Llaeth — sounds like: thleye-th",
+            "pronunciation_hint": "thleye-th",
+            "image": "dinner/words/llaeth.svg",
+            "alt": "A glass of milk",
+            "notes": "South Wales word. North Wales: llefrith."
+          },
+          {
+            "type": "word",
+            "id": "word_dwr_dinner",
+            "welsh": "Dŵr",
+            "english": "Water",
+            "category": "food",
+            "audio": "dinner/words/dwr.mp3",
+            "transcript": "Dŵr — sounds like: door",
+            "pronunciation_hint": "door",
+            "image": "dinner/words/dwr.svg",
+            "alt": "A glass of water",
+            "notes": "Circumflex = long vowel"
+          },
+          {
+            "type": "word",
+            "id": "word_halen_dinner",
+            "welsh": "Halen",
+            "english": "Salt",
+            "category": "food",
+            "audio": "dinner/words/halen.mp3",
+            "transcript": "Halen — sounds like: HAL-en",
+            "pronunciation_hint": "HAL-en",
+            "image": "dinner/words/halen.svg",
+            "alt": "A salt shaker",
+            "notes": ""
+          },
+          {
+            "type": "word",
+            "id": "word_sos_dinner",
+            "welsh": "Sos",
+            "english": "Sauce",
+            "category": "food",
+            "audio": "dinner/words/sos.mp3",
+            "transcript": "Sos — sounds like: sohss",
+            "pronunciation_hint": "sohss",
+            "image": "dinner/words/sos.svg",
+            "alt": "A bottle of sauce",
+            "notes": "Sos coch = ketchup (literally 'red sauce'), very common with kids"
+          },
+          {
+            "type": "phrase",
+            "id": "phrase_ga_i_fwy_o_datws",
+            "blocks": [
+              "block_ga_i",
+              "block_mwy_o",
+              "block_tatws"
+            ],
+            "welsh_assembled": "Ga i fwy o datws",
+            "english": "Can I have more potatoes",
+            "english_natural": "More potatoes please",
+            "audio": "dinner/phrases/ga-i-fwy-o-datws.mp3",
+            "transcript": "Ga i fwy o datws — gah ee voo-ee oh dat-oos",
+            "pronunciation_hint": "gah ee voo-ee oh dat-oos",
+            "image": "dinner/phrases/ga-i-fwy-o-datws.svg",
+            "alt": "A bowl of potatoes being passed across a dinner table",
+            "context": "Said at the dinner table when you want more food",
+            "notes": "mwy o triggers soft mutation: tatws becomes datws"
+          },
+          {
+            "type": "phrase",
+            "id": "phrase_diolch",
+            "blocks": [
+              "block_diolch"
+            ],
+            "welsh_assembled": "Diolch",
+            "english": "Thank you",
+            "english_natural": "Thank you",
+            "audio": "dinner/phrases/diolch.mp3",
+            "transcript": "Diolch — dee-olch (ch as in loch)",
+            "pronunciation_hint": "dee-olch",
+            "image": "dinner/phrases/diolch.svg",
+            "alt": "A smiling person saying thank you",
+            "context": "Said whenever something is passed or received at the table",
+            "notes": "High frequency. Same block used across all topics."
+          },
+          {
+            "type": "phrase",
+            "id": "phrase_gair_halen",
+            "blocks": [
+              "block_gai_r",
+              "block_halen",
+              "block_os_gwelwch_yn_dda"
+            ],
+            "welsh_assembled": "Ga i'r halen, os gwelwch yn dda",
+            "english": "Can I have the salt, if you please",
+            "english_natural": "Can I have the salt please",
+            "audio": "dinner/phrases/gair-halen.mp3",
+            "transcript": "Ga i'r halen, os gwelwch yn dda — gah eer HAL-en, os gwel-ooch un tha",
+            "pronunciation_hint": "gah eer HAL-en, os gwel-ooch un tha",
+            "image": "dinner/phrases/gair-halen.svg",
+            "alt": "A hand reaching across the table toward a salt shaker",
+            "context": "Said at the table when you want the salt passed to you",
+            "notes": "Ga i'r = Ga i + yr (the). FLAG FOR REVIEW: confirm no aspirate mutation needed on halen here."
+          },
+          {
+            "type": "phrase",
+            "id": "phrase_dwin_hoffi_pasta",
+            "blocks": [
+              "block_dw_in_hoffi",
+              "block_pasta"
+            ],
+            "welsh_assembled": "Dw i'n hoffi pasta",
+            "english": "I like pasta",
+            "english_natural": "I like pasta",
+            "audio": "dinner/phrases/dwin-hoffi-pasta.mp3",
+            "transcript": "Dw i'n hoffi pasta — doo een HOFF-ee PAST-a",
+            "pronunciation_hint": "doo een HOFF-ee PAST-a",
+            "image": "dinner/phrases/dwin-hoffi-pasta.svg",
+            "alt": "A child happily pointing at a bowl of pasta",
+            "context": "Said to tell someone you like a food",
+            "notes": "Swap the final block to make a new phrase for any food."
+          },
+          {
+            "type": "phrase",
+            "id": "phrase_dwi_ddim_yn_hoffi_pys",
+            "blocks": [
+              "block_dw_i_ddim_yn_hoffi",
+              "block_pys"
+            ],
+            "welsh_assembled": "Dw i ddim yn hoffi pys",
+            "english": "I don't like peas",
+            "english_natural": "I don't like peas",
+            "audio": "dinner/phrases/dwi-ddim-yn-hoffi-pys.mp3",
+            "transcript": "Dw i ddim yn hoffi pys — doo ee thim un HOFF-ee pees",
+            "pronunciation_hint": "doo ee thim un HOFF-ee pees",
+            "image": "dinner/phrases/dwi-ddim-yn-hoffi-pys.svg",
+            "alt": "A child pushing a plate of peas away with a playful frown",
+            "context": "Said to tell someone you don't like a food. Low stakes — meant to be funny, not a real refusal.",
+            "notes": "The honest first phrase most kids want to say. Keep it light."
+          },
+          {
+            "type": "phrase",
+            "id": "phrase_dwin_llawn",
+            "blocks": [
+              "block_dw_in_llawn"
+            ],
+            "welsh_assembled": "Dw i'n llawn",
+            "english": "I'm full",
+            "english_natural": "I'm full / I'm done",
+            "audio": "dinner/phrases/dwin-llawn.mp3",
+            "transcript": "Dw i'n llawn — doo een thlown",
+            "pronunciation_hint": "doo een thlown",
+            "image": "dinner/phrases/dwin-llawn.svg",
+            "alt": "A child leaning back from a cleared plate, hand on tummy",
+            "context": "Said at the end of a meal when you've had enough",
+            "notes": ""
+          },
+          {
+            "type": "phrase",
+            "id": "phrase_dwin_llwgu",
+            "blocks": [
+              "block_dw_in_llwgu"
+            ],
+            "welsh_assembled": "Dw i'n llwgu",
+            "english": "I'm starving",
+            "english_natural": "I'm starving!",
+            "audio": "dinner/phrases/dwin-llwgu.mp3",
+            "transcript": "Dw i'n llwgu — doo een THLOO-gee",
+            "pronunciation_hint": "doo een THLOO-gee",
+            "image": "dinner/phrases/dwin-llwgu.svg",
+            "alt": "A child at an empty place setting looking eagerly at the kitchen",
+            "context": "Said before a meal when you're really hungry",
+            "notes": "Hyperbole — kids enjoy the drama of it."
+          },
+          {
+            "type": "phrase",
+            "id": "phrase_gair_llaeth_plis",
+            "blocks": [
+              "block_gai_r",
+              "block_llaeth",
+              "block_plis"
+            ],
+            "welsh_assembled": "Ga i'r llaeth, plîs",
+            "english": "Can I have the milk, please",
+            "english_natural": "Can I have the milk please",
+            "audio": "dinner/phrases/gair-llaeth-plis.mp3",
+            "transcript": "Ga i'r llaeth, plîs — gah eer thleye-th, pleece",
+            "pronunciation_hint": "gah eer thleye-th, pleece",
+            "image": "dinner/phrases/gair-llaeth-plis.svg",
+            "alt": "A jug of milk on a breakfast table",
+            "context": "Said when you want the milk passed to you",
+            "notes": "Uses informal plîs — the version a South Wales family actually says."
+          },
+          {
+            "type": "phrase",
+            "id": "phrase_maer_bwyd_bron_yn_barod",
+            "blocks": [
+              "block_maer_bwyd",
+              "block_bron_yn_barod"
+            ],
+            "welsh_assembled": "Mae'r bwyd bron yn barod",
+            "english": "The food is almost ready",
+            "english_natural": "Food's almost ready",
+            "audio": "dinner/phrases/maer-bwyd-bron-yn-barod.mp3",
+            "transcript": "Mae'r bwyd bron yn barod — mire boo-id bron un BAR-od",
+            "pronunciation_hint": "mire boo-id bron un BAR-od",
+            "image": "dinner/phrases/maer-bwyd-bron-yn-barod.svg",
+            "alt": "A parent at the cooker glancing at the kids, food nearly done",
+            "context": "Called out from the kitchen when the meal is nearly done",
+            "notes": "Parent-to-child everyday usage."
+          },
+          {
+            "type": "phrase",
+            "id": "phrase_maer_swper_yn_barod",
+            "blocks": [
+              "block_maer_bwyd",
+              "block_swper",
+              "block_yn_barod"
+            ],
+            "welsh_assembled": "Mae swper yn barod",
+            "english": "Supper is ready",
+            "english_natural": "Dinner's ready!",
+            "audio": "dinner/phrases/maer-swper-yn-barod.mp3",
+            "transcript": "Mae swper yn barod — meye SOOP-er un BAR-od",
+            "pronunciation_hint": "meye SOOP-er un BAR-od",
+            "image": "dinner/phrases/maer-swper-yn-barod.svg",
+            "alt": "A family being called to a set table",
+            "context": "Called out when the meal is on the table",
+            "notes": "Uses 'Mae' (not 'Mae'r') before swper — assembled form differs from block label; audio must match welsh_assembled. FLAG FOR REVIEW: swper vs te."
+          },
+          {
+            "type": "phrase",
+            "id": "phrase_aros",
+            "blocks": [
+              "block_aros"
+            ],
+            "welsh_assembled": "Aros",
+            "english": "Wait",
+            "english_natural": "Wait / hang on",
+            "audio": "dinner/phrases/aros.mp3",
+            "transcript": "Aros — AR-os",
+            "pronunciation_hint": "AR-os",
+            "image": "dinner/phrases/aros.svg",
+            "alt": "A parent holding up a hand gently to a child reaching for food",
+            "context": "Said to a child who's diving in before everyone's ready",
+            "notes": "Informal singular. Plural: Arhoswch."
+          },
+          {
+            "type": "phrase",
+            "id": "phrase_dewch_iw_fwyta",
+            "blocks": [
+              "block_dewch_iw_fwyta"
+            ],
+            "welsh_assembled": "Dewch i fwyta",
+            "english": "Come and eat",
+            "english_natural": "Come and eat / come to the table",
+            "audio": "dinner/phrases/dewch-i-fwyta.mp3",
+            "transcript": "Dewch i fwyta — dewch ee VOO-uh-ta",
+            "pronunciation_hint": "dewch ee VOO-uh-ta",
+            "image": "dinner/phrases/dewch-i-fwyta.svg",
+            "alt": "A parent waving the family over to the table",
+            "context": "Said to call everyone to the table",
+            "notes": ""
+          },
+          {
+            "type": "phrase",
+            "id": "phrase_golcha_dy_ddwylo",
+            "blocks": [
+              "block_golcha_dy_ddwylo"
+            ],
+            "welsh_assembled": "Golcha dy ddwylo",
+            "english": "Wash your hands",
+            "english_natural": "Go wash your hands",
+            "audio": "dinner/phrases/golcha-dy-ddwylo.mp3",
+            "transcript": "Golcha dy ddwylo — GOL-cha duh THWEE-lo",
+            "pronunciation_hint": "GOL-cha duh THWEE-lo",
+            "image": "dinner/phrases/golcha-dy-ddwylo.svg",
+            "alt": "A child washing hands at a sink before dinner",
+            "context": "Said before sitting down to eat",
+            "notes": "Soft mutation: dwylo -> ddwylo after dy."
+          },
+          {
+            "type": "phrase",
+            "id": "phrase_eistedda",
+            "blocks": [
+              "block_eistedda"
+            ],
+            "welsh_assembled": "Eistedda",
+            "english": "Sit down",
+            "english_natural": "Sit down / take a seat",
+            "audio": "dinner/phrases/eistedda.mp3",
+            "transcript": "Eistedda — ay-STED-a",
+            "pronunciation_hint": "ay-STED-a",
+            "image": "dinner/phrases/eistedda.svg",
+            "alt": "A child pulling out a chair at the dinner table",
+            "context": "Said to get a child into their seat at the table",
+            "notes": "Informal singular. Plural: Eisteddwch."
+          }
+        ],
+        "parent_supplemental": [
+          {
+            "type": "supplemental_activity",
+            "id": "supp_dinner_phrase_practice",
+            "title": "Build the phrase",
+            "mechanic": "phrase_builder",
+            "prompt": "Tap the blocks in the right order",
+            "content_refs": [
+              "phrase_ga_i_fwy_o_datws",
+              "phrase_gair_halen",
+              "phrase_dwin_hoffi_pasta",
+              "phrase_dwi_ddim_yn_hoffi_pys",
+              "phrase_gair_llaeth_plis",
+              "phrase_maer_bwyd_bron_yn_barod",
+              "phrase_maer_swper_yn_barod",
+              "phrase_aros"
+            ],
+            "alternative": "Read the assembled phrase aloud from the card",
+            "notes": "Shows only unlocked blocks. More blocks = more combinations.",
+            "trackable": true
+          },
+          {
+            "type": "supplemental_activity",
+            "id": "supp_dinner_listen_identify",
+            "title": "Listen and find",
+            "mechanic": "listen_identify",
+            "prompt": "Tap the food you hear",
+            "content_refs": [
+              "word_tatws_dinner",
+              "word_pys_dinner",
+              "word_cig_dinner",
+              "word_pasta_dinner",
+              "word_llysiau_dinner",
+              "word_caws_dinner",
+              "word_llaeth_dinner",
+              "word_dwr_dinner"
+            ],
+            "alternative": "Read the food words aloud from the cards instead",
+            "notes": "Randomly selects from content_refs each session. Same mechanic as alphabet listen_identify.",
+            "trackable": true
+          }
+        ],
+        "family_activity": [
+          {
+            "type": "family_activity",
+            "id": "activity_dinner_say_together",
+            "title": "Say it together",
+            "mechanic": "record_playback",
+            "prompt": "Everyone say it at the same time. Ready?",
+            "prompt_welsh": "Pawb gyda'i gilydd. Barod?",
+            "content_ref": "phrase_ga_i_fwy_o_datws",
+            "content_refs": null,
+            "alternative": "Point to what you want and nod — that counts too",
+            "notes": "",
+            "feedback": {
+              "thumbs": null,
+              "topic_feedback": true
+            }
+          },
+          {
+            "type": "family_activity",
+            "id": "activity_dinner_plate_builder",
+            "title": "Build a plate",
+            "mechanic": "plate_builder",
+            "prompt": "Drag the food onto the plate. As each one lands, say its name in Welsh together.",
+            "prompt_welsh": "Llusgwch y bwyd ar y plât. Dwedwch yr enw gyda'ch gilydd.",
+            "content_ref": null,
+            "content_refs": [
+              "word_tatws_dinner",
+              "word_pys_dinner",
+              "word_cig_dinner",
+              "word_pasta_dinner",
+              "word_llysiau_dinner",
+              "word_caws_dinner",
+              "word_bara_dinner"
+            ],
+            "alternative": "Point to each food on screen and let someone else say the Welsh",
+            "notes": "NEW MECHANIC. Drag-and-drop foods (sourced from content_refs) onto a plate graphic. On drop, play the word audio and show the Welsh label. No score — the plate fills as foods are added. Tablet drag interaction; foods are illustrated word assets reused from parent_reference. Build note: needs a plate SVG container and draggable food tokens. Each token maps to a word_id so audio + label come straight from content.",
+            "feedback": {
+              "thumbs": null,
+              "topic_feedback": true
+            }
+          },
+          {
+            "type": "family_activity",
+            "id": "activity_dinner_menu_roleplay",
+            "title": "Café Cymraeg",
+            "mechanic": "menu_roleplay",
+            "prompt": "One of you is the waiter, one is the customer. The customer orders using 'Ga i...'. The waiter brings it over. Then swap.",
+            "prompt_welsh": "Un yn weinydd, un yn gwsmer. Archebwch gyda 'Ga i...'.",
+            "content_ref": null,
+            "content_refs": [
+              "phrase_ga_i_fwy_o_datws",
+              "phrase_gair_halen",
+              "phrase_gair_llaeth_plis",
+              "word_pasta_dinner",
+              "word_caws_dinner",
+              "word_bara_dinner",
+              "word_dwr_dinner"
+            ],
+            "alternative": "Point to an item on the menu and the waiter names it in Welsh for you",
+            "notes": "NEW MECHANIC. On-screen menu of food cards (drawn from content_refs). The app prompts a role split and shows the 'Ga i...' sentence frame the customer can tap to hear. The waiter taps the ordered item to 'serve' it (plays the word audio). Turn-taking is family-managed, not enforced. Build note: reuses existing word + phrase assets; the only new UI is a menu layout and a serve-tap state. Designed to scale — any topic with food/object words can populate the menu.",
+            "feedback": {
+              "thumbs": null,
+              "topic_feedback": true
+            }
+          }
+        ],
+        "family_challenge": [
+          {
+            "type": "family_challenge",
+            "id": "challenge_phrase_night",
+            "title": "Phrase of the night",
+            "category": "scripted_phrase",
+            "prompt": "Tonight's challenge: everyone has to ask for something using Welsh. The app will remind you at dinner time.",
+            "content_ref": "phrase_ga_i_fwy_o_datws",
+            "content_refs": null,
+            "duration": "one_meal",
+            "alternative": "Try just the first word — Ga i is enough to start",
+            "notes": "Can be presented as a printable card or lock screen reminder",
+            "feedback": {
+              "thumbs": null,
+              "topic_feedback": true
+            }
+          },
+          {
+            "type": "family_challenge",
+            "id": "challenge_table_hunt",
+            "title": "Name the table",
+            "category": "item_hunt",
+            "prompt": "Before anyone sits down, take turns naming something on the table in Welsh. How many can you get?",
+            "content_ref": null,
+            "content_refs": [
+              "word_plat_dinner",
+              "word_cwpan_dinner",
+              "word_fforc_dinner",
+              "word_llwy_dinner",
+              "word_cyllell_dinner"
+            ],
+            "duration": "pre_meal",
+            "alternative": "Point to things instead — family guesses the Welsh word",
+            "notes": "No Welsh needed to start. Works on first use.",
+            "feedback": {
+              "thumbs": null,
+              "topic_feedback": true
+            }
+          },
+          {
+            "type": "family_challenge",
+            "id": "challenge_taste_test",
+            "title": "Blaswr y nos (Taste tester)",
+            "category": "role_play",
+            "prompt": "Pick one taster for tonight. They try a forkful of something on the table and give it a verdict in Welsh: 'Dw i'n hoffi hwn!' or 'Dw i ddim yn hoffi hwn!' Everyone else guesses the verdict before they say it.",
+            "content_ref": null,
+            "content_refs": [
+              "phrase_dwin_hoffi_pasta",
+              "phrase_dwi_ddim_yn_hoffi_pys"
+            ],
+            "duration": "one_meal",
+            "alternative": "Thumbs up or thumbs down counts as the verdict — no words needed",
+            "notes": "NEW CHALLENGE. Real-world, screen-down. 'hwn' = this one. Deliberately silly to lower stakes. FLAG FOR REVIEW: confirm 'hwn' is the natural South Wales choice here vs 'hwn 'ma'.",
+            "feedback": {
+              "thumbs": null,
+              "topic_feedback": true
+            }
+          },
+          {
+            "type": "family_challenge",
+            "id": "challenge_clear_the_table",
+            "title": "Clirio'r bwrdd (Clear the table)",
+            "category": "competitive",
+            "prompt": "When the meal's done, everyone clears together — but you can only pick something up after you've named it in Welsh. Last thing on the table loses.",
+            "content_ref": null,
+            "content_refs": [
+              "word_plat_dinner",
+              "word_cwpan_dinner",
+              "word_fforc_dinner",
+              "word_llwy_dinner",
+              "word_cyllell_dinner",
+              "word_halen_dinner",
+              "word_sos_dinner"
+            ],
+            "duration": "pre_meal",
+            "alternative": "Name it in English first, then have a go at the Welsh — both count",
+            "notes": "NEW CHALLENGE. Turns clearing up into the game. 'pre_meal' duration is the closest existing value for an end-of-meal moment; consider adding 'post_meal' to the duration enum later.",
+            "feedback": {
+              "thumbs": null,
+              "topic_feedback": true
+            }
+          }
+        ]
+      }
+    }
+  ]
+}
