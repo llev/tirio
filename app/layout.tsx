@@ -9,21 +9,9 @@ export const viewport = {
   width: 'device-width',
   initialScale: 1,
   viewportFit: 'cover',
+  // Hint to browsers that this is a portrait-only experience
+  // (full lock requires Screen Orientation API, handled via CSS)
 };
-
-// Fit the fixed-size iPad frame into the viewport (letterboxed on black).
-const FIT_SCRIPT = `(function () {
-  var FW = 836 + 32, FH = 1196 + 32, MARGIN = 24;
-  function fit() {
-    var ipad = document.getElementById('ipad');
-    if (!ipad) return;
-    var s = Math.min((window.innerWidth - MARGIN) / FW, (window.innerHeight - MARGIN) / FH);
-    s = Math.min(s, 1);
-    ipad.style.transform = 'scale(' + s + ')';
-  }
-  window.addEventListener('resize', fit);
-  fit(); setTimeout(fit, 60); setTimeout(fit, 300);
-})();`;
 
 export default function RootLayout({ children }) {
   return (
@@ -38,15 +26,10 @@ export default function RootLayout({ children }) {
       </head>
       <body>
         <div id="stage">
-          <div className="ipad" id="ipad">
-            <div className="ipad__screen">
-              <div id="root" style={{ position: 'absolute', inset: 0 }}>
-                {children}
-              </div>
-            </div>
+          <div id="root" style={{ position: 'absolute', inset: 0 }}>
+            {children}
           </div>
         </div>
-        <script dangerouslySetInnerHTML={{ __html: FIT_SCRIPT }} />
       </body>
     </html>
   );

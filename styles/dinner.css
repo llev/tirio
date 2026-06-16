@@ -11,7 +11,7 @@
   padding:var(--space-2xl) var(--space-xl);display:flex;flex-direction:column;gap:6px;min-height:330px;justify-content:flex-end;
 }
 .dn-hero__kicker{font-family:var(--font-mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;opacity:.7}
-.dn-hero__title{font-family:var(--font-display);font-weight:800;font-size:88px;line-height:.92;letter-spacing:-.02em;margin-top:auto}
+.dn-hero__title{font-family:var(--font-display);font-weight:800;font-size:clamp(44px,11vw,88px);line-height:.92;letter-spacing:-.02em;margin-top:auto}
 .dn-hero__en{font-family:var(--font-display);font-weight:700;font-size:var(--fs-h2)}
 .dn-hero__blurb{font-size:var(--fs-body-lg);line-height:1.4;max-width:34ch;margin:8px 0 4px;opacity:.92}
 .dn-hero__chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
