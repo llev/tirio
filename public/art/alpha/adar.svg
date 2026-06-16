@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" width="240" height="240">
+  <defs>
+    <filter id="back" x="-45%" y="-45%" width="190%" height="190%">
+      <feMorphology in="SourceAlpha" operator="dilate" radius="12" result="f"></feMorphology>
+      <feTurbulence type="fractalNoise" baseFrequency="0.016" numOctaves="2" seed="41" result="n"></feTurbulence>
+      <feDisplacementMap in="f" in2="n" scale="7" xChannelSelector="R" yChannelSelector="G" result="rr"></feDisplacementMap>
+      <feFlood flood-color="#3f86ee" result="c"></feFlood>
+      <feComposite in="c" in2="rr" operator="in"></feComposite>
+    </filter>
+    <filter id="ln" x="-30%" y="-30%" width="160%" height="160%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.02" numOctaves="2" seed="42" result="n"></feTurbulence>
+      <feDisplacementMap in="SourceGraphic" in2="n" scale="4.2" xChannelSelector="R" yChannelSelector="G"></feDisplacementMap>
+    </filter>
+  </defs>
+  <g filter="url(#back)" transform="translate(6 7) rotate(3 120 120)">
+    <circle cx="100" cy="116" r="25"></circle><circle cx="122" cy="100" r="14"></circle><path d="M133 98 l16 -3 -11 12 Z"></path><path d="M78 110 l-22 -10 16 24 Z"></path><circle cx="166" cy="134" r="18"></circle><circle cx="180" cy="120" r="10"></circle><path d="M188 118 l12 -2 -8 9 Z"></path><path d="M44 166 q78 16 154 0 v9 q-78 16 -154 0 Z"></path>
+  </g>
+  <g filter="url(#ln)" transform="rotate(3 120 120)" fill="none" stroke="#15130e" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="100" cy="116" r="25"></circle><circle cx="122" cy="100" r="14"></circle><path d="M133 98 l16 -3 -11 12 Z"></path><path d="M84 116 q14 12 28 2"></path><circle cx="124" cy="98" r="2.8" fill="#15130e"></circle><circle cx="166" cy="134" r="18"></circle><circle cx="180" cy="120" r="10"></circle><path d="M188 118 l12 -2 -8 9 Z"></path><path d="M156 134 q10 9 20 2"></path><circle cx="181" cy="118" r="2.4" fill="#15130e"></circle><path d="M44 168 q78 16 154 -2"></path><path d="M104 141 v14 M116 141 v14 M168 152 v12 M178 152 v12" stroke-width="3"></path>
+  </g>
+</svg>

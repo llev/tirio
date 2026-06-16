@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" width="240" height="240">
+  <defs>
+    <filter id="back" x="-45%" y="-45%" width="190%" height="190%">
+      <feMorphology in="SourceAlpha" operator="dilate" radius="12" result="f"></feMorphology>
+      <feTurbulence type="fractalNoise" baseFrequency="0.016" numOctaves="2" seed="913" result="n"></feTurbulence>
+      <feDisplacementMap in="f" in2="n" scale="7" xChannelSelector="R" yChannelSelector="G" result="rr"></feDisplacementMap>
+      <feFlood flood-color="#f1c43e" result="c"></feFlood>
+      <feComposite in="c" in2="rr" operator="in"></feComposite>
+    </filter>
+    <filter id="ln" x="-30%" y="-30%" width="160%" height="160%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.02" numOctaves="2" seed="1313" result="n"></feTurbulence>
+      <feDisplacementMap in="SourceGraphic" in2="n" scale="4.2" xChannelSelector="R" yChannelSelector="G"></feDisplacementMap>
+    </filter>
+  </defs>
+  <g filter="url(#back)" transform="translate(6 7) rotate(4 120 120)">
+    <circle cx="100" cy="62" r="18"></circle><path d="M100 80 v40 M100 92 l-20 24 M100 92 l20 22 M100 120 l-12 46 M100 120 l12 46" fill="none" stroke="#000" stroke-width="16" stroke-linecap="round"></path><circle cx="150" cy="98" r="13"></circle><path d="M150 111 v32 M150 124 l-10 20 M150 124 l10 20" fill="none" stroke="#000" stroke-width="12" stroke-linecap="round"></path>
+  </g>
+  <g filter="url(#ln)" transform="rotate(4 120 120)" fill="none" stroke="#15130e" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="100" cy="62" r="18"></circle><circle cx="94" cy="60" r="2.4" fill="#15130e"></circle><circle cx="106" cy="60" r="2.4" fill="#15130e"></circle><path d="M94 70 q6 5 12 0"></path><path d="M100 80 v40"></path><path d="M100 92 l-20 24 M100 92 l22 22"></path><path d="M100 120 l-12 46 M100 120 l12 46"></path><path d="M122 114 q14 0 22 -8"></path><circle cx="150" cy="98" r="13"></circle><circle cx="146" cy="96" r="2.2" fill="#15130e"></circle><circle cx="154" cy="96" r="2.2" fill="#15130e"></circle><path d="M146 104 q4 4 8 0"></path><path d="M150 111 v32 M150 124 l-10 20 M150 124 l10 20"></path>
+  </g>
+</svg>

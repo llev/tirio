@@ -1,0 +1,126 @@
+/* ============================================================
+   Tirio — Colour tokens   ·   Direction: P1 "Marker"
+   ------------------------------------------------------------
+   Graphic & confident: near-black ink + warm off-white paper,
+   marigold brand fill, four marker-bright content colours.
+   Colour is used as GROUND; ink/white type sits on top.
+   Full light + dark. Every pairing meets WCAG AA (verified).
+
+   Tile slots (kept as named tokens for the component API):
+     tile-orange = Marigold  · tile-coral = Coral
+     tile-gold   = Iris      · tile-teal  = Fern
+     tile-indigo = Azure
+   ============================================================ */
+
+:root {
+  /* ---- Warm neutral scale ---- */
+  --warm-50:  #ffffff;
+  --warm-100: #fcfaf3;   /* raised */
+  --warm-150: #f4f1e8;   /* base paper */
+  --warm-200: #ece6d8;   /* sunken */
+  --warm-300: #e3ded0;   /* border subtle */
+  --warm-400: #d4cdb9;   /* border strong */
+  --warm-600: #5c574d;   /* secondary ink */
+  --warm-800: #34302a;
+  --warm-850: #252119;
+  --warm-900: #1a1712;
+  --warm-950: #120f0a;
+  --ink:      #15130e;
+
+  /* ---- Brand: marigold (fill — ink sits on it) ---- */
+  --marigold-400: #f3c948;  /* dark-mode brand (glows) */
+  --marigold-500: #f1c43e;  /* brand, light mode */
+  --marigold-600: #e0b22f;  /* pressed / hover */
+  --honey-300:    #f6d36a;  /* brand-warm, highlighter pills */
+
+  /* ---- Content / tile colours (marker brights) ---- */
+  --c-marigold: #f1c43e;
+  --c-coral:    #ef5a44;
+  --c-iris:     #9d7bef;
+  --c-fern:     #46c07a;
+  --c-azure:    #3f86ee;
+
+  /* ---- Feedback (warm, never clinical) ---- */
+  --green-500:  #3f9457;  --green-700: #2a6b3a;
+  --terra-500:  #d8553c;  --terra-700: #a8402a;
+  --taupe-400:  #b39a7d;
+
+  /* ============ SEMANTIC — LIGHT (default) ============ */
+  --surface-base:    var(--warm-150);
+  --surface-raised:  var(--warm-100);
+  --surface-sunken:  var(--warm-200);
+  --surface-inverse: var(--warm-900);
+
+  --text-primary:    var(--ink);
+  --text-secondary:  var(--warm-600);
+  --text-on-inverse: var(--warm-100);
+
+  --border-subtle:   var(--warm-300);
+  --border-strong:   var(--warm-400);
+  --border-field:    #8c7e62;   /* interactive outlines (inputs, ghost controls) — 3.5–3.8:1, clears AA non-text */
+
+  --brand:           var(--marigold-500);
+  --brand-press:     var(--marigold-600);
+  --brand-warm:      var(--honey-300);
+  --text-on-brand:   var(--ink);      /* deep ink on marigold — ~11:1 */
+
+  --btn-ink-bg:      var(--ink);
+  --btn-ink-text:    var(--warm-100);
+
+  --success:         var(--green-500);  --success-text: var(--green-700);
+  --error:           var(--terra-500);  --error-text:   var(--terra-700);
+  --neutral:         var(--taupe-400);
+
+  /* tile slots (component API names) */
+  --tile-orange: var(--c-marigold);
+  --tile-coral:  var(--c-coral);
+  --tile-gold:   var(--c-iris);
+  --tile-teal:   var(--c-fern);
+  --tile-indigo: var(--c-azure);
+  --text-on-tile: var(--ink);          /* ink on every tile — all >= 5.9:1 */
+
+  --shadow-card:   0 1px 2px rgba(21,19,14,0.05);
+  --shadow-raised: 0 4px 16px rgba(21,19,14,0.09);
+  --shadow-modal:  0 24px 60px rgba(21,19,14,0.24);
+
+  --focus:         #cf4127;     /* focus-ring colour, light — 4.19:1 on base */
+  --focus-ring:    0 0 0 3px var(--surface-base), 0 0 0 5px var(--focus);
+  color-scheme: light;
+}
+
+/* ================== DARK (first-class) ================== */
+[data-theme="dark"] {
+  --surface-base:    var(--warm-900);
+  --surface-raised:  var(--warm-850);
+  --surface-sunken:  var(--warm-950);
+  --surface-inverse: var(--warm-150);
+
+  --text-primary:    #f1ece0;   /* ~14:1 on base */
+  --text-secondary:  #b0a899;   /* ~7.5:1 on base */
+  --text-on-inverse: var(--ink);
+
+  --border-subtle:   #34302a;
+  --border-strong:   #45403a;
+  --border-field:    #787064;   /* interactive outlines, dark — 3.66:1 on base */
+
+  --brand:           var(--marigold-400);
+  --brand-press:     var(--marigold-500);
+  --text-on-brand:   var(--ink);
+
+  --btn-ink-bg:      #f1ece0;
+  --btn-ink-text:    var(--ink);
+
+  --success:  #57b06f;  --success-text: #84cf99;
+  --error:    #e3705a;  --error-text:   #ef9685;
+  --neutral:  #b39a7d;
+
+  --text-on-tile: var(--ink);   /* tiles stay bright; ink still reads */
+
+  --shadow-card:   0 1px 2px rgba(0,0,0,0.32);
+  --shadow-raised: 0 6px 20px rgba(0,0,0,0.42);
+  --shadow-modal:  0 24px 60px rgba(0,0,0,0.55);
+
+  --focus:         #ef5a44;     /* coral reads fine on dark — 5.29:1 */
+  --focus-ring:    0 0 0 3px var(--surface-base), 0 0 0 5px var(--focus);
+  color-scheme: dark;
+}

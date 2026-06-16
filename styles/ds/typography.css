@@ -1,0 +1,47 @@
+/* ============================================================
+   Tirio — Typography tokens
+   ------------------------------------------------------------
+   Display carries the personality (content register).
+   Body delivers it, calmly and legibly (shell register).
+   iPad-first: generous sizing. Touch targets min 44px.
+   ============================================================ */
+
+:root {
+  /* ---- Families ---- */
+  --font-display: 'Hanken Grotesk', system-ui, sans-serif;  /* hero: wordmark, tiles, headlines */
+  --font-display-alt: 'Hanken Grotesk', system-ui, sans-serif;
+  --font-body: 'Source Sans 3', system-ui, -apple-system, sans-serif;
+  --font-mono: ui-monospace, 'SF Mono', 'Cascadia Mono', Menlo, monospace; /* placeholder/spec labels only */
+
+  /* ---- Weights ---- */
+  --fw-regular: 400;
+  --fw-medium:  500;
+  --fw-semibold: 600;
+  --fw-bold:    700;
+  --fw-display: 800;   /* Hanken Grotesk ExtraBold — the big letter-tile weight */
+
+  /* ---- Type scale (px on iPad canvas) ---- */
+  --fs-tile:     104px;  /* letter tiles 80–120 — this is the moment */
+  --fs-display:  64px;   /* challenge / activity headlines */
+  --fs-h1:       36px;   /* screen titles */
+  --fs-h2:       26px;   /* section labels */
+  --fs-h3:       21px;   /* card titles */
+  --fs-body-lg:  19px;   /* reference reading */
+  --fs-body:     17px;   /* default UI body */
+  --fs-label:    15px;   /* buttons, tags, metadata */
+  --fs-caption:  13px;   /* pronunciation hints, small supporting text */
+
+  /* ---- Line heights ---- */
+  --lh-tile:     0.95;
+  --lh-display:  1.04;
+  --lh-heading:  1.12;
+  --lh-body:     1.55;
+  --lh-snug:     1.35;
+
+  /* ---- Letter spacing ---- */
+  --ls-tile:     -0.01em;
+  --ls-display:  -0.01em;
+  --ls-heading:  -0.005em;
+  --ls-label:     0.005em;
+  --ls-caps:      0.08em;   /* the all-caps mono micro-labels */
+}

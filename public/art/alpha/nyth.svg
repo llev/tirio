@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" width="240" height="240">
+  <defs>
+    <filter id="back" x="-45%" y="-45%" width="190%" height="190%">
+      <feMorphology in="SourceAlpha" operator="dilate" radius="12" result="f"></feMorphology>
+      <feTurbulence type="fractalNoise" baseFrequency="0.016" numOctaves="2" seed="612" result="n"></feTurbulence>
+      <feDisplacementMap in="f" in2="n" scale="7" xChannelSelector="R" yChannelSelector="G" result="rr"></feDisplacementMap>
+      <feFlood flood-color="#3f86ee" result="c"></feFlood>
+      <feComposite in="c" in2="rr" operator="in"></feComposite>
+    </filter>
+    <filter id="ln" x="-30%" y="-30%" width="160%" height="160%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.02" numOctaves="2" seed="1012" result="n"></feTurbulence>
+      <feDisplacementMap in="SourceGraphic" in2="n" scale="4.2" xChannelSelector="R" yChannelSelector="G"></feDisplacementMap>
+    </filter>
+  </defs>
+  <g filter="url(#back)" transform="translate(6 7) rotate(-3 120 120)">
+    <path d="M64 130 q56 30 112 0 q-6 40 -56 40 q-50 0 -56 -40 Z"></path><ellipse cx="106" cy="128" rx="12" ry="15"></ellipse><ellipse cx="132" cy="130" rx="12" ry="15"></ellipse>
+  </g>
+  <g filter="url(#ln)" transform="rotate(-3 120 120)" fill="none" stroke="#15130e" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+    <ellipse cx="120" cy="128" rx="56" ry="16"></ellipse><path d="M66 130 q10 40 54 40 q44 0 54 -40"></path><ellipse cx="106" cy="126" rx="12" ry="15"></ellipse><ellipse cx="132" cy="128" rx="12" ry="15"></ellipse><path d="M70 124 l-12 -6 M88 122 l-10 -10 M152 122 l10 -10 M170 124 l12 -6" stroke-width="3"></path>
+  </g>
+</svg>

@@ -1,0 +1,10 @@
+/* Design-system tokens first, then app/topic styles. Order matches the prototype's index.html. */
+@import '../styles/ds/colors.css';
+@import '../styles/ds/typography.css';
+@import '../styles/ds/spacing.css';
+@import '../styles/ds/radius.css';
+@import '../styles/ds/motion.css';
+@import '../styles/ds/components.css';
+@import '../styles/app.css';
+@import '../styles/dinner.css';
+@import '../styles/dinner-games.css';

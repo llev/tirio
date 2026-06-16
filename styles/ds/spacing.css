@@ -1,0 +1,22 @@
+/* ============================================================
+   Tirio — Spacing scale (iPad-first, generous by default)
+   8pt base rhythm. Use gap/padding with these, not bare margins.
+   ============================================================ */
+
+:root {
+  --space-xs:  4px;
+  --space-sm:  8px;
+  --space-md:  16px;
+  --space-lg:  24px;
+  --space-xl:  32px;
+  --space-2xl: 48px;
+  --space-3xl: 64px;
+  --space-4xl: 96px;
+
+  /* Minimum interactive target — no exceptions */
+  --touch-min: 44px;
+
+  /* Layout */
+  --container-max: 1024px;   /* primary iPad canvas */
+  --content-max:   720px;    /* comfortable reading measure */
+}

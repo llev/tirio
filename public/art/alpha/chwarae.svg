@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" width="240" height="240">
+  <defs>
+    <filter id="back" x="-45%" y="-45%" width="190%" height="190%">
+      <feMorphology in="SourceAlpha" operator="dilate" radius="12" result="f"></feMorphology>
+      <feTurbulence type="fractalNoise" baseFrequency="0.016" numOctaves="2" seed="111" result="n"></feTurbulence>
+      <feDisplacementMap in="f" in2="n" scale="7" xChannelSelector="R" yChannelSelector="G" result="rr"></feDisplacementMap>
+      <feFlood flood-color="#ef5a44" result="c"></feFlood>
+      <feComposite in="c" in2="rr" operator="in"></feComposite>
+    </filter>
+    <filter id="ln" x="-30%" y="-30%" width="160%" height="160%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.02" numOctaves="2" seed="112" result="n"></feTurbulence>
+      <feDisplacementMap in="SourceGraphic" in2="n" scale="4.2" xChannelSelector="R" yChannelSelector="G"></feDisplacementMap>
+    </filter>
+  </defs>
+  <g filter="url(#back)" transform="translate(6 7) rotate(4 120 120)">
+    <circle cx="106" cy="72" r="18"></circle><path d="M106 90 v40 M106 100 l-24 -18 M106 100 l24 -18 M106 130 l-18 28 M106 130 l18 28" fill="none" stroke="#000" stroke-width="15" stroke-linecap="round"></path><circle cx="166" cy="158" r="20"></circle>
+  </g>
+  <g filter="url(#ln)" transform="rotate(4 120 120)" fill="none" stroke="#15130e" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="106" cy="72" r="18"></circle><circle cx="100" cy="70" r="2.6" fill="#15130e"></circle><circle cx="112" cy="70" r="2.6" fill="#15130e"></circle><path d="M99 78 q7 6 14 0"></path><path d="M106 90 v40"></path><path d="M106 100 l-24 -18 M106 100 l24 -18"></path><path d="M106 130 l-18 28 M106 130 l18 28"></path><circle cx="166" cy="158" r="20"></circle><path d="M146 158 h40 M166 138 q14 10 0 40" stroke-width="3"></path><path d="M150 64 l12 -6 M156 80 l13 -2" stroke-width="3"></path>
+  </g>
+</svg>

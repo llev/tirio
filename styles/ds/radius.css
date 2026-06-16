@@ -1,0 +1,12 @@
+/* ============================================================
+   Tirio — Radius tokens
+   Rounded, but not pill-for-everything. Pills are reserved.
+   ============================================================ */
+
+:root {
+  --radius-sm:   8px;    /* small interactive elements */
+  --radius-md:   12px;   /* buttons, inputs */
+  --radius-lg:   20px;   /* cards, tiles, modals */
+  --radius-xl:   28px;   /* large activity surfaces */
+  --radius-full: 999px;  /* chips, avatars — specific uses only */
+}

@@ -1,0 +1,188 @@
+/* ============================================================
+   Tirio — Amser Bwyd (Dinner Time) styles
+   Built on the same DS tokens. Shell screens stay calm;
+   the two new mechanics carry the content register.
+   ============================================================ */
+
+/* ---------- Topic hero ---------- */
+.dn-hero{
+  position:relative;border-radius:var(--radius-xl);overflow:hidden;
+  background:var(--tile-coral);color:var(--ink);
+  padding:var(--space-2xl) var(--space-xl);display:flex;flex-direction:column;gap:6px;min-height:330px;justify-content:flex-end;
+}
+.dn-hero__kicker{font-family:var(--font-mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;opacity:.7}
+.dn-hero__title{font-family:var(--font-display);font-weight:800;font-size:88px;line-height:.92;letter-spacing:-.02em;margin-top:auto}
+.dn-hero__en{font-family:var(--font-display);font-weight:700;font-size:var(--fs-h2)}
+.dn-hero__blurb{font-size:var(--fs-body-lg);line-height:1.4;max-width:34ch;margin:8px 0 4px;opacity:.92}
+.dn-hero__chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
+.dn-chip{font-family:var(--font-display);font-weight:700;font-size:15px;background:rgba(21,19,14,.13);color:var(--ink);
+  padding:7px 14px;border-radius:var(--radius-full)}
+.dn-chip--more{font-family:var(--font-mono);font-weight:500;opacity:.75}
+
+/* ---------- Reference: word groups + phrases ---------- */
+.dn-group{margin-top:var(--space-xl)}
+.dn-group__label{margin:0 2px var(--space-md);line-height:1.2}
+.dn-group__label strong{font-family:var(--font-display);font-weight:800;font-size:var(--fs-h2);letter-spacing:-.01em}
+.dn-group__label span{font-size:var(--fs-label);color:var(--text-secondary);margin-left:10px}
+.dn-group__label span{font-size:var(--fs-label);color:var(--text-secondary)}
+
+.dn-phrases{display:flex;flex-direction:column;gap:var(--space-md)}
+.dn-phrase{background:var(--surface-raised);border:1px solid var(--border-subtle);border-radius:var(--radius-lg);
+  padding:var(--space-lg);box-shadow:var(--shadow-card)}
+.dn-phrase__top{display:flex;align-items:center;justify-content:space-between;gap:var(--space-md)}
+.dn-phrase__en{font-size:var(--fs-label);color:var(--text-secondary);font-weight:600;text-transform:uppercase;letter-spacing:.04em;font-family:var(--font-mono);font-size:11px}
+.dn-phrase__welsh{font-family:var(--font-display);font-weight:800;font-size:34px;line-height:1.05;letter-spacing:-.01em;margin:6px 0 12px;text-wrap:pretty}
+.dn-phrase__blocks{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:10px}
+.dn-block{font-family:var(--font-body);font-weight:600;font-size:15px;background:var(--surface-sunken);color:var(--text-primary);
+  padding:6px 12px;border-radius:var(--radius-md);border:1px solid var(--border-subtle)}
+.dn-phrase__pron{font-family:var(--font-mono);font-size:13px;color:var(--text-secondary)}
+.dn-phrase__ctx{font-size:var(--fs-caption);color:var(--text-secondary);font-style:italic;margin-top:6px;line-height:1.35}
+
+/* ---------- Phrase builder (supplemental) ---------- */
+.pb{display:flex;flex-direction:column;align-items:center;gap:var(--space-lg);padding:var(--space-xl) 0 0;text-align:center}
+.pb__prompt{font-size:var(--fs-body-lg);color:var(--text-secondary)}
+.pb__target{font-family:var(--font-display);font-weight:700;font-size:var(--fs-h2);max-width:24ch;line-height:1.1}
+.pb-slots{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;min-height:74px;align-items:center;width:100%;max-width:620px}
+.pb-slots.nudge{animation:shake .4s}
+.pb-slot{min-width:96px;height:64px;padding:0 8px;border-radius:var(--radius-md);border:2.5px dashed var(--border-strong);
+  display:flex;align-items:center;justify-content:center;background:var(--surface-sunken)}
+.pb-slot.filled{border-style:solid;border-color:transparent;background:transparent;padding:0}
+.pb-slot__n{font-family:var(--font-mono);font-size:16px;color:var(--text-secondary);opacity:.6}
+.pb__poollabel{font-family:var(--font-mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--text-secondary)}
+.pb__pool{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;max-width:640px}
+.pb-block{font-family:var(--font-display);font-weight:700;font-size:24px;line-height:1;padding:16px 22px;border-radius:var(--radius-md);border:0;cursor:pointer;
+  background:var(--tile-indigo);color:var(--ink);box-shadow:var(--shadow-card);
+  transition:transform var(--dur-fast) var(--ease-spring),opacity var(--dur-fast)}
+.pb-block:active{transform:scale(.96)}
+.pb-block.placed{box-shadow:none;background:var(--tile-teal);cursor:pointer}
+.pb-block.used{opacity:0;pointer-events:none}
+.pb__reveal{display:flex;flex-direction:column;align-items:center;gap:var(--space-md);text-align:center;padding-top:var(--space-md);width:100%}
+.pb__reveal-welsh{display:block;width:100%;font-family:var(--font-display);font-weight:800;font-size:42px;line-height:1.12;letter-spacing:-.01em;color:var(--tile-teal);
+  max-width:20ch;text-wrap:pretty;animation:pop var(--dur-joy) var(--ease-spring) both}
+[data-theme="dark"] .pb__reveal-welsh{color:var(--c-fern)}
+.pb__pron{font-family:var(--font-mono);font-size:14px;color:var(--text-secondary)}
+
+/* ---------- Family record: phrase variant (smaller than a single word) ---------- */
+.fa__phrase{font-family:var(--font-display);font-weight:800;font-size:clamp(40px,8.5vw,68px);line-height:1.0;letter-spacing:-.01em;
+  max-width:16ch;text-wrap:pretty}
+
+/* ============================================================
+   PLATE BUILDER  (content register)
+   ============================================================ */
+.plate-screen{position:absolute;inset:0;display:flex;flex-direction:column;background:var(--surface-base);overflow:hidden;touch-action:none}
+.plate-screen .fa__bar{color:var(--text-primary)}
+.plate-screen .fa__close{background:var(--surface-sunken)}
+.plate-screen .fa__skip{background:var(--surface-sunken);color:var(--text-primary)}
+.plate-screen__body{flex:1;display:flex;flex-direction:column;align-items:center;gap:var(--space-lg);padding:var(--space-md) var(--space-xl) var(--space-xl);overflow-y:auto}
+.plate-prompt{font-family:var(--font-display);font-weight:700;font-size:var(--fs-h3);text-align:center;max-width:30ch;line-height:1.15;margin:0}
+
+/* the plate */
+.plate{position:relative;width:min(440px,86%);aspect-ratio:1;flex:none;margin:4px auto}
+.plate__rim{position:absolute;inset:0;border-radius:50%;background:
+  radial-gradient(circle at 50% 42%, var(--warm-50) 0%, var(--warm-100) 60%, var(--warm-200) 100%);
+  box-shadow:0 18px 40px rgba(21,19,14,.18), inset 0 0 0 2px var(--border-subtle)}
+[data-theme="dark"] .plate__rim{background:radial-gradient(circle at 50% 42%, var(--warm-850) 0%, var(--warm-900) 70%, var(--warm-950) 100%)}
+.plate__well{position:absolute;inset:11%;border-radius:50%;border:2px solid var(--border-subtle);
+  background:color-mix(in srgb,var(--surface-sunken) 60%,transparent)}
+.plate__hint{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);font-family:var(--font-mono);
+  font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--text-secondary);opacity:.5}
+
+/* food disc on the plate */
+.food-disc{position:absolute;transform:translate(-50%,-50%);width:96px;height:96px;border-radius:50%;border:0;cursor:pointer;
+  background:var(--fc,var(--tile-coral));color:var(--ink);display:flex;align-items:center;justify-content:center;padding:0;
+  box-shadow:0 6px 14px rgba(21,19,14,.22), inset 0 -6px 12px rgba(21,19,14,.10);
+  animation:discDrop var(--dur-joy) var(--ease-spring) both}
+.food-disc__welsh{font-family:var(--font-display);font-weight:800;font-size:18px;line-height:1;text-align:center;padding:0 6px;pointer-events:none}
+.food-disc__label{position:absolute;top:calc(100% + 7px);left:50%;transform:translateX(-50%);white-space:nowrap;
+  background:var(--ink);color:var(--warm-100);font-family:var(--font-body);font-weight:600;font-size:13px;
+  padding:5px 11px;border-radius:var(--radius-full);opacity:0;transition:opacity var(--dur-default);pointer-events:none}
+.food-disc.show-label .food-disc__label{opacity:1}
+.food-disc--ghost{position:fixed;z-index:60;pointer-events:none;animation:none;opacity:.94;width:88px;height:88px;
+  box-shadow:0 16px 30px rgba(21,19,14,.3)}
+@keyframes discDrop{0%{transform:translate(-50%,-50%) scale(.4)}60%{transform:translate(-50%,-50%) scale(1.12)}100%{transform:translate(-50%,-50%) scale(1)}}
+@media (prefers-reduced-motion:reduce){.food-disc{animation:none}}
+
+/* tray of draggable foods */
+.plate-tray{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;width:100%;max-width:600px}
+.food-token{position:relative;display:flex;flex-direction:column;align-items:flex-start;gap:1px;cursor:grab;touch-action:none;
+  border:0;border-left:6px solid var(--fc,var(--tile-coral));border-radius:var(--radius-md);
+  background:var(--surface-raised);box-shadow:var(--shadow-card);padding:11px 16px 11px 14px;
+  transition:transform var(--dur-fast) var(--ease-spring),opacity var(--dur-fast)}
+.food-token:active{transform:scale(.96);cursor:grabbing}
+.food-token__welsh{font-family:var(--font-display);font-weight:800;font-size:20px;line-height:1;color:var(--text-primary)}
+.food-token__en{font-size:12px;color:var(--text-secondary)}
+.food-token.placed{opacity:.45}
+.food-token__tick{position:absolute;top:-7px;right:-7px;width:24px;height:24px;border-radius:50%;background:var(--success);color:#fff;
+  display:flex;align-items:center;justify-content:center;box-shadow:var(--shadow-card)}
+
+.plate-actions{display:flex;align-items:center;gap:var(--space-md);width:100%;max-width:600px;justify-content:space-between;margin-top:auto}
+.plate-count{font-family:var(--font-mono);font-size:13px;color:var(--text-secondary)}
+
+/* ============================================================
+   CAFÉ CYMRAEG (menu roleplay)
+   ============================================================ */
+.cafe{position:absolute;inset:0;display:flex;flex-direction:column;background:var(--surface-base)}
+.cafe .fa__bar{color:var(--text-primary)}
+.cafe .fa__close{background:var(--surface-sunken)}
+.cafe__body{flex:1;overflow-y:auto;padding:var(--space-md) var(--space-xl) var(--space-2xl);display:flex;flex-direction:column;gap:var(--space-lg)}
+
+.cafe__masthead{text-align:center;border-bottom:2px solid var(--ink);padding-bottom:var(--space-md)}
+.cafe__name{display:block;font-family:var(--font-display);font-weight:800;font-size:46px;letter-spacing:-.02em;line-height:1}
+.cafe__sub{font-family:var(--font-mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--text-secondary)}
+
+.cafe-roles{display:flex;align-items:center;justify-content:center;gap:var(--space-md)}
+.cafe-role{display:flex;flex-direction:column;align-items:center;gap:1px;min-width:120px;padding:12px 16px;border-radius:var(--radius-lg);
+  background:var(--surface-sunken);font-family:var(--font-display);font-weight:700;font-size:var(--fs-h3);color:var(--text-secondary);
+  border:2px solid transparent;transition:all var(--dur-default)}
+.cafe-role small{font-family:var(--font-mono);font-weight:500;font-size:10px;letter-spacing:.08em;text-transform:uppercase;opacity:.8}
+.cafe-role.is-waiter{background:var(--brand);color:var(--ink);border-color:var(--brand-press)}
+.cafe-swap{display:inline-flex;align-items:center;gap:6px;border:1.5px solid var(--border-strong);background:transparent;cursor:pointer;
+  border-radius:var(--radius-full);padding:9px 14px;font-family:var(--font-body);font-weight:600;font-size:14px;color:var(--text-primary);
+  transition:transform var(--dur-fast) var(--ease-spring)}
+.cafe-swap:active{transform:scale(.95)}
+
+.cafe-order{background:var(--brand-warm);border-radius:var(--radius-lg);padding:var(--space-lg)}
+.cafe-order__label{display:block;font-family:var(--font-mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink);opacity:.75;margin-bottom:10px}
+.cafe-order__chips{display:flex;flex-wrap:wrap;gap:8px}
+.cafe-order__chip{display:inline-flex;align-items:center;gap:7px;border:0;cursor:pointer;background:rgba(21,19,14,.1);color:var(--ink);
+  font-family:var(--font-display);font-weight:700;font-size:15px;padding:9px 15px;border-radius:var(--radius-full);
+  transition:transform var(--dur-fast) var(--ease-spring),background var(--dur-fast)}
+.cafe-order__chip:hover{background:rgba(21,19,14,.16)}
+.cafe-order__chip:active{transform:scale(.97)}
+
+.cafe-menu__label{font-family:var(--font-mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--text-secondary);margin:2px 2px -4px}
+.cafe-menu{display:grid;grid-template-columns:1fr 1fr;gap:var(--space-md)}
+.cafe-item{display:flex;align-items:center;gap:var(--space-md);text-align:left;font-family:inherit;cursor:pointer;
+  background:var(--surface-raised);border:1px solid var(--border-subtle);border-radius:var(--radius-lg);padding:var(--space-md) var(--space-lg);
+  box-shadow:var(--shadow-card);transition:transform var(--dur-fast) var(--ease-spring),border-color var(--dur-fast)}
+.cafe-item:active{transform:scale(.98)}
+.cafe-item__dot{flex:none;width:40px;height:40px;border-radius:50%;background:var(--fc,var(--tile-coral));
+  box-shadow:inset 0 -4px 8px rgba(21,19,14,.12)}
+.cafe-item__body{flex:1;display:flex;flex-direction:column}
+.cafe-item__welsh{font-family:var(--font-display);font-weight:800;font-size:24px;line-height:1;color:var(--text-primary)}
+.cafe-item__en{font-size:13px;color:var(--text-secondary);margin-top:2px}
+.cafe-item__state{flex:none;display:inline-flex;align-items:center;gap:5px;font-family:var(--font-mono);font-size:11px;letter-spacing:.04em;
+  text-transform:uppercase;color:var(--text-secondary)}
+.cafe-item.served{border-color:var(--success)}
+.cafe-item.served .cafe-item__dot{background:var(--success)}
+.cafe-item.served .cafe-item__state{color:var(--success-text);font-weight:700}
+
+.cafe-done{background:var(--surface-raised);border:1px solid var(--border-subtle);border-radius:var(--radius-lg);padding:var(--space-lg);
+  font-size:var(--fs-body-lg);line-height:1.4;color:var(--text-primary);text-align:center}
+.cafe-done b{font-family:var(--font-display);font-weight:800;font-size:var(--fs-h3);display:block;margin-bottom:4px}
+
+/* ---------------- hand-drawn food illustrations in the games ---------------- */
+/* plate disc: paper backing so the coloured food icon reads */
+.food-disc:has(.food-disc__img){background:var(--surface-raised)}
+.food-disc__img{width:74%;height:74%;object-fit:contain;pointer-events:none;-webkit-user-drag:none}
+.food-disc--ghost .food-disc__img{width:80%;height:80%}
+
+/* tray token: small icon beside the words */
+.food-token{flex-direction:row;align-items:center;gap:11px}
+.food-token__img{flex:none;width:40px;height:40px;object-fit:contain;-webkit-user-drag:none;pointer-events:none}
+.food-token__text{display:flex;flex-direction:column;gap:1px}
+
+/* café menu: food icon in place of the plain colour dot */
+.cafe-item__img{flex:none;width:46px;height:46px;object-fit:contain;-webkit-user-drag:none;
+  background:color-mix(in srgb,var(--surface-sunken) 60%,transparent);border-radius:50%;padding:5px}
+.cafe-item.served .cafe-item__img{background:color-mix(in srgb,var(--success) 16%,transparent)}
