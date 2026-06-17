@@ -30,7 +30,7 @@ export const metadata = {
 export const viewport = {
   width: 'device-width',
   initialScale: 1,
-  viewportFit: 'cover',
+  // viewportFit: 'cover',
   // Hint to browsers that this is a portrait-only experience
   // (full lock requires Screen Orientation API, handled via CSS)
 };
