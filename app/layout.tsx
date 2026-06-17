@@ -29,7 +29,6 @@ export const metadata = {
 
 export const viewport = {
   width: 'device-width',
-  height: 'device-height',   // ← adds height=device-height
   initialScale: 1,
   viewportFit: 'cover',
   // Hint to browsers that this is a portrait-only experience
