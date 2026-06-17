@@ -208,6 +208,9 @@ export default function App(){
   }
 
   const theme = t.dark ? 'dark' : 'light';
+  useEffect(() => {
+    document.documentElement.dataset.theme = theme;
+  }, [theme]);
 
   return (
     <div id="app-root" data-theme={theme} data-tactile={t.tactile} data-palette={t.palette}
