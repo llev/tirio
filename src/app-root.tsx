@@ -103,7 +103,7 @@ export default function App(){
     const vv = window.visualViewport;
     const setH = () => {
       const h = vv ? vv.height : window.innerHeight;
-      document.documentElement.style.setProperty('--app-height', h + '100px');
+      document.documentElement.style.setProperty('--app-height', h + 'px');
     };
     setH();
     if (vv) {
