@@ -354,7 +354,7 @@ export function ChallengeDeck({ id, go }) {
   return (
     <div className="chl">
       <TopBar title="Take it further" onBack={() => go(id ? 'letter' : 'home', id ? { id } : {})} />
-      <div className="chl__deck">
+      <div className="chl__deck" style={{ justifyContent: 'flex-start', overflowY: 'auto' }}>
         <p className="muted" style={{ margin: '0 0 4px', fontSize: 17 }}>Pick a challenge. These happen away from the screen.</p>
         {D.challenges.map(c => (
           <button key={c.id} className={`chl-card tr-challenge--${CHL_COLORS[c.id]}`} style={{ '--tile-c': `var(--tile-${CHL_COLORS[c.id]})` }}
