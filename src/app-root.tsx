@@ -99,6 +99,14 @@ export default function App(){
 
   useEffect(() => { saveState({ eng, flags, account, lastLetter, family, tracking }); }, [eng, flags, account, lastLetter, family, tracking]);
 
+  useEffect(() => {
+    const setH = () =>
+      document.documentElement.style.setProperty('--app-height', window.innerHeight + 'px');
+    setH();
+    window.addEventListener('resize', setH);
+    return () => window.removeEventListener('resize', setH);
+  }, []);
+
   const go = useCallback((name, params = {}) => {
     setDir('fwd'); setNavSeq(s => s + 1);
     if (name === 'home') { setStack([{ name: 'home', params }]); return; }
