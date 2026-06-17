@@ -5,7 +5,7 @@
 
 *{box-sizing:border-box}
 html,body{margin:0;height:100%}
-html{overflow:hidden;background:var(--surface-base)}
+html{background:var(--surface-base)}
 #app-root{color:var(--text-primary)}
 body{
   background:var(--surface-base);
