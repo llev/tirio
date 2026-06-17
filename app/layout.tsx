@@ -3,6 +3,12 @@ import './globals.css';
 export const metadata = {
   title: 'Tirio — Welsh family play',
   description: 'A little Welsh, together, every day.',
+  manifest: '/manifest.webmanifest',
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: 'black-translucent',
+    title: 'Tirio',
+  },
 };
 
 export const viewport = {
