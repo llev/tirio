@@ -17,8 +17,7 @@ body{
 
 /* ---------- Stage (full-viewport, no iPad chrome) ---------- */
 #stage{
-  position:fixed;top:0;left:0;right:0;bottom:0;
-  height:100vh;height:var(--app-height,100lvh);
+  position:fixed;inset:0;
   background:var(--surface-base);
 }
 

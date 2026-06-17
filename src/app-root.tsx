@@ -99,20 +99,6 @@ export default function App(){
 
   useEffect(() => { saveState({ eng, flags, account, lastLetter, family, tracking }); }, [eng, flags, account, lastLetter, family, tracking]);
 
-  useEffect(() => {
-    const vv = window.visualViewport;
-    const setH = () => {
-      const h = vv ? vv.height : window.innerHeight;
-      document.documentElement.style.setProperty('--app-height', h + 'px');
-    };
-    setH();
-    if (vv) {
-      vv.addEventListener('resize', setH);
-      return () => vv.removeEventListener('resize', setH);
-    }
-    window.addEventListener('resize', setH);
-    return () => window.removeEventListener('resize', setH);
-  }, []);
 
   const go = useCallback((name, params = {}) => {
     setDir('fwd'); setNavSeq(s => s + 1);
