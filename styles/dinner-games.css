@@ -7,7 +7,7 @@
    covers the action surface whenever a player looks at their secret.
    ============================================================ */
 
-.sg{position:absolute;inset:0;display:flex;flex-direction:column;background:var(--tile-c,var(--tile-teal));color:var(--ink);overflow:hidden;padding-bottom:env(safe-area-inset-bottom)}
+.sg{position:absolute;inset:0;display:flex;flex-direction:column;background:var(--tile-c,var(--tile-teal));color:var(--ink);overflow:hidden;padding-top:env(safe-area-inset-top);padding-bottom:env(safe-area-inset-bottom)}
 .sg .fa__close{background:rgba(21,19,14,.14)}
 .sg__body{flex:1;display:flex;flex-direction:column;align-items:center;gap:var(--space-md);
   padding:var(--space-sm) var(--space-xl) var(--space-xl);overflow-y:auto;width:100%}
