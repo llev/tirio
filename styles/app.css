@@ -28,6 +28,7 @@ body{
   background:var(--surface-base);
   overflow:hidden;
   padding-top:env(safe-area-inset-top);
+  padding-bottom:env(safe-area-inset-bottom);
 }
 .screen__scroll{flex:1;overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;}
 .screen__scroll::-webkit-scrollbar{width:0;height:0}
@@ -372,7 +373,7 @@ body{
 /* ============================================================
    FAMILY ACTIVITY (content register — bold, full-bleed)
    ============================================================ */
-.fa{position:absolute;inset:0;display:flex;flex-direction:column;background:var(--tile-c,var(--tile-coral));color:var(--ink);padding-top:env(safe-area-inset-top)}
+.fa{position:absolute;inset:0;display:flex;flex-direction:column;background:var(--tile-c,var(--tile-coral));color:var(--ink);padding-top:env(safe-area-inset-top);padding-bottom:env(safe-area-inset-bottom)}
 .fa__bar{display:flex;align-items:center;gap:var(--space-md);padding:18px 22px;flex:none}
 .fa__close{width:44px;height:44px;border-radius:var(--radius-md);border:0;cursor:pointer;background:rgba(21,19,14,.14);color:var(--ink);
   display:flex;align-items:center;justify-content:center;transition:transform var(--dur-fast) var(--ease-spring)}
@@ -451,7 +452,7 @@ body{
 /* ============================================================
    WORD BUILDER
    ============================================================ */
-.wb{position:absolute;inset:0;display:flex;flex-direction:column;background:var(--surface-base);padding-top:env(safe-area-inset-top)}
+.wb{position:absolute;inset:0;display:flex;flex-direction:column;background:var(--surface-base);padding-top:env(safe-area-inset-top);padding-bottom:env(safe-area-inset-bottom)}
 .wb__body{flex:1;display:flex;flex-direction:column;align-items:center;gap:var(--space-lg);padding:var(--space-lg) var(--space-xl) var(--space-2xl);overflow-y:auto}
 .wb__prompt{font-size:var(--fs-body-lg);color:var(--text-secondary);text-align:center;max-width:30ch}
 .wb__art{width:clamp(150px,28dvh,230px);aspect-ratio:1;border-radius:var(--radius-xl);overflow:hidden;box-shadow:var(--shadow-card);flex:none}
@@ -500,7 +501,7 @@ body{
 /* ============================================================
    CHALLENGE (cards + away + return)
    ============================================================ */
-.chl{position:absolute;inset:0;display:flex;flex-direction:column;background:var(--surface-base);padding-top:env(safe-area-inset-top)}
+.chl{position:absolute;inset:0;display:flex;flex-direction:column;background:var(--surface-base);padding-top:env(safe-area-inset-top);padding-bottom:env(safe-area-inset-bottom)}
 .chl__deck{flex:1;display:flex;flex-direction:column;justify-content:center;gap:var(--space-lg);padding:var(--space-xl)}
 .chl-card{border-radius:var(--radius-xl);padding:var(--space-2xl) var(--space-xl);color:var(--ink);position:relative;overflow:hidden;
   box-shadow:var(--shadow-raised);display:flex;flex-direction:column;gap:var(--space-md);cursor:pointer;border:0;text-align:left;font-family:inherit;

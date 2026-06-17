@@ -27,17 +27,12 @@ export const metadata = {
   },
 };
 
-export const viewport = {
-  width: 'device-width',
-  initialScale: 1,
-  viewportFit: 'cover',
-  // Hint to browsers that this is a portrait-only experience
-  // (full lock requires Screen Orientation API, handled via CSS)
-};
-
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${hankenGrotesk.variable} ${sourceSans.variable}`}>
+      <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+      </head>
       <body>
         <div id="stage">
           <div id="root" style={{ position: 'absolute', inset: 0 }}>
