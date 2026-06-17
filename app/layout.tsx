@@ -20,6 +20,17 @@ export const metadata = {
   title: 'Tirio — Welsh family play',
   description: 'A little Welsh, together, every day.',
   manifest: '/manifest.webmanifest',
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: 'black-translucent',
+    title: 'Tirio',
+  },
+};
+
+export const viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  viewportFit: 'cover',
 };
 
 export default function RootLayout({ children }) {

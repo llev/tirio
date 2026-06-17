@@ -5,19 +5,20 @@
 
 *{box-sizing:border-box}
 html,body{margin:0;height:100%}
-html{background:var(--surface-base)}
 #app-root{color:var(--text-primary)}
 body{
   background:var(--surface-base);
   font-family:var(--font-body);
   color:var(--text-primary);
   -webkit-font-smoothing:antialiased;
+  overflow:hidden;
 }
 :root{ --tile-c:var(--tile-orange); }
 
 /* ---------- Stage (full-viewport, no iPad chrome) ---------- */
 #stage{
-  position:fixed;inset:0;
+  position:fixed;top:0;left:0;right:0;
+  height:100vh;height:100lvh;
   background:var(--surface-base);
 }
 

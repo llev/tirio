@@ -6,7 +6,7 @@ export default function manifest(): MetadataRoute.Manifest {
     short_name: 'Tirio',
     description: 'A little Welsh, together, every day.',
     start_url: '/',
-    display: 'fullscreen',
+    display: 'standalone',
     orientation: 'portrait',
     background_color: '#f4f1e8',
     theme_color: '#f4f1e8',
