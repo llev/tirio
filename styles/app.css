@@ -21,6 +21,9 @@ body{
   height:100vh;height:var(--app-height,100lvh);
   background:var(--surface-base);
 }
+@media(display-mode:standalone){
+  #stage{height:100vh}
+}
 
 
 /* ---------- Screen system ---------- */
