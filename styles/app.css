@@ -320,7 +320,7 @@ body{
 /* ============================================================
    GENERIC LAYER SCREENS (reference / supplemental)
    ============================================================ */
-.layerscreen__scroll{padding:0 clamp(16px,3.5vw,26px) 48px}
+.layerscreen__scroll{padding:0 clamp(16px,3.5vw,26px) 120px}
 .layerscreen__head{margin-bottom:var(--space-lg)}
 .layerscreen__kicker{font-family:var(--font-mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--text-secondary)}
 .layerscreen__title{font-family:var(--font-display);font-weight:800;font-size:var(--fs-h1);letter-spacing:-.01em;margin:4px 0 0}
