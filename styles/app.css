@@ -22,9 +22,6 @@ body{
   background:var(--surface-base);
 }
 
-@media(display-mode:standalone){
-  #stage{height:100lvh}
-}
 
 /* ---------- Screen system ---------- */
 .screen{
