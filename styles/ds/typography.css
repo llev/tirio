@@ -8,9 +8,9 @@
 
 :root {
   /* ---- Families ---- */
-  --font-display: 'Hanken Grotesk', system-ui, sans-serif;  /* hero: wordmark, tiles, headlines */
-  --font-display-alt: 'Hanken Grotesk', system-ui, sans-serif;
-  --font-body: 'Source Sans 3', system-ui, -apple-system, sans-serif;
+  --font-display: var(--font-hanken), system-ui, sans-serif;  /* hero: wordmark, tiles, headlines */
+  --font-display-alt: var(--font-hanken), system-ui, sans-serif;
+  --font-body: var(--font-source), system-ui, -apple-system, sans-serif;
   --font-mono: ui-monospace, 'SF Mono', 'Cascadia Mono', Menlo, monospace; /* placeholder/spec labels only */
 
   /* ---- Weights ---- */

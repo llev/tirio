@@ -373,8 +373,8 @@ body{
 /* ============================================================
    FAMILY ACTIVITY (content register — bold, full-bleed)
    ============================================================ */
-.fa{position:absolute;inset:0;display:flex;flex-direction:column;background:var(--tile-c,var(--tile-coral));color:var(--ink)}
-.fa__bar{display:flex;align-items:center;gap:var(--space-md);padding:18px 22px;flex:none}
+.fa{position:absolute;inset:0;display:flex;flex-direction:column;background:var(--tile-c,var(--tile-coral));color:var(--ink);padding-bottom:env(safe-area-inset-bottom)}
+.fa__bar{display:flex;align-items:center;gap:var(--space-md);padding:18px 22px;padding-top:calc(18px + env(safe-area-inset-top));flex:none}
 .fa__close{width:44px;height:44px;border-radius:var(--radius-md);border:0;cursor:pointer;background:rgba(21,19,14,.14);color:var(--ink);
   display:flex;align-items:center;justify-content:center;transition:transform var(--dur-fast) var(--ease-spring)}
 .fa__close:active{transform:scale(.94)}
@@ -501,7 +501,7 @@ body{
 /* ============================================================
    CHALLENGE (cards + away + return)
    ============================================================ */
-.chl{position:absolute;inset:0;display:flex;flex-direction:column;background:var(--surface-base)}
+.chl{position:absolute;inset:0;display:flex;flex-direction:column;background:var(--surface-base);padding-top:env(safe-area-inset-top);padding-bottom:env(safe-area-inset-bottom)}
 .chl__deck{flex:1;display:flex;flex-direction:column;justify-content:center;gap:var(--space-lg);padding:var(--space-xl)}
 .chl-card{border-radius:var(--radius-xl);padding:var(--space-2xl) var(--space-xl);color:var(--ink);position:relative;overflow:hidden;
   box-shadow:var(--shadow-raised);display:flex;flex-direction:column;gap:var(--space-md);cursor:pointer;border:0;text-align:left;font-family:inherit;
@@ -524,7 +524,10 @@ body{
 
 /* away screen */
 .away{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:clamp(16px,3dvh,48px);
-  padding:var(--space-3xl);text-align:center;color:var(--ink);transition:background var(--dur-slow)}
+  padding:var(--space-3xl);
+  padding-top:calc(var(--space-3xl) + env(safe-area-inset-top));
+  padding-bottom:calc(var(--space-3xl) + env(safe-area-inset-bottom));
+  text-align:center;color:var(--ink);transition:background var(--dur-slow)}
 .away--dim{background:var(--warm-950)!important;color:var(--warm-100)}
 .away__name{font-family:var(--font-display);font-weight:800;font-size:var(--fs-h1)}
 .away__timer{font-family:var(--font-mono);font-size:clamp(38px,8vw,60px);font-weight:500;letter-spacing:.02em}
@@ -541,7 +544,11 @@ body{
 .away__mode.on span{color:var(--tile-c,var(--tile-coral));mix-blend-mode:difference}
 
 /* return screen */
-.ret{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:var(--space-xl);padding:var(--space-2xl);text-align:center}
+.ret{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:var(--space-xl);
+  padding:var(--space-2xl);
+  padding-top:calc(var(--space-2xl) + env(safe-area-inset-top));
+  padding-bottom:calc(var(--space-2xl) + env(safe-area-inset-bottom));
+  text-align:center}
 .ret__title{font-family:var(--font-display);font-weight:800;font-size:var(--fs-h1)}
 .ret__q{font-size:var(--fs-h3);color:var(--text-secondary)}
 .ret__opts{display:flex;flex-direction:column;gap:var(--space-md);width:100%;max-width:400px}

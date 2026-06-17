@@ -7,7 +7,7 @@
    covers the action surface whenever a player looks at their secret.
    ============================================================ */
 
-.sg{position:absolute;inset:0;display:flex;flex-direction:column;background:var(--tile-c,var(--tile-teal));color:var(--ink);overflow:hidden}
+.sg{position:absolute;inset:0;display:flex;flex-direction:column;background:var(--tile-c,var(--tile-teal));color:var(--ink);overflow:hidden;padding-bottom:env(safe-area-inset-bottom)}
 .sg .fa__close{background:rgba(21,19,14,.14)}
 .sg__body{flex:1;display:flex;flex-direction:column;align-items:center;gap:var(--space-md);
   padding:var(--space-sm) var(--space-xl) var(--space-xl);overflow-y:auto;width:100%}
@@ -32,7 +32,10 @@
    PEEK — the private surface. Covers the action area while open.
    ============================================================ */
 .peek{position:absolute;inset:0;z-index:40;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:var(--space-lg);
-  padding:var(--space-xl);background:color-mix(in srgb,var(--ink) 86%,transparent);color:var(--warm-100);
+  padding:var(--space-xl);
+  padding-top:calc(var(--space-xl) + env(safe-area-inset-top));
+  padding-bottom:calc(var(--space-xl) + env(safe-area-inset-bottom));
+  background:color-mix(in srgb,var(--ink) 86%,transparent);color:var(--warm-100);
   animation:peekIn var(--dur-default) var(--ease-soft) both}
 @keyframes peekIn{from{opacity:0}to{opacity:1}}
 .peek__eyebrow{font-family:var(--font-mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;opacity:.7;display:flex;align-items:center;gap:8px}
@@ -82,7 +85,10 @@
    PASS / SWAP banner — hand the iPad over
    ============================================================ */
 .passcard{position:absolute;inset:0;z-index:45;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:var(--space-lg);
-  padding:var(--space-2xl) var(--space-xl);text-align:center;background:var(--tile-c,var(--tile-teal));color:var(--ink);
+  padding:var(--space-2xl) var(--space-xl);
+  padding-top:calc(var(--space-2xl) + env(safe-area-inset-top));
+  padding-bottom:calc(var(--space-2xl) + env(safe-area-inset-bottom));
+  text-align:center;background:var(--tile-c,var(--tile-teal));color:var(--ink);
   animation:peekIn var(--dur-default) var(--ease-soft) both}
 .passcard__eyebrow{font-family:var(--font-mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;opacity:.7}
 .passcard__big{font-family:var(--font-display);font-weight:800;font-size:clamp(40px,8vw,68px);line-height:.98;letter-spacing:-.02em;max-width:14ch;text-wrap:balance}
@@ -169,7 +175,10 @@
    shared finish overlay for both games
    ============================================================ */
 .sg-done{position:absolute;inset:0;z-index:46;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:var(--space-lg);
-  padding:var(--space-2xl) var(--space-xl);text-align:center;background:var(--tile-c,var(--tile-teal));color:var(--ink);
+  padding:var(--space-2xl) var(--space-xl);
+  padding-top:calc(var(--space-2xl) + env(safe-area-inset-top));
+  padding-bottom:calc(var(--space-2xl) + env(safe-area-inset-bottom));
+  text-align:center;background:var(--tile-c,var(--tile-teal));color:var(--ink);
   animation:peekIn var(--dur-default) var(--ease-soft) both}
 .sg-done__burst{font-family:var(--font-display);font-weight:800;font-size:clamp(44px,7.6vw,66px);line-height:1.0;letter-spacing:-.02em;white-space:nowrap;
   animation:pop var(--dur-joy) var(--ease-spring) both}
