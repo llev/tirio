@@ -23,7 +23,7 @@ body{
 }
 
 @media(display-mode:standalone){
-  #stage{height:100vh+env(safe-area-inset-top)}
+  #stage{height:100lvh}
 }
 
 /* ---------- Screen system ---------- */
