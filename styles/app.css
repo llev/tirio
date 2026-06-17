@@ -21,10 +21,10 @@ body{
   height:100vh;height:var(--app-height,100lvh);
   background:var(--surface-base);
 }
-@media(display-mode:standalone){
-  #stage{height:100vh}
-}
 
+@media(display-mode:standalone){
+  #stage{height:100vh+env(safe-area-inset-top)}
+}
 
 /* ---------- Screen system ---------- */
 .screen{
@@ -32,7 +32,6 @@ body{
   background:var(--surface-base);
   overflow:hidden;
   padding-top:env(safe-area-inset-top);
-  padding-top:-env(safe-area-inset-top);
 }
 .screen__scroll{flex:1;overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;}
 .screen__scroll::-webkit-scrollbar{width:0;height:0}
