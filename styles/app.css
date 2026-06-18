@@ -15,9 +15,14 @@ body{
 }
 :root{ --tile-c:var(--tile-orange); }
 
-/* ---------- Stage (full-viewport, edge-to-edge) ---------- */
+/* ---------- Stage (full-viewport, edge-to-edge) ----------
+   In iOS standalone, lvh/vh resolve to the FULL physical screen
+   (measured: 874 iPhone, 1112 iPad) while inset:0 / dvh / svh give the
+   SHORTER layout viewport (812 / 1092) and leave a strip uncovered at the
+   bottom. Anchor top/left/right and set height in lvh to fill the screen. */
 #stage{
-  position:fixed;inset:0;
+  position:fixed;top:0;left:0;right:0;
+  height:100vh;height:100lvh;
   background:var(--surface-base);
 }
 
