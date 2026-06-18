@@ -11,16 +11,19 @@ body{
   font-family:var(--font-body);
   color:var(--text-primary);
   -webkit-font-smoothing:antialiased;
-  overflow:hidden;
 }
 :root{ --tile-c:var(--tile-orange); }
 
 /* ---------- Stage (full-viewport, edge-to-edge) ----------
-   No viewport-fit:cover (see app/layout.tsx), so the layout viewport reaches
-   the bottom edge and inset:0 fills it. The notch/safe-area canvas color is the
-   <body> background, set per-screen in app-root.tsx. */
+   Normal-flow root like spelliegame.com (NOT position:fixed): html/body are
+   height:100% and #stage fills them. This lets iPhone Safari extend the page
+   color behind the Dynamic Island and render the bottom searchbar translucent.
+   overflow:hidden lives here (moved off <body>) to clip the slide transitions.
+   The notch/safe-area canvas color is the <body> background, set per-screen in
+   app-root.tsx. */
 #stage{
-  position:fixed;inset:0;
+  position:relative;height:100%;
+  overflow:hidden;
   background:var(--surface-base);
 }
 
