@@ -5,6 +5,7 @@
 import { useState, useEffect, useRef, useCallback } from 'react';
 
 import { Icon, Button, TopBar, speakText } from '@/components/primitives';
+import { ViewportDebug } from '@/components/viewport-debug'; // TEMP: remove after viewport fix
 import {
   useTweaks, TweaksPanel, TweakSection, TweakRadio, TweakToggle,
 } from '@/components/tweaks-panel';
@@ -231,6 +232,7 @@ export default function App(){
       )}
 
       <TirioTweaks t={t} setTweak={setTweak} />
+      <ViewportDebug />{/* TEMP: remove after viewport fix */}
     </div>
   );
 }
