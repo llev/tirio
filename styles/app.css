@@ -4,7 +4,7 @@
    ============================================================ */
 
 *{box-sizing:border-box}
-html,body{margin:0;height:100%}
+html,body{margin:0}
 #app-root{color:var(--text-primary)}
 body{
   background:var(--surface-base);
@@ -15,10 +15,10 @@ body{
 }
 :root{ --tile-c:var(--tile-orange); }
 
-/* ---------- Stage (full-viewport, no iPad chrome) ---------- */
+/* ---------- Stage (full-viewport, edge-to-edge) ---------- */
 #stage{
-  position:fixed;top:0;left:0;right:0;
-  height:100vh;height:100lvh;
+  position:fixed;inset:0;
+  height:100dvh;
   background:var(--surface-base);
 }
 

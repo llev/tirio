@@ -36,12 +36,7 @@ export const viewport = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${hankenGrotesk.variable} ${sourceSans.variable}`}>
-      <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-        <meta name="apple-mobile-web-app-capable" content="yes" />
-        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-        <meta name="apple-mobile-web-app-title" content="Tirio" />
-      </head>
+      <head />
       <body>
         <div id="stage">
           <div id="root" style={{ position: 'absolute', inset: 0 }}>
