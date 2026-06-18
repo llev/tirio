@@ -22,12 +22,26 @@ export function ViewportDebug() {
       'padding-bottom:env(safe-area-inset-bottom);padding-left:env(safe-area-inset-left)';
     document.body.appendChild(probe);
 
+    // Probes that resolve each viewport-height unit to px. Whichever equals
+    // screen.height is the unit that reaches the full physical screen.
+    const mkUnit = (h) => {
+      const el = document.createElement('div');
+      el.style.cssText = `position:fixed;top:0;left:0;width:1px;height:${h};visibility:hidden;pointer-events:none`;
+      document.body.appendChild(el);
+      return el;
+    };
+    const uSvh = mkUnit('100svh');
+    const uLvh = mkUnit('100lvh');
+    const uDvh = mkUnit('100dvh');
+    const uVh = mkUnit('100vh');
+
     const read = () => {
       const cs = getComputedStyle(probe);
       const vv = window.visualViewport;
       const stage = document.getElementById('stage');
       const sr = stage ? stage.getBoundingClientRect() : null;
       const px = (v) => Math.round(parseFloat(v) || 0);
+      const uh = (el) => Math.round(el.getBoundingClientRect().height);
       setM({
         inner: `${window.innerWidth} x ${window.innerHeight}`,
         screen: `${screen.width} x ${screen.height}`,
@@ -36,6 +50,7 @@ export function ViewportDebug() {
         client: `${document.documentElement.clientWidth} x ${document.documentElement.clientHeight}`,
         stage: sr ? `${Math.round(sr.width)} x ${Math.round(sr.height)} @${Math.round(sr.top)},${Math.round(sr.left)}` : 'n/a',
         insets: `${px(cs.paddingTop)}/${px(cs.paddingRight)}/${px(cs.paddingBottom)}/${px(cs.paddingLeft)}`,
+        units: `svh${uh(uSvh)} lvh${uh(uLvh)} dvh${uh(uDvh)} vh${uh(uVh)}`,
         dpr: window.devicePixelRatio,
         sa: `nav=${'standalone' in navigator ? navigator.standalone : '?'} dm=${window.matchMedia('(display-mode: standalone)').matches}`,
       });
@@ -55,6 +70,7 @@ export function ViewportDebug() {
       vv?.removeEventListener('scroll', read);
       window.clearInterval(id);
       probe.remove();
+      uSvh.remove(); uLvh.remove(); uDvh.remove(); uVh.remove();
     };
   }, []);
 
@@ -68,6 +84,7 @@ export function ViewportDebug() {
     `client  ${m.client}`,
     `#stage  ${m.stage}`,
     `insets  ${m.insets}`,
+    `units   ${m.units}`,
     `dpr     ${m.dpr}`,
     `mode    ${m.sa}`,
     `(tap to hide)`,
