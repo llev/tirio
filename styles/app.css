@@ -18,7 +18,6 @@ body{
 /* ---------- Stage (full-viewport, edge-to-edge) ---------- */
 #stage{
   position:fixed;inset:0;
-  height:100dvh;
   background:var(--surface-base);
 }
 
