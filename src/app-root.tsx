@@ -223,6 +223,17 @@ export default function App(){
     const bg = getComputedStyle(el).backgroundColor;
     if (bg && bg !== 'rgba(0, 0, 0, 0)' && bg !== 'transparent') {
       document.body.style.backgroundColor = bg;
+      try {
+        let m = document.querySelector('meta[name="theme-color"]') as HTMLMetaElement | null;
+        if (!m) {
+          m = document.createElement('meta');
+          m.name = 'theme-color';
+          document.head.appendChild(m);
+        }
+        m.content = bg;
+      } catch (e) {
+        // ignore DOM/security errors
+      }
     }
   }, [navSeq, theme]);
 
