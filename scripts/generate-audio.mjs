@@ -43,9 +43,9 @@ const content = JSON.parse(readFileSync(CONTENT_PATH, 'utf8'));
 // B uses short 'i' rather than long 'î' to avoid sounding like English "bee".
 const WELSH_LETTER_NAMES = {
   letter_a:  'a',
-  letter_b:  'ba',    // short i — long î sounds too much like English "B"
+  letter_b:  'b',    // short i — long î sounds too much like English "B"
   letter_c:  'ec',
-  letter_ch: 'ech',
+  letter_ch: 'ch',
   letter_d:  'da',
   letter_dd: 'edd',
   letter_e:  'e',
@@ -155,7 +155,7 @@ console.log(`\nDone. Generated: ${generated}  Skipped: ${skipped}  Failed: ${fai
 
 async function generateAzure(text, dest) {
   const ssml = `<speak version="1.0" xmlns="http://www.w3.org/2001/10/synthesis" xml:lang="cy-GB">
-  <voice name="cy-GB-NiaNeural">${text.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')}</voice>
+  <voice name="cy-GB-AledNeural">${text.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')}</voice>
 </speak>`;
 
   const res = await fetch(
