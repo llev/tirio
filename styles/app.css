@@ -4,7 +4,7 @@
    ============================================================ */
 
 *{box-sizing:border-box}
-html,body{margin:0}
+html,body{margin:0;height:100%}
 #app-root{color:var(--text-primary)}
 body{
   background:var(--surface-base);

@@ -38,6 +38,7 @@ export default function RootLayout({ children }) {
     <html lang="en" className={`${hankenGrotesk.variable} ${sourceSans.variable}`}>
       <head />
       <body>
+        <script dangerouslySetInnerHTML={{ __html: `if('serviceWorker'in navigator)navigator.serviceWorker.register('/sw.js');` }} />
         <div id="stage">
           <div id="root" style={{ position: 'absolute', inset: 0 }}>
             {children}
