@@ -2,7 +2,7 @@
 /* ============================================================
    Tirio — app root: router, state, tweaks
    ============================================================ */
-import { useState, useEffect, useRef, useCallback } from 'react';
+import { useState, useEffect, useLayoutEffect, useRef, useCallback } from 'react';
 
 import { Icon, Button, TopBar, speakText } from '@/components/primitives';
 import { ViewportDebug } from '@/components/viewport-debug'; // TEMP: remove after viewport fix
@@ -213,10 +213,23 @@ export default function App(){
     document.documentElement.dataset.theme = theme;
   }, [theme]);
 
+  // Mirror the active screen's background onto the <body> canvas. With no
+  // viewport-fit:cover, iOS paints the notch/safe-area regions with the body
+  // background, so this makes them match the current screen edge-to-edge.
+  const renderRef = useRef(null);
+  useLayoutEffect(() => {
+    const el = renderRef.current?.firstElementChild;
+    if (!el) return;
+    const bg = getComputedStyle(el).backgroundColor;
+    if (bg && bg !== 'rgba(0, 0, 0, 0)' && bg !== 'transparent') {
+      document.body.style.backgroundColor = bg;
+    }
+  }, [navSeq, theme]);
+
   return (
     <div id="app-root" data-theme={theme} data-tactile={t.tactile} data-palette={t.palette}
       style={{ position: 'absolute', inset: 0, background: 'var(--surface-base)' }}>
-      <div className={dir === 'back' ? 'rt-back-enter' : 'rt-enter'} key={navSeq} style={{ position: 'absolute', inset: 0 }}>
+      <div ref={renderRef} className={dir === 'back' ? 'rt-back-enter' : 'rt-enter'} key={navSeq} style={{ position: 'absolute', inset: 0 }}>
         {render()}
       </div>
       {sheet && <AccountSheet account={account} family={family} tiers={TIERS} tracking={tracking}

@@ -27,10 +27,14 @@ export const metadata = {
   },
 };
 
+// NOTE: deliberately NO viewportFit:'cover'. With cover, iOS pins content under
+// the notch and shrinks the layout viewport to screen−top_inset, leaving a dead
+// strip at the bottom. Without it, content reaches the bottom edge and the
+// notch/safe-area regions are painted by the <body> canvas color (set per-screen
+// in app-root). Matches the spelliegame.com approach.
 export const viewport = {
   width: 'device-width',
   initialScale: 1,
-  viewportFit: 'cover',
 };
 
 export default function RootLayout({ children }) {
