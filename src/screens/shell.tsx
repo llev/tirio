@@ -62,7 +62,7 @@ export function Auth({ go, onAuth }) {
             <div className="auth__sub">{mode === 'in' ? 'Sign in to pick up where your family left off.' : "Save your family's progress as you go."}</div>
           </div>
 
-          <button className="auth__google" onClick={() => onAuth('Lloyd')}>
+          <button className="auth__google" onClick={() => onAuth('Enw')}>
             <GoogleG /> Continue with Google
           </button>
 
@@ -71,7 +71,7 @@ export function Auth({ go, onAuth }) {
           <div className="auth__form">
             {mode === 'up' && (
               <div className="tr-field"><label className="tr-field__label">Your name</label>
-                <input className="tr-input" placeholder="e.g. Lloyd" /></div>
+                <input className="tr-input" placeholder="e.g. Enw" /></div>
             )}
             <div className="tr-field"><label className="tr-field__label">Email</label>
               <input className="tr-input" type="email" placeholder="you@example.com" /></div>
@@ -79,7 +79,7 @@ export function Auth({ go, onAuth }) {
               <input className="tr-input" type="password" placeholder="••••••••" onChange={() => setErr(false)} />
               {err && <span className="tr-field__hint">That email and password don't match. Try again or reset your password.</span>}</div>
             {mode === 'in' && <button className="auth__link" onClick={() => go('forgot')}>Forgot your password?</button>}
-            <Button kind="ink" size="lg" block onClick={() => onAuth('Lloyd')}>
+            <Button kind="ink" size="lg" block onClick={() => onAuth('Enw')}>
               {mode === 'in' ? 'Sign in' : 'Create account'}
             </Button>
           </div>
